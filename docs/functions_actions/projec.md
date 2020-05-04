@@ -4,7 +4,7 @@ title: Project
 permalink: '/docs/functions_actions/project'
 ---
 
-# Quick look
+# Quick Look
 The PROJECT function processes through all records in the record-set performing the transform function on each record in turn.
 
 ```java
@@ -42,4 +42,4 @@ CatRecs := PROJECT(NameDS, //inline dataset, left recordset
 ```
 
 Let's take a look at result:\
-![project fname lname exp](/docs/functions_actions/images/project_Fname.png)
+![project fname lname exp](/docs/functions_actions/images/project_Fname.jpg)
