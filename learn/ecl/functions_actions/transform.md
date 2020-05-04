@@ -28,3 +28,5 @@ Let's take a look at an example:
 ```java
 NameOutRec
 ```
+
+For executable code please see [transform.ecl](/source/ecl/transform.ecl)

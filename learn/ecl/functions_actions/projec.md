@@ -42,4 +42,4 @@ CatRecs := PROJECT(NameDS, //inline dataset, left recordset
 ```
 
 Let's take a look at result:\
-![project fname lname exp](/docs/functions_actions/images/project_Fname.jpg)
+![project fname lname exp](/learn/ecl/functions_actions/images/project_Fname.jpg)
