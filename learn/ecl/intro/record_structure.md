@@ -1,8 +1,3 @@
----
-layout: page
-title: Record Structure
-permalink: ./intro/record_structure/
----
 
 # Record Structure
 ## Quick Look

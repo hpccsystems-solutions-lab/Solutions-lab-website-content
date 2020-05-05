@@ -1,11 +1,9 @@
 
 # Dataset
 ## Quick Look
-A physical data file on disk. It can be defined directly as an inline dataset, or can be brought in from outside.
+There are a few ways to generate output.
 
-### Inline Dataset
-Inline dataset definition can be used for small datasets.
-
+Using the following dataset, let's look at some examples
 ![record set example](./images/RecordLayout.JPG)
 
 
@@ -23,6 +21,7 @@ SalaryAvg_Layout := RECORD
     INTEGER	Upperband;
 END;
 
+// creating an inline dataset
 SalaryAvg_DS := DATASET([
                 {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
                 {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
@@ -31,5 +30,18 @@ SalaryAvg_DS := DATASET([
                 {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}
                 ], SalaryAvg_Layout //Layout definition
                 );
-```
 
+//Output with no lable, following will display the dataset without labling the output
+OUTPUT(SalaryAvg_DS);
+
+
+//Looking for an easier way :)
+//Note: too many outputs with no lables, you won't know what you are looking at.
+SalaryAvg_DS; 
+
+//Let's see how we can lable them
+OUTPTU(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
+```
+![record set example](./images/filterOutput.JPG)
+
+Put it in practice [output.ecl](/source/ecl/output.ecl)

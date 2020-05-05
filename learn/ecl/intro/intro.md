@@ -1,8 +1,3 @@
----
-layout: page
-title: Getting Started
-permalink: /main/
----
 
 # Getting Started
 ## HPCC
@@ -20,7 +15,7 @@ For practicing, you can take advantage of our [ECL Could IDE](https://ide.hpccsy
 For creating a new account and a quick guide on how to use the Could IDE, use 
 [this instruction manual](/references/cloudide_setup.md)
 
-<!-- ![ Cloud IDE screenshot](/docs/intro/images/cloudIDE.jpg) -->
+<!-- ![ Cloud IDE screenshot](learn/ecl/docs/intro/images/cloudIDE.jpg) -->
 <img width="600" alt="portfolio_view" src="images/cloudIDE.jpg">
 
 ```java

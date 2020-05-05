@@ -29,4 +29,4 @@ Let's take a look at an example:
 NameOutRec
 ```
 
-For executable code please see [transform.ecl](/source/ecl/transform.ecl)
+Put it in practice [transform.ecl](/source/ecl/transform.ecl)
