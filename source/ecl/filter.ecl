@@ -26,7 +26,7 @@ OUTPUT(allPeople(isEmployed), NAMED('isEmployed');
 
 //Capture None Smith last names and save the result.
 //<> or != can be used for not euqal 
-//Field Values are case sensetive
+//Strings are case sensetive
 noSmith := allPeople(lastName != 'Smith');
 
 OUTPUT(noSmith, NAMED('noSmith'));

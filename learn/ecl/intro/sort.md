@@ -25,7 +25,7 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 											 ,Layout_Person);
 OUTPUT(allPeople, NAMED('allPeople'));
 ```
-![Asc Sort Poeple LastName](./images/allPeople.JPG)
+![Complete People Dataset](./images/allPeople.JPG)
 
 ### Ascending Sort
 Sorting from A to Z or 0 to 9.
