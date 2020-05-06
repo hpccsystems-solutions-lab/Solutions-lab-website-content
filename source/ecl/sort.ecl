@@ -21,7 +21,7 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 
 OUTPUT(allPeople, NAMED('allPeople'));
 
-//Ascending
+//Ascending 
 A_SortedLastName := SORT(allPeople, lastName);
 OUTPUT(A_SortedLastName, NAMED('Asc_SortedLastName'));
 
