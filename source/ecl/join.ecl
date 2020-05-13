@@ -65,6 +65,16 @@ LeftOuterJoin := JOIN(EmpDS, JobCatDS,
 														
 OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
+//FULL OUTER Join
+FullOuterJoin := JOIN(EmpDS, JobCatDS,
+										LEFT.EmpID = RIGHT.EmpID,
+										TRANSFORM(EmpResult_Layout,
+														SELF := LEFT,
+														SELF := RIGHT),
+														FULL OUTER);
+														
+OUTPUT(FullOuterJoin, NAMED('FullOuterJoin'));
+
 
 
 

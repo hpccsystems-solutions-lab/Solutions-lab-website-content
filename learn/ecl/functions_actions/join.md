@@ -66,3 +66,5 @@ Left Outer Join Result\
 
 \
 Put it into practice [join.ecl](/source/ecl/join.ecl)
+
+

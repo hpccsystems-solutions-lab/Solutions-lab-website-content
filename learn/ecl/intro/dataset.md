@@ -27,7 +27,7 @@ SalaryAvg_DS := DATASET([
                 {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
                 {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
                 {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
-                {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
+                {'CIO', 'IT', 'Tampa', 'FL', 112000, 69000, 131000},
                 {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}
                 ], SalaryAvg_Layout //Layout definition
                 );
