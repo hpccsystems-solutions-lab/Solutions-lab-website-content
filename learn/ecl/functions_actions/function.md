@@ -16,7 +16,7 @@ OUTPUT(res, NAMED('res'));
 OUTPUT(myfunc('Sunny'), NAMED('Sunny'));
 ```
 ## Outputs in Function - Using WHEN
-OUPUTs can be used to return multiple result from a function. `PARALLEL` and `WHEN` are the keywords used generate multiple results.
+`OUPUT`s can be used to return multiple result from a function. `PARALLEL` and `WHEN` are the keywords used generate multiple results.
 
 ```java
 Foo(DATASET ds) := FUNCTION
@@ -35,7 +35,7 @@ END;
 ```
 ## One Line Function
 If you don’t have any ecl_code for the function, it is a one-liner. \
-FUNCTION, RETURN and END keywords are omitted. 
+`FUNCTION`, `RETURN` and `END` keywords are omitted. 
 
 ```java
 UNSIGNED2 Squared(UNSIGNED1 n) := n * n;
