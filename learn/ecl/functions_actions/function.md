@@ -16,7 +16,7 @@ OUTPUT(res, NAMED('res'));
 OUTPUT(myfunc('Sunny'), NAMED('Sunny'));
 ```
 ## Outputs in Function - Using WHEN
-`OUPUT`s can be used to return multiple result from a function. `PARALLEL` and `WHEN` are the keywords used generate multiple results.
+`OUPUT` can be used to return multiple results from a function. `PARALLEL` and `WHEN` are the keywords used to generate multiple results.
 
 ```java
 Foo(DATASET ds) := FUNCTION
