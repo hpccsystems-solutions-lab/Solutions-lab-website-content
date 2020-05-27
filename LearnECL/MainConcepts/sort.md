@@ -27,7 +27,7 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 OUTPUT(allPeople, NAMED('allPeople'));
 ```
 
-![Complete People Dataset](./Images/allPeople.jpg)
+![Complete People Dataset](./Images/allPeople.JPG)
 
 ### Ascending Sort
 

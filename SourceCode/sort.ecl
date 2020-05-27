@@ -1,7 +1,7 @@
 ﻿/*
 Sort
 - Ascending
--Descending
+- Descending
 */
 
 //Define record layout
@@ -14,16 +14,17 @@ Layout_Person := RECORD
 END;
 
 //Inline dataset
-allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
-											 {102,'Fact','Smith', TRUE, 200000},
-                       {012,'Joe','Blow', TRUE, 11250},
-                       {085,'Blue','Moon', TRUE, 185000},
-                       {055,'Silver','Jo', FALSE, 5000},
-                       {265,'Darling','Jo', TRUE, 5000},
-                       {265,'Blue','Silver', TRUE, 75000},
-                       {333,'Jane','Smith', FALSE, 50000},
-                       {333,'Funny','Joke', FALSE, 450}]
-											 ,Layout_Person);
+allPeople := DATASET([ 
+                  {102,'Fred','Smith', FALSE, 0},
+                  {102,'Fact','Smith', TRUE, 200000},
+                  {012,'Joe','Blow', TRUE, 11250},
+                  {085,'Blue','Moon', TRUE, 185000},
+                  {055,'Silver','Jo', FALSE, 5000},
+                  {265,'Darling','Jo', TRUE, 5000},
+                  {265,'Blue','Silver', TRUE, 75000},
+                  {333,'Jane','Smith', FALSE, 50000},
+                  {333,'Funny','Joke', FALSE, 450}]
+                  ,Layout_Person);
 
 OUTPUT(allPeople, NAMED('allPeople'));
 
@@ -40,4 +41,4 @@ OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
 
 //Sort per multiple fields
 OUTPUT(SORT(allPeople, firstName, lastName, avgHouseIncome),
-						NAMED('Sort_Couple_Fields'));
+                    NAMED('Sort_Couple_Fields'));

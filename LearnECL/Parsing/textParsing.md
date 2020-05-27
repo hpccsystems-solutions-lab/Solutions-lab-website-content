@@ -16,4 +16,4 @@ str := DATASET([
 ```
 
 \
-![color input ds](./Images/ColorInput.JPG)
+![color input ds](./Images/colorInput.JPG)

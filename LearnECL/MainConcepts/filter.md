@@ -29,7 +29,7 @@ OUTPUT(allPeople, NAMED('allPeople'));
 
 Complete people dataset:
 
-![Complete People Dataset](./Images/allPeople.jpg)
+![Complete People Dataset](./Images/allPeople.JPG)
 
 Filter by income:
 
