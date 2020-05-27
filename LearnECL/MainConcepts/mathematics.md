@@ -3,18 +3,18 @@
 Let's look at some simple, useful mathematics functions.
 
 someMathDS table\
-![income expense table](./images/Income_Exp_DS.JPG)
+![income expense table](./Images/Income_Exp_DS.JPG)
 
 ## SUM
 
-Sum function returns the result of adding numbers together, or returning a sum for a column in dataset. 
+Sum function returns the result of adding numbers together, or returning a sum for a column in dataset.
 
 ```java
 SUM(1,2,3,4,5) // result is 15
 SUM(someMathDS, monthlyIncome) // result is 83958.88
 ```
 
-## COUNT 
+## COUNT
 
 Returns the number of occurrence for a specified dataset or value-list.
 
@@ -67,7 +67,8 @@ OUTPUT(TRUNCATE(3.45), NAMED('truncate'));  //return 3
 
 OUTPUT(TRUNCATE(AVE(someMathDS, monthlyExp)), NAMED('truncate_avg')); //return 3862
 ```
-## ROUND 
+
+## ROUND
 
 The ROUND function returns the rounded value by using standard arithmetic rounding (decimal portions less than .5 round down and decimal portions greater than or equal to .5 round up).
 
@@ -76,5 +77,6 @@ OUTPUT(ROUND(3.45), NAMED('R1')); // return 3
 OUTPUT(ROUND(3.65), NAMED('R2')); //return 4
 OUTPUT(ROUND(SUM(someMathDS, monthlyExp)), NAMED('R3')); //return 27034
 ```
+
 \
 Put it into practice [mathematics.ecl](/source/ecl/mathematics.ecl)

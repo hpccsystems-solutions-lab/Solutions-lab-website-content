@@ -1,4 +1,4 @@
-# OverView
+# Text Parsing
 
 Text or string parsing is finding records whose data contains a match for the pattern you defined. If the pattern finds multiple matches in the data, then a result record is generated for each match. Each match for a PARSE is effectively a single path through the pattern. If there is more than one path that matches, then the result transform is either called once for each path, or if the BEST option is used, the path with the lowest penalty is selected.
 
@@ -16,4 +16,4 @@ str := DATASET([
 ```
 
 \
-![color input ds](./images/ColorInput.JPG)
+![color input ds](./Images/ColorInput.JPG)

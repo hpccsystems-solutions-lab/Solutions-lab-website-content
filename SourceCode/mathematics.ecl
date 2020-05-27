@@ -1,4 +1,16 @@
-﻿someMath_Layout := RECORD
+﻿/*
+Math
+- Simple Math
+- Math Functions 
+       * COUNT
+       * SUM
+       * MIN
+       * MAX
+       * AVE
+       * ROUND
+*/
+
+someMath_Layout := RECORD
     INTEGER ID;
 		STRING  lastName;
 		DECIMAL9_2 monthlyIncome;

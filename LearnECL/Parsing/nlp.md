@@ -1,10 +1,8 @@
-# Overview
-
-## NLP
+# NLP
 
 NLP (Natural Language Parsing) is the process of determining the syntactic structure of a text by analyzing its constituent words based on an underlying grammar.
 
-## String Parsing
+# String Parsing
 
 String parsing, or syntactic analysis is the process of analyzing a string of symbols, either in natural language, computer languages or data structures, conforming to the rules of a formal grammar.
 

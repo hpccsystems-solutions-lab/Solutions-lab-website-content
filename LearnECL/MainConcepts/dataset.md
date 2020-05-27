@@ -1,13 +1,14 @@
-
 # Dataset
+
 ## Quick Look
+
 A physical data file on disk. It can be defined directly as an inline dataset, or can be brought in from outside.
 
 ### Inline Dataset
+
 Inline dataset definition can be used for small datasets.
 
-![record set example](./images/RecordLayout.JPG)
-
+![record set example](./Images/RecordLayout.JPG)
 
 The layout for above dataset:
 
@@ -32,4 +33,3 @@ SalaryAvg_DS := DATASET([
                 ], SalaryAvg_Layout //Layout definition
                 );
 ```
-

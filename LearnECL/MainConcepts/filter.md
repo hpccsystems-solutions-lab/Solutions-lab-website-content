@@ -13,7 +13,7 @@ Layout_Person := RECORD
   STRING15  FirstName;
   STRING25  LastName;
   BOOLEAN   isEmployed;
-  UNSIGNED  avgHouseIncome;	
+  UNSIGNED  avgHouseIncome;
 END;
 
 //Inline dataset
@@ -26,17 +26,17 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 											 ,Layout_Person);
 OUTPUT(allPeople, NAMED('allPeople'));
 ```
+
 Complete people dataset:
 
-![Complete People Dataset](./images/allPeople.jpg)
+![Complete People Dataset](./Images/allPeople.jpg)
 
 Filter by income:
 
-![Filter Income](./images/Poeple_FilterIncome.JPG)
+![Filter Income](./Images/Poeple_FilterIncome.JPG)
 
 Filter by last name and income:
 
-![Filter lastname income](./images/PeopleAndFilter.JPG)
-
+![Filter lastname income](./Images/PeopleAndFilter.JPG)
 
 Put it into practice [filter.ecl](/source/ecl/filter.ecl)

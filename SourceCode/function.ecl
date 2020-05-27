@@ -1,4 +1,13 @@
-﻿STRING myfunc (STRING val) := FUNCTION
+﻿/*
+Function
+- Creating a function 
+- Calling a function
+- Online function
+- Multiple outputs in a function
+*/
+
+
+STRING myfunc (STRING val) := FUNCTION
    Result := 'Hello ' + val + ' , welcome to this function';
   RETURN Result;
 END;
@@ -12,6 +21,7 @@ OUTPUT(myfunc('Sunny'), NAMED('Sunny'));
 //******************************************************
 
 mathFunc() := FUNCTION
+
     numOne := RANDOM();
     str    := IF(numOne % 2 = 0, 'Even', 'Odd');
     
@@ -32,7 +42,7 @@ checkMath(SET numList, INTEGER val) := FUNCTION
 
   sideActions := PARALLEL
      (
-				 OUTPUT(numList, NAMED('Evaluated_List'));
+         OUTPUT(numList, NAMED('Evaluated_List'));
          OUTPUT(getMax, NAMED('MaxValue'));
          OUTPUT(getMin, NAMED('MinValue'));
          OUTPUT(getAvg, NAMED('AvgValue'));

@@ -12,10 +12,10 @@ The join function produces a result set based on the intersection of two datase
 - FULL ONLY: One record for each left and right record with no match in the opposite.
 
 Employee Information, EmpDS\
-![Employee Dataset](./images/EmpID_DS.JPG)
+![Employee Dataset](./Images/EmpID_DS.JPG)
 
 Job Category, JobCatDS\
-![Job Category Dataset](./images/EmpCat_DS.JPG)
+![Job Category Dataset](./Images/EmpCat_DS.JPG)
 
 ```java
 EmpResult_Layout := RECORD
@@ -58,13 +58,13 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 ```
 
 Inner Join Result\
-![Inner Join Result](./images/EmpInnerJoin.JPG)
+![Inner Join Result](./Images/EmpInnerJoin.JPG)
 
 Left Only Join Result\
-![Inner Join Result](./images/EmpLeftOnly.JPG)
+![Inner Join Result](./Images/EmpLeftOnly.JPG)
 
 Left Outer Join Result\
-![Inner Join Result](./images/EMp_LeftOuter.JPG)
+![Inner Join Result](./Images/EMp_LeftOuter.JPG)
 
 \
 Put it into practice [join.ecl](/source/ecl/join.ecl)

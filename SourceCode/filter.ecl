@@ -1,4 +1,9 @@
-﻿// Define record layout
+﻿
+/*
+Filter
+*/
+
+// Define record layout
 Layout_Person := RECORD
   UNSIGNED  personID;
   STRING15  firstName;

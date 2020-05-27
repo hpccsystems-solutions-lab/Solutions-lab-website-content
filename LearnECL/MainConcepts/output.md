@@ -1,11 +1,11 @@
+# Output
 
-# Dataset
 ## Quick Look
+
 There are a few ways to generate output.
 
 Using the following dataset, let's look at some examples
-![record set example](./images/RecordLayout.JPG)
-
+![record set example](./Images/RecordLayout.JPG)
 
 The layout for above dataset:
 
@@ -37,11 +37,12 @@ OUTPUT(SalaryAvg_DS);
 
 //Looking for an easier way :)
 //Note: too many outputs with no lables, you won't know what you are looking at.
-SalaryAvg_DS; 
+SalaryAvg_DS;
 
 //Let's see how we can lable them
 OUTPTU(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 ```
-![record set example](./images/filterOutput.JPG)
+
+![record set example](./Images/filterOutput.JPG)
 
 Put it into practice [output.ecl](/source/ecl/output.ecl)

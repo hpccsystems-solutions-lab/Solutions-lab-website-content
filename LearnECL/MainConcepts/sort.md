@@ -1,4 +1,5 @@
 # Sort
+
 ## Quick Look
 
 Need to sort ascending or descending?
@@ -12,7 +13,7 @@ Layout_Person := RECORD
   STRING15  FirstName;
   STRING25  LastName;
   BOOLEAN   isEmployed;
-  UNSIGNED  avgHouseIncome;	
+  UNSIGNED  avgHouseIncome;
 END;
 
 //Inline dataset
@@ -25,9 +26,11 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 											 ,Layout_Person);
 OUTPUT(allPeople, NAMED('allPeople'));
 ```
-![Complete People Dataset](./images/allPeople.jpg)
+
+![Complete People Dataset](./Images/allPeople.jpg)
 
 ### Ascending Sort
+
 Sorting from A to Z or 0 to 9.
 
 ```Java
@@ -37,16 +40,20 @@ OUTPUT(A_SortedLastName, NAMED('Asc_SortedLastName'));
 A_SortedIncome := SORT(A_SortedLastName, avgHouseIncome);
 OUTPUT(A_SortedIncome, NAMED('Asc_SortedIncome'));
 ```
-![Asc Sort Poeple LastName](./images/AscSort_Lname.JPG)
 
-![Asc Sort Poeple Income](./images/AscSort_Income.JPG)
+![Asc Sort Poeple LastName](./Images/AscSort_Lname.JPG)
+
+![Asc Sort Poeple Income](./Images/AscSort_Income.JPG)
+
 ### Descending Sort
-Sorting Z to  A or 9 to 0.
+
+Sorting Z to A or 9 to 0.
 
 ```java
 D_SortedIncome := SORT(allPeople, -avgHouseIncome);
 OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
 ```
-![Des Sort Poeple Income](./images/DesSort_Income.JPG)
+
+![Des Sort Poeple Income](./Images/DesSort_Income.JPG)
 
 Put it into practice [sort.ecl](/source/ecl/sort.ecl)

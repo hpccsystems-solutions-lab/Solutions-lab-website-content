@@ -1,13 +1,13 @@
-
 # TABLE
+
 ## Quick Look
 
-Creates a temporary dataset in memory, GROUP option can be used. 
+Creates a temporary dataset in memory, GROUP option can be used.
 
-![fare dataset](./images/fare_ds.JPG)
+![fare dataset](./Images/fare_ds.JPG)
 
 ```java
-crossTabLayout  :=  RECORD 
+crossTabLayout  :=  RECORD
    fareDS.pickup_date;
    avgFare := AVE(GROUP, fareDS.fare);
    totalFare := SUM(GROUP, fareDS.fare);
@@ -18,8 +18,8 @@ crossTabDs := TABLE(fareDS, crossTabLayout, pickup_date);
 OUTPUT(crossTabDs, NAMED('crossTabDs'));
 
 ```
-![fare table result](./images/fare_table.JPG)
+
+![fare table result](./Images/fare_table.JPG)
 
 \
 Put it into practice [table.ecl](/source/ecl/table.ecl)
-
