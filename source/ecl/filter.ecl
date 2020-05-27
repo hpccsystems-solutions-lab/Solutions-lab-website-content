@@ -9,7 +9,7 @@ END;
 
 //Inline dataset
 allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
-											 {102,'Fact','Smith', TRUE, 200000},
+                       {102,'Fact','Smith', TRUE, 200000},
                        {012,'Joe','Blow', TRUE, 11250},
                        {085,'Blue','Moon', TRUE, 185000},
                        {055,'Silver','Jo', FALSE, 5000},
@@ -17,12 +17,12 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
                        {265,'Blue','Silver', TRUE, 75000},
                        {333,'Jane','Smith', FALSE, 50000},
                        {333,'Funny','Joke', FALSE, 450}]
-											 ,Layout_Person);
+                         ,Layout_Person);
 
 OUTPUT(allPeople, NAMED('allPeople'));
 
 //Show employed people
-OUTPUT(allPeople(isEmployed), NAMED('isEmployed');
+OUTPUT(allPeople(isEmployed), NAMED('isEmployed'));
 
 //Capture None Smith last names and save the result.
 //<> or != can be used for not euqal 

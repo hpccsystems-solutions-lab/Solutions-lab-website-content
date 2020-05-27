@@ -43,7 +43,7 @@ UNSIGNED2 Squared(UNSIGNED1 n) := n * n;
 isEven(INTEGER num) := num % 2 = 0;
 ```
 
-## Depth Look
+## Deep Look
 
 ```java
 [return_data_type] function_name (data_type arg [, data_type arg]+) := FUNCTION
