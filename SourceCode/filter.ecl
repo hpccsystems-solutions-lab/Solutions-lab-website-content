@@ -3,8 +3,8 @@ Layout_Person := RECORD
   UNSIGNED  personID;
   STRING15  firstName;
   STRING25  lastName;
-	BOOLEAN   isEmployed;
-	UNSIGNED  avgHouseIncome;	
+  BOOLEAN   isEmployed;
+  UNSIGNED  avgHouseIncome; 
 END;
 
 //Inline dataset
@@ -25,11 +25,13 @@ OUTPUT(allPeople, NAMED('allPeople'));
 OUTPUT(allPeople(isEmployed), NAMED('isEmployed'));
 
 //Capture None Smith last names and save the result.
-//<> or != can be used for not euqal 
-//Strings are case sensetive
+//<> or != can be used for not equal 
+//Strings are case sensitive
 noSmith := allPeople(lastName != 'Smith');
 
 OUTPUT(noSmith, NAMED('noSmith'));
 
 //Show income > 100000 or Jo last name
 allPeople(lastName = 'Jo' OR avgHouseIncome > 100000);
+
+

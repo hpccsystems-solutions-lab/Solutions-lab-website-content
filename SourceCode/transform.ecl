@@ -39,15 +39,15 @@ END;
 
 //Standalone transform
 PriceCheckLayout xform(CarsDs li) := TRANSFORM
-	SELF.desc 				:= li.brand + ' ' + li.model;
-	SELF.isOverPriced := li.price > 15000; //Assigns TRUE if price of car is over 10K	
-	SELF := li; 			// for remaining feilds assing the original value
+	SELF.desc         := li.brand + ' ' + li.model;
+	SELF.isOverPriced := li.price > 15000;  //Assigns TRUE if price of car is over 10K	
+	SELF              := li; 			    //for remaining feilds assing the original value
 END;
 
-PriceCheck := PROJECT( CarsDS, //Dataset to loop through
-											xForm(LEFT) //Calling transfrom and sending the data set. 
-																	//LEFT refers to CardDS
-											);
+PriceCheck := PROJECT(CarsDS, //Dataset to loop through
+                        xForm(LEFT) //Calling transfrom and sending the data set. 
+                                    //LEFT refers to CardDS
+                      );
 											
 
 OUTPUT(PriceCheck, NAMED('PriceCheck_Result'));					
@@ -63,14 +63,14 @@ CheckTitle_Layout := RECORD
 END;
 			
 CheckTitle_Layout yform(CarsDs cd) := TRANSFORM
-	SELF.TitleWork 		:= IF(cd.title_status = 'salvage insurance', 'Needs work', 'checked');
-	SELF := cd; 			// for remaining feilds assing the original value
+	SELF.TitleWork := IF(cd.title_status = 'salvage insurance', 'Needs work', 'checked');
+	SELF := cd; 			//for remaining feilds assing the original value
 	SELF := [] 				//Assign defualt value for the unassinged fields
 END;
 
 TitleCheck := PROJECT( CarsDS, //Dataset to loop through
 											yform(LEFT) //Calling transfrom and sending the data set. 
-																	//LEFT refers to CardDS
+											            //LEFT refers to CardDS
 											);
 											
 OUTPUT(TitleCheck, NAMED('TitleCheck_Result'));					
@@ -87,15 +87,16 @@ Inline_Layout := RECORD
 END;   
 
 
-//Let's check an inline transform
+//Inline transform
 inlineTrans := PROJECT(CarsDs, //Datset will be refered to as LEFT
 						TRANSFORM(Inline_Layout,
 							 SELF.recCount := COUNTER, //Adding counter
+
 							 //If State is FL, blank the field, if not get the original state
 							 SELF.State    := IF(LEFT.state = 'florida', '', LEFT.State),
 							 SELF.Owener   := IF(LEFT.title_status = 'salvage insurance', 'Pre Owned', 'Brand New'),
-							 SELF 				 := LEFT,
-							 SELF					 := []));
+							 SELF          := LEFT,
+							 SELF          := []));
 											 
 OUTPUT(inlineTrans, NAMED('inline_Transform'));
 											 

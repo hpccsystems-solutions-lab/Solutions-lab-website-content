@@ -1,5 +1,10 @@
 # DataLakeTechnology
 
-Our HPCC Systems Solution Lab is proud to provide and support Data Lake Technology. 
-here we interduces HPCC, our big data platform, and ECL language.
-You can find all materials and references you need here. 
+Our HPCC Systems Solution Lab is proud to provide and support ECL tutorials.
+here we interduces basics of HPCC, our big data platform, and complete tutorial on ECL (Enterprise Control Language).
+
+You can find all materials and references you need here.
+
+Please contact us for questions and feedback:
+
+hpccsystems-solution-lab@lexisnexisrisk.com

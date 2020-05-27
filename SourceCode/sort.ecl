@@ -7,7 +7,7 @@ Layout_Person := RECORD
 	UNSIGNED  avgHouseIncome;	
 END;
 
-//Inline dataset
+// Inline dataset
 allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 											 {102,'Fact','Smith', TRUE, 200000},
                        {012,'Joe','Blow', TRUE, 11250},
@@ -21,17 +21,17 @@ allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
 
 OUTPUT(allPeople, NAMED('allPeople'));
 
-//Ascending
+// Ascending
 A_SortedLastName := SORT(allPeople, lastName);
 OUTPUT(A_SortedLastName, NAMED('Asc_SortedLastName'));
 
 A_SortedIncome := SORT(A_SortedLastName, avgHouseIncome);
 OUTPUT(A_SortedIncome, NAMED('Asc_SortedIncome'));
 
-//Descending
+// Descending
 D_SortedIncome := SORT(allPeople, -avgHouseIncome);
 OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
 
-//sort per multiple fields
+// Sort per multiple fields
 OUTPUT(SORT(allPeople, firstName, lastName, avgHouseIncome),
 						NAMED('Sort_Couple_Fields'));

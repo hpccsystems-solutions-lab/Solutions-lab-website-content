@@ -31,7 +31,7 @@ OUTPUT(SUM(someMathDS, monthlyIncome), NAMED('Sum_Dataset'));
 
 OUTPUT(COUNT(1,1,2,2,3,5,6), NAMED('SimpleCount'));
 
-//num of rows in a dataset
+//Number of rows in a dataset
 OUTPUT(COUNT(someMathDS), NAMED('ds_Count'));
 
 //Count a specific field

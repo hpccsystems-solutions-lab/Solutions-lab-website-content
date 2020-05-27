@@ -21,7 +21,7 @@ END;
 OUTPUT(mathFunc(), NAMED('mathFunc'));
 
 //*******************************************************
-// Including outputs in your function
+//Including outputs in your function
 
 checkMath(SET numList, INTEGER val) := FUNCTION
 
@@ -46,7 +46,7 @@ PowerOfTwo := checkMath([4,7,3,90,67,2,12], 12);
 OUTPUT(PowerOfTwo, NAMED('PowerOfTwo'));
 
 //*******************************************************
-// One Line Function
+//One Line Function
 
 INTEGER checkMax (SET OF INTEGER numList) := MAX(numList);
 

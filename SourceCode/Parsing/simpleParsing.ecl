@@ -35,7 +35,7 @@ onlyColor_Rec := RECORD
     //Input Index
     INTEGER ID  := InputDS.num;
 
-    //string that is evaluated
+    //String that is evaluated
     STRING input := InputDS.val;
 
     //If match is found
@@ -162,7 +162,7 @@ OUTPUT(findSomeComb, NAMED('findSomeComb'));
 //Note: this will return any match combination on "color" and "blue
 
 //Defining all alphabets and digits
-//+ : to capture one or more letter or digit
+//” + ” : to capture one or more letter or digit
 PATTERN AllAlpha := PATTERN('[a-zA-Z0-9]+');
 
 //Optional space followed by colorset followed by space
@@ -173,7 +173,7 @@ allComb_Rec := RECORD
     //Input Index
     INTEGER ID  := InputDS.num;
 
-    //string that is evaluated
+    //String that is evaluated
     STRING input := InputDS.val;
 
     //If match is found
@@ -191,6 +191,7 @@ findAllComb := PARSE(
                    );
 
 OUTPUT(findAllComb, NAMED('allComb'));
+
 
 
 
