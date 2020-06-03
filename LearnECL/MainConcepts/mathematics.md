@@ -79,4 +79,4 @@ OUTPUT(ROUND(SUM(someMathDS, monthlyExp)), NAMED('R3')); //return 27034
 ```
 
 \
-Put it into practice [mathematics.ecl](/source/ecl/mathematics.ecl)
+Put it into practice [mathematics.ecl](https://ide.hpccsystems.com/#)

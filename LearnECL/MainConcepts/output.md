@@ -45,4 +45,4 @@ OUTPTU(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 
 ![record set example](./Images/filterOutput.JPG)
 
-Put it into practice [output.ecl](/source/ecl/output.ecl)
+Put it into practice [output.ecl](https://ide.hpccsystems.com/#)

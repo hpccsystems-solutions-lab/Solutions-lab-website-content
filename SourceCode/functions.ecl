@@ -1,9 +1,14 @@
-﻿/*
+/*
 Function
 - Creating a function 
 - Calling a function
 - Online function
 - Multiple outputs in a function
+
+Note: For purpose of showing different usage of function,
+EXPORT is not used. So these fucntions are called local functions.
+A function with no export is only visibale to the file being used, 
+and can't be called from outside.
 */
 
 
@@ -14,9 +19,9 @@ END;
 
 //Using myfunc
 res := myfunc('Jonny');
-OUTPUT(res, NAMED('res'));
-OUTPUT(myfunc('Sunny'), NAMED('Sunny'));
 
+OUTPUT(myfunc('Sunny'), NAMED('Sunny'));
+OUTPUT(res, NAMED('res'));
 
 //******************************************************
 

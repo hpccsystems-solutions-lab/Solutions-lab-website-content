@@ -19,7 +19,7 @@ Job Category, JobCatDS\
 
 ```java
 EmpResult_Layout := RECORD
-  INTEGER EmpID;
+    INTEGER EmpID;
 	STRING  Name;
 	STRING  Title;
 	STRING  Department;
@@ -67,4 +67,4 @@ Left Outer Join Result\
 ![Inner Join Result](./Images/EMp_LeftOuter.JPG)
 
 \
-Put it into practice [join.ecl](/source/ecl/join.ecl)
+Put it into practice [join.ecl](https://ide.hpccsystems.com/#)

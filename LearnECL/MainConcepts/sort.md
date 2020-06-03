@@ -41,9 +41,9 @@ A_SortedIncome := SORT(A_SortedLastName, avgHouseIncome);
 OUTPUT(A_SortedIncome, NAMED('Asc_SortedIncome'));
 ```
 
-![Asc Sort Poeple LastName](./Images/AscSort_Lname.JPG)
+![Asc Sort People LastName](./Images/AscSort_Lname.JPG)
 
-![Asc Sort Poeple Income](./Images/AscSort_Income.JPG)
+![Asc Sort People Income](./Images/AscSort_Income.JPG)
 
 ### Descending Sort
 
@@ -56,4 +56,4 @@ OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
 
 ![Des Sort Poeple Income](./Images/DesSort_Income.JPG)
 
-Put it into practice [sort.ecl](/source/ecl/sort.ecl)
+Put it into practice [sort.ecl](https://ide.hpccsystems.com/#)

@@ -12,16 +12,19 @@ SELF := [];
 SELF := LEFT;
 SELF := RIGHT;
 ```
+
 ## Standalone Transform
+
 If you need the transforms to be used in multiple places, or your dataset contains many fields, you want to define an standalone transform(a function that can be called multiple times)
 
 ```java
 NameOutRec CatThem(NameRec L, INTEGER C) := TRANSFORM
 ```
-* Left side includes the result layout.
-* It should have a name
-* Contains parameter list
-* SELF: refers to fields in result type.
+
+- Left side includes the result layout.
+- It should have a name
+- Contains parameter list
+- SELF: refers to fields in result type.
 
 Let's take a look at an example:
 
@@ -29,4 +32,4 @@ Let's take a look at an example:
 NameOutRec
 ```
 
-Put it into practice [transform.ecl](/source/ecl/transform.ecl)
+Put it into practice [transform.ecl](https://ide.hpccsystems.com/#)

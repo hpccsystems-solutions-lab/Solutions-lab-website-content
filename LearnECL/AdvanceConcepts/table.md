@@ -22,4 +22,4 @@ OUTPUT(crossTabDs, NAMED('crossTabDs'));
 ![fare table result](./Images/fare_table.JPG)
 
 \
-Put it into practice [table.ecl](/source/ecl/table.ecl)
+Put it into practice [table.ecl](https://ide.hpccsystems.com/#)

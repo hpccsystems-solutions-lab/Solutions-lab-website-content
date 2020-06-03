@@ -39,4 +39,3 @@ OUTPUT(noSmith, NAMED('noSmith'));
 //Show income > 100000 or Jo last name
 allPeople(lastName = 'Jo' OR avgHouseIncome > 100000);
 
-
