@@ -11,6 +11,8 @@ parentDS := DATASET
         ],
         ParentLayout
     );
+
+OUTPUT(parentDS, NAMED('parentDS'));
 //------------------------------------------------
 ChildrenLayout := RECORD
     STRING      fname;
@@ -28,6 +30,8 @@ childrenDS := DATASET
         ],
         ChildrenLayout
     );
+
+OUTPUT(childrenDS, NAMED('childrenDS'));
 //------------------------------------------------
 EmbeddedChildLayout := RECORD
     STRING      fname;
@@ -59,6 +63,7 @@ denorm1 := DENORMALIZE
                 SELF := LEFT
             )
     );
+OUTPUT(preppedParents, NAMED('preppedParents'));
 OUTPUT(denorm1, NAMED('example_1'));
 //------------------------------------------------
 ParentChildLayout2 := RECORD

@@ -4,6 +4,20 @@
 
 The join function produces a result set based on the intersection of two datasets or indexes.
 
+```java
+attribName := JOIN(LEFT_DatasetName,
+                   RIGHT_DatasetName,
+				   // fields AND/OR fields that are used to compare datasets
+					LEFT.fieldName = RIGHT.fieldName AND
+					LEFT.fieldName = RIGHT.fieldName,
+					TRANSFORM(Result_RecordLayout,
+							SELF := LEFT,
+							SELF := RIGHT),
+					        JOINType);
+```
+
+### Join Types
+
 - INNER: Only those records that exist in both datasets.
 - LEFT OUTER: At least one record for every record in the left.
 - RIGHT OUTER: At least one record for every record in the right.

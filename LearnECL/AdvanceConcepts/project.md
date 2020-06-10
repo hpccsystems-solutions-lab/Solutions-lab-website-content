@@ -9,7 +9,11 @@ NameRec := RECORD //defining record layout
 END;
 
 //creating inline dataset
-NameDS := DATASET([{'Sun','Shine'}, {'Blue','Moon'}, {'Silver','Rose'}], NameRec);
+NameDS := DATASET([
+                {'Sun','Shine'},
+				{'Blue','Moon'},
+				{'Silver','Rose'}],
+				NameRec);
 
 //defining new layout for the project result
 NameOutRec := RECORD
@@ -18,6 +22,7 @@ NameOutRec := RECORD
 	STRING CatValues;
  	INTEGER RecCount; //counter
 END;
+
 /*
 NameOutRec: result of the project gets saved in this record layout
 CatThem: Tranform name
