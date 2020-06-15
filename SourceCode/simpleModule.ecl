@@ -5,6 +5,7 @@ Module
 
 //Creating the module
 EXPORT simpleModule := MODULE
+
    SHARED x := 12;
    STRING str := 'abc';   
    EXPORT strRes := x + str;
@@ -15,6 +16,7 @@ EXPORT simpleModule := MODULE
 
   str := 'Local Variable';
   EXPORT conCat := str + ' ' + (x * 2);
+  
 END;
 
 

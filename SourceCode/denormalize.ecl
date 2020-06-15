@@ -65,7 +65,11 @@ denorm1 := DENORMALIZE
     );
 OUTPUT(preppedParents, NAMED('preppedParents'));
 OUTPUT(denorm1, NAMED('example_1'));
+
+
 //------------------------------------------------
+
+
 ParentChildLayout2 := RECORD
     ParentLayout;
     SET OF STRING   children;

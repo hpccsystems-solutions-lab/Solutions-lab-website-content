@@ -7,7 +7,7 @@ This function is used to combine parent and child recordset.
 - `LEFT` Combined layout of parent and child layout.
 - `RIGHT` Take the child layout.
   `COUNTER` Can be added as an optional parameter
-- Transform result outcome should be the same your LEFT record layout.
+- Transform result outcome is usually the same format as your LEFT record layout.
 
 ```java
 ParentResultLayout out xFormName (ParentResultLayout L,
