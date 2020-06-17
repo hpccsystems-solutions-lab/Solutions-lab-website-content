@@ -9,4 +9,4 @@
 ![](./Images/CheatSheet.009.jpeg)
 ![](./Images/CheatSheet.010.jpeg)
 
-Need a pdf version of [ECL Cheat Sheet](./LearnECL/Refrences/ECL_Cheat_Sheet.pdf)
+Need a pdf version of [ECL Cheat Sheet](./LearnECL/References/ECL_Cheat_Sheet.pdf)
