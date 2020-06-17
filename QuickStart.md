@@ -2,13 +2,13 @@
 
 Need a quick start to ECL, take a look at followings:
 
-- [Dataset](./MainConcepts/dataset.md)
-- [Transform](./AdvanceConcepts/transform.md)
-- [Project](./AdvanceConcepts/project.md)
-- [Join](./AdvanceConcepts/join.md)
-- [Table](./AdvanceConcepts/table.md)
+- [Dataset](./LearnECL/MainConcepts/dataset.md)
+- [Transform](./LearnECL/AdvanceConcepts/transform.md)
+- [Project](./LearnECL/AdvanceConcepts/project.md)
+- [Join](./LearnECL/AdvanceConcepts/join.md)
+- [Table](./LearnECL/AdvanceConcepts/table.md)
 
 References to Download
 
-- [Cheat Sheet](./References/ECL_Cheat_Sheet.pdf)
-- [Cloud IDE Setup](./References/CloudIDE-Setup.pdf)
+- [Cheat Sheet](./LearnECL/References/ECL_Cheat_Sheet.pdf)
+- [Cloud IDE Setup](./LearnECL/References/CloudIDE-Setup.pdf)
