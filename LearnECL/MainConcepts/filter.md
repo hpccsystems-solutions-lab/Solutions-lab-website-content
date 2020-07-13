@@ -40,5 +40,3 @@ Filter by last name and income:
 ![Filter last-name income](./Images/PeopleAndFilter.JPG)
 
 Put it into practice [filter.ecl](https://ide.hpccsystems.com/#)
-
-This is a test.
