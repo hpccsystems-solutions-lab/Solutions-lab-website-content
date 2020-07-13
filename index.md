@@ -4,14 +4,12 @@ Our HPCC Systems Solutions Lab is proud to provide and support ECL tutorials.
 
 Here we introduce basics of HPCC Systems, our big data platform, and a complete tutorial on ECL (Enterprise Control Language).
 
-# Introduction
-
-## HPCC Systems: End to End Data Lake Management
+# HPCC Systems: End to End Data Lake Management
 
 HPCC Systems is a mature platform that has been heavily used in commercial applications for almost two decades, predating the development of Hadoop. Created by LexisNexis® Risk Solutions, an innovative pioneer in big data processing, and open source for nearly a decade now, HPCC Systems features a vibrant development community that continues to push the boundaries of big data.\
-This powerful, versatile platform makes it easier for developers to see the data they’re working with and manipulate it as needed. Flexible information delivery makes it easier for your clients to query and find the data they need — and it runs analysis and queries faster than other platforms such as SQL or Hadoop.\
+This powerful, versatile platform makes it easier for developers to see the data they’re working with and manipulate it as needed. Flexible information delivery makes it easier for your clients to query and find the data they need — and it runs analysis and queries faster than other platforms such as SQL or Hadoop.
 
-**Key Functionalities:**
+**Key Functionalities**
 
 - Standard hardware, operating system and protocols
 - High redundancy and availability
@@ -40,7 +38,7 @@ This powerful, versatile platform makes it easier for developers to see the data
   - `dataset.fieldName`
   - `moduleName.definition`
 
-### Two Statement Types
+## Two Statement Types
 
 **Definition\Expression**
 
@@ -51,7 +49,7 @@ Definitions always contain `:=`
 `INTEGER Num := 900;`
 
 **Action**
-Action simple means "do something." Actions trigger execution of a workunit that produces
+Action simply means "do something." Actions trigger execution of a workunit that produces
 results.
 
 `OUTPUT('this is an action');`\
@@ -63,7 +61,7 @@ results.
 //defining an attribute
 str := 'Hello Word';
 
-//puting it into action
+//putting it into action
 OUTPUT(str, NAMED('My_First_Program'));
 
 //Defining an action
@@ -79,23 +77,26 @@ OUTPUT(NumOne, NAMED('ActionThis'));
 
 ```
 
-## ECL Cloud IDE
+# ECL Cloud IDE
 
-For practicing, you can take advantage of our [ECL Could IDE](https://ide.hpccsystems.com/auth/login).
+For practicing, you can take advantage of our [ECL Cloud IDE](https://ide.hpccsystems.com/auth/login).
 
 For creating a new account and a quick guide on how to use the Could IDE, use
 [instruction manual](/references/cloudide_setup.md)
 
-<!-- ![ Cloud IDE screenshot](./Images/cloudIDE.jpg) -->
-<img width="600" alt="portfolio_view" src="Images/cloudIDE.jpg">
+<!-- ![ Cloud IDE screenshot](./Images/cloudIDE.jpg)
 
-## Code Access
+# Code Access
 
 All sample code is available for download in the SourceCode folder. Or, you can simply access them all to practice and play directly on the
 [Cloud IDE workspace ](ttps://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31).
 
+## Further Training
+
 If you would like further ECL training, please visit
 [our training center](https://hpccsystems.com/training) for free online class options.
+
+## Contact Us
 
 Please contact us for questions and feedback:
 
