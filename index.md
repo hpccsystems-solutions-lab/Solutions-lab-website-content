@@ -84,7 +84,7 @@ For practicing, you can take advantage of our [ECL Cloud IDE](https://ide.hpccsy
 For creating a new account and a quick guide on how to use the Could IDE, use
 [instruction manual](/references/cloudide_setup.md)
 
-<!-- ![ Cloud IDE screenshot](./Images/cloudIDE.jpg)
+![ Cloud IDE screenshot](./Images/cloudIDE.jpg)
 
 # Code Access
 
