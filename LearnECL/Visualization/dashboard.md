@@ -27,7 +27,7 @@ dashData := DATASET(
     'Daily Cases',                          // the label of the chart
     'cases',                                // name of the dataset to use as the data source
     'Bar',                                  // the type of chart
-    '{"xField": "day", "yField": "value"}'  // options for the chart
+    '{"xField": "value", "yField": "day"}'  // options for the chart
   }, {
     'Daily Cases Recovered',
     'recovered',
