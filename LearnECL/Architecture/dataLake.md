@@ -45,7 +45,7 @@ Data governance is the process of implementing set of rules and policies to mana
 
 In contrast with data lake, data swap has little or no curation, including little to no active management throughout the data life cycle. Data swamp contains no or very little data governance or metadata. Metadata can create a tiered storage structure that stops a data lake from turning into a data swamp.
 
-![Data Lake Overview](./Images/datalakeOverview.JPG)
+![Data Lake Overview](./Images/dataLakeOverview.JPG)
 
 **Data Lake Benefits**
 
@@ -54,3 +54,5 @@ In contrast with data lake, data swap has little or no curation, including littl
 - Ease of scaling: Incrementally scale to any capacity.
 - Transparency: Visibility into complete process.
 - Development efficiency: Removes forced dependencies. The most common reason for project overruns.
+
+**Data Lake Challenges**
