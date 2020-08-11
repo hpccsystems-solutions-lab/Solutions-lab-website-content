@@ -40,6 +40,7 @@ marriedWithIncome := allPeople(isMarried = TRUE AND
 OUTPUT(marriedWithIncome, NAMED('marriedWithIncome'));
 
 //OR Operator
+
 youngeOrLowIncome := allPeople(age < 20 OR
                                avgHouseIncome <= 10000);
 

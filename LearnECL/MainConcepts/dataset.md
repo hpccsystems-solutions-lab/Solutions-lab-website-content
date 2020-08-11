@@ -33,3 +33,25 @@ SalaryAvg_DS := DATASET([
 ### Inline Dataset
 
 Inline dataset definition can be used for small datasets.
+
+```java
+
+attr := DATASET(path, record_structure, file_type);
+
+```
+
+```java
+
+recName := RECORD
+   STRING  valOne;
+   STRING  valTwo;
+   INTEGER numOne;
+   BOOLEAN isName;
+END;
+
+fileDS := DATASET(~test::file::cvs, //File Name
+                  recName, //defined record structure/layout
+                  CVS     //File Type
+                  );
+
+```
