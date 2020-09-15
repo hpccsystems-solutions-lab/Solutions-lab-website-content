@@ -55,3 +55,11 @@ fileDS := DATASET(~test::file::cvs, //File Name
                   );
 
 ```
+
+### File Type
+
+- **FLAT**: Native file type for Thor; also used for fixed-length raw records
+- **CSV**: Any kind of delimited data, including CSV-encoded data
+- **JSON**: Data stored as a series of JSON objects
+- **XML**: Data stored as a series of XML documents
+- **PIPE**: Data obtained dynamically via process calls
