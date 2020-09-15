@@ -22,22 +22,23 @@ The layout for above dataset would be:
 ```java
 //SalaryAvg is the name of layout.
 SalaryAvg := RECORD
-    STRING Job;
-    STRING Category;
-    STRING City;
-    STRING2	State;
-    INTEGER	AvgSalary;
-    INTEGER	LowerBand;
-    INTEGER	Upperband;
+    STRING job;
+    STRING category;
+    STRING city;
+    STRING2 state;
+    INTEGER avgSalary;
+    INTEGER lowerBand;
+    INTEGER upperband;
 END;
 
-SalaryDS := {STRING  Job,
-             STRING  Category,
-             STRING  City,
-             STRING2 State,
-             INTEGER AvgSalary,
-             INTEGER LowerBand,
-             INTEGER Upperband
+//Inine layout definition
+SalaryDS := {STRING  job,
+             STRING  category,
+             STRING  city,
+             STRING2 state,
+             INTEGER avgSalary,
+             INTEGER lowerBand,
+             INTEGER upperband
              }
 ```
 
@@ -142,7 +143,7 @@ sampleLayout := RECORD
     STRING someXML {xpath('a/b<>')};
     STRING Fname{xpath('Fname')}; ////matches: <Fname>xxxxx</Fname>
     UNSIGNED8 fpos {VIRTUAL(fileposition)};
-
+END;
 
 ```
 
