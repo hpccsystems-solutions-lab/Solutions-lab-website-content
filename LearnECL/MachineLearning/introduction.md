@@ -43,11 +43,13 @@ For example, Run below code to install LearningTrees Bundle:
 
 > Note that for PC users, ecl bundle install must be run as Admin.  Right click on the command icon and select "Run as administrator" when you start your command window.
 
-## STEP 2 : DATA PREPRATION
+## STEP 2 : DATA PREPROCESSING
 
-[NumericField](https://github.com/hpcc-systems/ML_Core/blob/master/Types.ecl) is the standard training data format for most Bundles.
+[NumericField](https://github.com/hpcc-systems/ML_Core/blob/master/Types.ecl) is the standard training data format for most Machine Learning Bundles.
+Other preprocessing methods such as scaling, normalization or encodeing can be done in this step as well but are optional.
 
-Below is an example of how to transform your data to NumericField format before feeding into Machine Learning Bundles:
+Below is an simple example of how to transform your data to training data in the NumericField format.
+
 
 ```java
 IMPORT ML_Core.Types;
@@ -72,7 +74,6 @@ Pre_Model := KMeans.KMeans(Max_iterations, Tolerance);
 Model := Pre_Model.Fit( ML_Data, Centroids);
 
 ```
-
 
 
 
