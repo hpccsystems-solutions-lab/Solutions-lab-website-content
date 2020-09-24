@@ -1,7 +1,7 @@
 # Linear Regression
 
 Linear regression (scalar approach) is commonly used in predictive analytics. In Linear Regression we look at two things.\
-1- Does a set of predictor variables do a good job in predicting an outcome (dependent) variable?
+1- Does a set of predictor variables do a good job in predicting an outcome (dependent) variable?\
 2- Which variables in particular are significant predictors of the outcome variable?
 
 These regression estimates are used to explain the relationship between one dependent variable and one or more independent variables.
