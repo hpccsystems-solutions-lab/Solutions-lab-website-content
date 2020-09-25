@@ -1,4 +1,4 @@
-# Quick Look
+# TRANSFORM
 
 Transform function, loops through an entire dataset, and performs an operation on every field in the dataset.
 When defining a transform you need to tell the function what it needs to do for each field in the input dataset, and what the output dataset should look like.\
@@ -6,7 +6,7 @@ Transform can be used with PROJECT, JOIN, ITERATE, ROLLUP and more.
 
 ```java
 EXPORT [return_dataset_layout] transform_name ([input_arguments_types]+ arg_name ) := TRANSFROM
-      SELF.return_field_name := arg_name.input_Dataset_fieldname;
+      SELF.return_field_name := arg_name.input_dataset_fieldname;
       SELF := arg_name;
       SELF := [];
 END;
@@ -39,19 +39,20 @@ END;
 
 ## Standalone Transform
 
-If you need the transform to be used in multiple places, or your dataset contains many fields, you may want to define an standalone transform(a function that can be called multiple times)
+If you need the transform to be used in multiple places, or it contains many fields or child datasets, you may want to define a standalone transform(a function that can be called multiple times)
 
 ```java
 NameRec := RECORD //defining record layout
 	STRING FirstName;
 	STRING LastName;
 END;
+
 //creating inline dataset
 NameDS := DATASET([
-                {'Sun','Shine'},
-				{'Blue','Moon'},
-				{'Silver','Rose'}],
-				NameRec);
+              {'Sun','Shine'},
+              {'Blue','Moon'},
+              {'Silver','Rose'}],
+              NameRec);
 
 //defining new layout for the project result
 NameOutRec := RECORD
@@ -86,7 +87,7 @@ EXPORT project_name := PRJECT(input_dataset,
                                 SELF.return_field_name := LEFT.input_Dataset_fieldname;
                                 SELF := LEFT;
                                 SELF := [];
-                            ))
+                            ));
 
 ```
 
@@ -123,6 +124,6 @@ CatThemDS := PROJECT(NameDS,
 
 ```
 
-Put it into practice [transform.ecl](https://ide.hpccsystems.com/#)\
+[Put it into practice](https://ide.hpccsystems.com/#)\
 [Learn PROJECT](./project.md)\
 [Learn JOIN](./join.md)
