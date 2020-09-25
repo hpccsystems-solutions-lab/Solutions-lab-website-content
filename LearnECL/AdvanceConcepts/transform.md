@@ -5,31 +5,124 @@ When defining a transform you need to tell the function what it needs to do for 
 Transform can be used with PROJECT, JOIN, ITERATE, ROLLUP and more.
 
 ```java
-//Means that every field in output that doesn't have a defined operationed should be set to blank.
-SELF := [];
-
-//Get the orginal values from input dataset for all fields that don't have an operation defined.
-SELF := LEFT;
-SELF := RIGHT;
+EXPORT [return_dataset_layout] transform_name ([input_arguments_types]+ arg_name ) := TRANSFROM
+      SELF.return_field_name := arg_name.input_Dataset_fieldname;
+      SELF := arg_name;
+      SELF := [];
+END;
 ```
+
+- EXPORT
+  - ECL Keyword
+  - Optional, used for constants, or in modules.
+- return_dataset_layout
+  - Record-definition/layout of result dataset.
+- transform_name
+  - The name by which the transform will be invoked
+- input_arguments_types
+  - The argument’s data type
+  - If passing a dataset, the data type is DATASET(record_definition)
+- arg_name
+  - Used to reference your argument in the transform
+- TRANSFROM
+  - ECL Keyword
+  - Required
+- SELF
+  - Reference the field in the return_data_type
+- arg_name.input_Dataset_fieldname
+  - Refers to the field in the input dataset
+- SELF := LEFT
+- SELF := RIGHT
+  - Get the original values from input dataset for all fields that don't have an operation defined.
+- SELF := []
+  - For every field in result layout that doesn't have a defined operation or doesn't exists in input dataset, assign default value. For example if there is a STRING field in result layout, that transform didn't assign a definition for, it will be assign to blank.
 
 ## Standalone Transform
 
-If you need the transforms to be used in multiple places, or your dataset contains many fields, you want to define an standalone transform(a function that can be called multiple times)
+If you need the transform to be used in multiple places, or your dataset contains many fields, you may want to define an standalone transform(a function that can be called multiple times)
 
 ```java
-NameOutRec CatThem(NameRec L, INTEGER C) := TRANSFORM
+NameRec := RECORD //defining record layout
+	STRING FirstName;
+	STRING LastName;
+END;
+//creating inline dataset
+NameDS := DATASET([
+                {'Sun','Shine'},
+				{'Blue','Moon'},
+				{'Silver','Rose'}],
+				NameRec);
+
+//defining new layout for the project result
+NameOutRec := RECORD
+	STRING FirstName;
+	STRING LastName;
+	STRING CatValues;
+ 	INTEGER RecCount; //counter
+END;
+
+/*
+NameOutRec: result of the project gets saved in this record layout
+CatThem: Tranform name
+NameRec L: Left datasets thats passed through project
+INTEGER C: counter
+*/
+NameOutRec catThem(NameRec L, INTEGER C) := TRANSFORM
+	SELF.CatValues := L.FirstName + ' ' + L.LastName; // concact fname and last name
+  	SELF.RecCount := C; //counting
+	SELF := L; //assing everything from left recordset
+END;
+
 ```
 
-- Left side includes the result layout.
-- It should have a name
-- Contains parameter list
-- SELF: refers to fields in result type.
+## Inline TRANSFORM
 
-Let's take a look at an example:
+Often times transform is used within Project, Join, etc. Let's take a look at how it can be used with a PROJCET. Similar principal is applied in using transform with other functions mentioned above, at transform definition.
 
 ```java
-NameOutRec
+EXPORT project_name := PRJECT(input_dataset,
+                            TRANSFORM(
+                                return_dataset_layout
+                                SELF.return_field_name := LEFT.input_Dataset_fieldname;
+                                SELF := LEFT;
+                                SELF := [];
+                            ))
+
 ```
 
-Put it into practice [transform.ecl](https://ide.hpccsystems.com/#)
+- EXPORT
+  - ECL Keyword
+  - Optional, used for constants, or in modules.
+- project_name
+  - The name by which the project will be invoked
+- PROJECT
+  - ECL Keyword
+  - Required
+- input_dataset
+  - Input dataset itself and not the record definition
+- TRANSFORM
+  - ECL Keyword
+  - Required
+- return_dataset_layout
+  - Record-definition/layout of result dataset.
+- SELF.return_field_name
+- SELF := LEFT
+- SELF := RIGHT
+  - Please see above explanations for each of them.
+
+```java
+CatThemDS := PROJECT(NameDS,
+                        TRANSFORM(
+                            NameOutRec,
+                            SELF.CatValues := LEFT.FirstName + ' ' + LEFT.LastName; // concact fname and last name
+  	                        SELF.RecCount := COUNTER; //counting
+	                        SELF := LEFT; //Assign everything from left recordset
+                            SELF := []; //If undefined assign default value
+                        ));
+
+
+```
+
+Put it into practice [transform.ecl](https://ide.hpccsystems.com/#)\
+[Learn PROJECT](./project.md)\
+[Learn JOIN](./join.md)
