@@ -66,3 +66,5 @@ predict := LT.RegressionForest().predict(mod, X);
 OUTPUT(predict, NAMED('predict'));            
 
 ```
+
+For more tutorials, please visit [Learning Trees -- A guide to Decision Tree based Machine Learning](https://hpccsystems.com/blog/learning-trees-guide-to-decision-tree-based-machine-learning)

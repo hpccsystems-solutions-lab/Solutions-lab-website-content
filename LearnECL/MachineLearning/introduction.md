@@ -77,3 +77,5 @@ Pre_Model := KMeans.KMeans(Max_iterations, Tolerance);
 Model := Pre_Model.Fit( ML_Data, Centroids);
 
 ```
+
+For more details, please visit [HPCC Systems Machine Learning Library](https://hpccsystems.com/download/free-modules/machine-learning-library)

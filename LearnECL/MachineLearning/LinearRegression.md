@@ -76,3 +76,5 @@ OUTPUT(eval, NAMED('Evaluation'));
 
 
 ```
+
+For more documentations, please visit [Linear Regression Documentation](https://cdn.hpccsystems.com/pdf/ml/LinearRegression.pdf)

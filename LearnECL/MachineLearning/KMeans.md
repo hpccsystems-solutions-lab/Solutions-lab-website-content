@@ -82,3 +82,5 @@ OUTPUT(predict, NAMED('predictionResult'));
 
 
 ```
+
+For more tutorials, please visit [Automatically Cluster your Data with Massively Scalable K-Means](https://hpccsystems.com/blog/kmeans)

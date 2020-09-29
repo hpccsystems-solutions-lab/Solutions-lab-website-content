@@ -68,3 +68,5 @@ predict := LR.BinomialLogisticRegression().Classify(mod_bi, X);
 OUTPUT(predict, NAMED('predict'));          
 
 ```
+
+For more documentations, please visit [Logistic Regression Documentation](https://cdn.hpccsystems.com/pdf/ml/LogisticRegression.pdf)
