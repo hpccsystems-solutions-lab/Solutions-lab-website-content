@@ -8,8 +8,6 @@ The training data used in this example has 30 data points with two outliers, as 
 <p align="center"> <img width="460" height="300" src="./images/dbscan_samples.PNG"> </p>
 <p align="center"> DBSCAN Sample Dataset </p>
 
-
-
 ```java
 
 IMPORT ML_Core;
@@ -78,5 +76,7 @@ Outliers := Model(label = 0);
 OUTPUT(Outliers, NAMED('Outliers'));
 
 ```
+
+Put it into practice [DBSCAN.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 For more tutorials, please visit [DBSCAN -- A Density Based Clustering Method](https://hpccsystems.com/blog/DBSCAN)

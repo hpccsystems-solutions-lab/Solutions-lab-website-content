@@ -43,3 +43,5 @@ CatRecs := PROJECT(NameDS, //inline dataset, left recordset
 
 Let's take a look at result:\
 ![project fname lname exp](./Images/project_Fname.jpg)
+
+Put it into practice [project.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

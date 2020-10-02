@@ -4,7 +4,6 @@ This is an example to use Logistic Regression model in HPCC Systems.
 
 The training data used in this example has 20 data points, as shown below.
 
-
 <!-- ![Linear Regression](./images/lr_samples.PNG) -->
 <p align="center"> <img width="460" height="300" src="./images/logisticregression_samples.PNG"> </p>
 <p align="center"> Logistic Regression Sample Dataset </p>
@@ -65,8 +64,10 @@ mod_bi := LR.BinomialLogisticRegression(100,0.00001).getModel(X, Y);
 
 //Prediction
 predict := LR.BinomialLogisticRegression().Classify(mod_bi, X);
-OUTPUT(predict, NAMED('predict'));          
+OUTPUT(predict, NAMED('predict'));
 
 ```
+
+Put it into practice [logisticRegression.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 For more documentations, please visit [Logistic Regression Documentation](https://cdn.hpccsystems.com/pdf/ml/LogisticRegression.pdf)

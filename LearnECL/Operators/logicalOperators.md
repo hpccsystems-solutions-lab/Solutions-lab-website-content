@@ -47,4 +47,4 @@ Sometimes complex logics will result to duplicate rows, in this case `DEDUP` can
 For simplicity, you can remove all exclusion first and then continue with your combined logic.
 Use of parenthesis can be very helpful to reduce errors in combining wrong logics and readability.
 
-Put it into practice [logicalOperators.ecl](https://ide.hpccsystems.com/#)
+Put it into practice [logicalOperators.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

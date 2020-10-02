@@ -115,7 +115,9 @@ The TOKEN value type defines a parsing expression very similar to a PATTERN, but
 Processes an input dataset much like NORMALIZE does, parsing a given field's data to see if it satisfies a given rule, producing a result set of those matches via a TRANSFORM. If multiple results are found they all will be returned.
 
 \
-Let's look at an example: [DateParsingOne.ecl](/source/ecl/DateParsingOne.ecl)
+Put it into practice [dataParsing.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+
+Put it into practice [simpleParsing.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 **References**\
 [Parsing tips and tricks by Richard Taylor](https://hpccsystems.com/blog/Tips_and_Tricks_for_ECL_Part2_PARSE)

@@ -79,3 +79,5 @@ extractChild := NORMALIZE(Paret Dataset,
                           xForm(LEFT,COUNTER));
 
 ```
+
+Put it into practice [normalize.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

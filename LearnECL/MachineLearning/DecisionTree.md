@@ -8,8 +8,6 @@ The training data used in this example has 20 data points, as shown below.
 <p align="center"> <img width="460" height="300" src="./images/regressiontree_samples.PNG"> </p>
 <p align="center"> Decision Tree Sample Dataset </p>
 
-
-
 ```java
 
 IMPORT ML_Core;
@@ -63,8 +61,10 @@ mod := LT.RegressionForest(numTrees:=30, featuresPerNode:=3, maxDepth:=50, nomin
 
 //Prediction
 predict := LT.RegressionForest().predict(mod, X);
-OUTPUT(predict, NAMED('predict'));            
+OUTPUT(predict, NAMED('predict'));
 
 ```
+
+Put it into practice [decisionTree.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 For more tutorials, please visit [Learning Trees -- A guide to Decision Tree based Machine Learning](https://hpccsystems.com/blog/learning-trees-guide-to-decision-tree-based-machine-learning)

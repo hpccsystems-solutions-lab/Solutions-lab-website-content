@@ -44,5 +44,5 @@ myMod.printIt();
 
 Put it into practice
 
-- To create a module: [simpleModule.ecl](https://ide.hpccsystems.com/#)
-- To call a module: [simpleModuleCall.ecl](https://ide.hpccsystems.com/#)
+- To create a module: [simpleModule.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+- To call a module: [simpleModuleCall.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

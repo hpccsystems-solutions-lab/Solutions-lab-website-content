@@ -81,4 +81,4 @@ Left Outer Join Result\
 ![Inner Join Result](./Images/EMp_LeftOuter.JPG)
 
 \
-Put it into practice [join.ecl](https://ide.hpccsystems.com/#)
+Put it into practice [join.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

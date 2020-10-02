@@ -8,8 +8,6 @@ The training data used in this example has 28 data points, as shown below.
 <p align="center"> <img width="460" height="300" src="./images/kmeans_samples.PNG"> </p>
 <p align="center"> KMeans Sample Dataset </p>
 
-
-
 ```java
 
 IMPORT ML_Core;
@@ -82,5 +80,7 @@ OUTPUT(predict, NAMED('predictionResult'));
 
 
 ```
+
+Put it into practice [KMeans.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 For more tutorials, please visit [Automatically Cluster your Data with Massively Scalable K-Means](https://hpccsystems.com/blog/kmeans)

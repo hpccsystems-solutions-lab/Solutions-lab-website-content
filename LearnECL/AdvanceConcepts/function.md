@@ -76,4 +76,4 @@ UNSIGNED2 Squared(UNSIGNED1 n) := n * n;
 isEven(INTEGER num) := num % 2 = 0;
 ```
 
-Put it into practice [function.ecl](https://ide.hpccsystems.com/#)
+Put it into practice [function.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

@@ -124,6 +124,7 @@ CatThemDS := PROJECT(NameDS,
 
 ```
 
-[Put it into practice](https://ide.hpccsystems.com/#)\
+[Put it into practice](Put it into practice [transform.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+)\
 [Learn PROJECT](./project.md)\
 [Learn JOIN](./join.md)
