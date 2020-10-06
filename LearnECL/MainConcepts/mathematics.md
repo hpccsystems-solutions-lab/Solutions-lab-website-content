@@ -30,7 +30,7 @@ OUTPUT(COUNT(someMathDS(numOfHousehold > 3)), NAMED('Count_condition')); //retur
 
 ## AVE
 
-The AVE function returns the average value (arithmetic mean) from the specified recordset or the valuelist. It is defined to return zero if the recordset is empty.
+The AVE function returns the average value (arithmetic mean) from the specified recordset or the value-list. It is defined to return zero if the recordset is empty.
 
 ```java
 OUTPUT(AVE(1,1,2,2,3,5,6), NAMED('SimpleAvg')); //return 2.8571
@@ -40,7 +40,7 @@ OUTPUT(AVE(someMathDS, monthlyExp), NAMED('Avg_exp')); //return 3862.0614
 
 ## MIN
 
-The MIN function either returns the minimum value from the specified recordset or the valuelist. It is defined to return zero if the recordset is empty.
+The MIN function either returns the minimum value from the specified recordset or the value-list. It is defined to return zero if the recordset is empty.
 
 ```java
 OUTPUT(MIN(1,1,2,2,3,5,6), NAMED('SimpleMin')); //return 1
@@ -50,7 +50,7 @@ OUTPUT(MIN(someMathDS, monthlyIncome), NAMED('Min_income')); //return 1200
 
 ## MAX
 
-The MAX function either returns the maximum value from the specified recordset or the valuelist. It is defined to return zero if the recordset is empty.
+The MAX function either returns the maximum value from the specified recordset or the value-list. It is defined to return zero if the recordset is empty.
 
 ```java
 OUTPUT(MAX(1,1,2,2,3,5,6), NAMED('SimpleMax')); //return 6
@@ -78,5 +78,6 @@ OUTPUT(ROUND(3.65), NAMED('R2')); //return 4
 OUTPUT(ROUND(SUM(someMathDS, monthlyExp)), NAMED('R3')); //return 27034
 ```
 
-\
-Put it into practice [mathematics.ecl](https://ide.hpccsystems.com/#)
+## Resources
+
+Put it into practice [mathematics.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

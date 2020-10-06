@@ -1,7 +1,5 @@
 # Sort
 
-## Quick Look
-
 Need to sort ascending or descending?
 
 Let's start by defining our dataset.
@@ -54,6 +52,8 @@ D_SortedIncome := SORT(allPeople, -avgHouseIncome);
 OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
 ```
 
-![Des Sort Poeple Income](./Images/DesSort_Income.JPG)
+![Des Sort People Income](./Images/DesSort_Income.JPG)
+
+## Resources
 
 Put it into practice [sort.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

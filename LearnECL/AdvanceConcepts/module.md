@@ -1,7 +1,5 @@
 # Module
 
-## Quick Look
-
 Is a container that allows you to group related definitions. The parameters passed to the module are shared by all the related members definitions.\
 Output can't be used within a module.
 
@@ -42,7 +40,9 @@ END;
 myMod.printIt();
 ```
 
-Put it into practice
+## Resources
+
+Put it into practice:
 
 - To create a module: [simpleModule.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 - To call a module: [simpleModuleCall.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)

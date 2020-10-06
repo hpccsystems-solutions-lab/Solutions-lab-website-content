@@ -37,51 +37,54 @@ attr_name := TABLE(dataset,
     - LOCAL: Evaluate the data stored on each Thor node independently and do not merge the results
       - Useful only when the data has been explicitly distributed
 
-![fare dataset](./Images/fare_ds.jpg)
+![fare dataset](./Images/fare_ds.JPG)
 
-## Optional Flags##
+## Optional Flags
 
-**FEW**
+**FEW**\
 Indicates that the expression will result in fewer than 10,000 distinct groups. This allows optimization to produce a significantly faster result.
 
-**MANY**
+**MANY**\
 Indicates that the expression will result in many distinct groups.
 
-**UNSORTED**
+**UNSORTED**\
 Specifies that you don't care about the order of the groups. This allows optimization to produce a significantly faster result.
-**LOCAL**
-Specifies the operation is performed on each node independently; the operation maintains the distribution of any previous <u>DISTRIBUT</u>.
 
-**KEYED**
+**LOCAL**\
+Specifies the operation is performed on each node independently; the operation maintains the distribution of any previous _DISTRIBUT_.
+
+**KEYED**\
 Specifies the activity is part of an index read operation, which allows the optimizer to generate optimal code for the operation.
 
 **MERGE**
 Specifies that results are aggregated on each node and then the aggregated intermediaries are aggregated globally. This is a safe method of aggregation that shines particularly well if the underlying data was skewed.
 
-**SKEW**
+**SKEW**\
 Indicates that you know the data will not be spread evenly across nodes.
 
 ```java
 //Out definition: Defining all fields for the table
 crossTabLayout  :=  RECORD
-   fareDS.pickup_date; //Calling specific field from input dataset
+   fareDS.pickup_date;                   //Calling specific field from input dataset
    avgFare   := AVE(GROUP, fareDS.fare); //Calculating avg fare per each group
    totalFare := SUM(GROUP, fareDS.fare); //Calculating total fare per each group
 END;
 
-crossTabDs := TABLE(fareDS, //Input dataset. please see dataset above
-                     crossTabLayout, //Result table definition
-                     pickup_date //Grouping field
+crossTabDs := TABLE(fareDS,           //Input dataset. please see dataset above
+                     crossTabLayout,  //Result table definition
+                     pickup_date      //Grouping field
                      );
 
 OUTPUT(crossTabDs, NAMED('crossTabDs'));
 
 ```
 
-![fare table result](./Images/fare_table.jpg)
+Result:
+
+![fare table result](./Images/fare_table.JPG)
 
 ## Resources
 
 [Put it into practice](Put it into practice [table.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-Please see [TABLE Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TABLE.html) for more information.
+Please visit [TABLE Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TABLE.html) for more details.

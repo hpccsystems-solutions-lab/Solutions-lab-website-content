@@ -78,4 +78,4 @@ Model := Pre_Model.Fit( ML_Data, Centroids);
 
 ```
 
-For more details, please visit [HPCC Systems Machine Learning Library](https://hpccsystems.com/download/free-modules/machine-learning-library)
+Please visit [HPCC Systems Machine Learning Library](https://hpccsystems.com/download/free-modules/machine-learning-library) for more details.

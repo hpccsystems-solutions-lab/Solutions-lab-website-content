@@ -119,5 +119,6 @@ Put it into practice [dataParsing.ecl](https://ide.hpccsystems.com/workspaces/sh
 
 Put it into practice [simpleParsing.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-**References**\
+## Resources
+
 [Parsing tips and tricks by Richard Taylor](https://hpccsystems.com/blog/Tips_and_Tricks_for_ECL_Part2_PARSE)

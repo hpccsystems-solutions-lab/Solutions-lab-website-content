@@ -32,9 +32,9 @@ attr_name := DATASET(
   - Dataset name
 - DATASET
   - ECL Keyword
-- ( )
+- (...)
   - Contains all dataset information
-- [ ]
+- [...]
   - Contains all rows for dataset
 - attr_layout
   - Record structure the dataset is using
@@ -126,6 +126,6 @@ fileDS := DATASET(~test::file::cvs, //File Name
 
 ## Resources
 
-[Put it into practice](Put it into practice [dataset.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+Put it into practice [dataset.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-Please see [DATASET](https://hpccsystems.com/training/documentation/ecl-language-reference/html/DATASET.ht) for more information.
+Please visit [DATASET](https://hpccsystems.com/training/documentation/ecl-language-reference/html/DATASET.html) for more details.

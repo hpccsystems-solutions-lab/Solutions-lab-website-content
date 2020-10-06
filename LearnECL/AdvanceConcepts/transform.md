@@ -125,9 +125,9 @@ CatThemDS := PROJECT(NameDS,
 
 ## Resources
 
-[Put it into practice](Put it into practice [transform.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+Put it into practice [transform.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
 [Learn PROJECT](./project.md)\
 [Learn JOIN](./join.md)
 
-Please see [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TRANSFORM_Structure.html) for more information.
+Please visit [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TRANSFORM_Structure.html) for more details.

@@ -65,6 +65,8 @@ OUTPUT(predict, NAMED('predict'));
 
 ```
 
+## Resources
+
 Put it into practice [decisionTree.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-For more tutorials, please visit [Learning Trees -- A guide to Decision Tree based Machine Learning](https://hpccsystems.com/blog/learning-trees-guide-to-decision-tree-based-machine-learning)
+Please visit [Learning Trees](https://hpccsystems.com/blog/learning-trees-guide-to-decision-tree-based-machine-learning) for more information.

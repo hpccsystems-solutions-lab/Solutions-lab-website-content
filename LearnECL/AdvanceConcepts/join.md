@@ -1,7 +1,5 @@
 # JOIN
 
-## Quick Look
-
 The join function produces a result set based on the intersection of two datasets or indexes.
 
 ```java
@@ -71,12 +69,8 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-<p align="center">
-  <p  align="center"> sample dataset is working </p>
-  <img align="center" width="350" height="100" src="Images/EmpInnerJoin.JPG">  
-</p>
-
-![Inner Join Result](./Images/EmpInnerJoin.JPG#center)
+<p  align="center"> sample dataset is working </p>
+<p align="center"> <img align="center" src="Images/EmpInnerJoin.JPG">
 
 <p align="center"> Sample Dataset </p>
 <img align="center" src="./Images/EmpInnerJoin.JPG">
@@ -91,4 +85,4 @@ Left Outer Join Result\
 
 Put it into practice [join.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-Please see [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/JOIN.html) for more information.
+Please see [JOIN Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/JOIN.html) for more information.

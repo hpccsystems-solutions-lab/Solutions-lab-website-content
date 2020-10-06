@@ -20,8 +20,8 @@ attrLayout := {data_type field1, ..., data_type field100};
 The layout for above dataset would be:
 
 ```java
-//SalaryAvg is the name of layout.
-SalaryAvg := RECORD
+//salaryAvg is the name of layout.
+salaryAvg := RECORD
     STRING job;
     STRING category;
     STRING city;
@@ -32,7 +32,7 @@ SalaryAvg := RECORD
 END;
 
 //Inine layout definition
-SalaryDS := {STRING  job,
+salaryDS := {STRING  job,
              STRING  category,
              STRING  city,
              STRING2 state,
@@ -154,4 +154,6 @@ END;
 
 ```
 
-For how to use record structure to define a dataset please see [dataset](./dataset.md)
+## Resources
+
+[Learn Dataset](./dataset.md)

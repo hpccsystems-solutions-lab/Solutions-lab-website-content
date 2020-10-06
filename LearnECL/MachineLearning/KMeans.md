@@ -83,4 +83,4 @@ OUTPUT(predict, NAMED('predictionResult'));
 
 Put it into practice [KMeans.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-For more tutorials, please visit [Automatically Cluster your Data with Massively Scalable K-Means](https://hpccsystems.com/blog/kmeans)
+Please visit [K-Means](https://hpccsystems.com/blog/kmeans) for more information.

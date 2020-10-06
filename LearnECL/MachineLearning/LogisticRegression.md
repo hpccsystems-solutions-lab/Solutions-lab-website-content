@@ -68,6 +68,8 @@ OUTPUT(predict, NAMED('predict'));
 
 ```
 
+## Resources
+
 Put it into practice [logisticRegression.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-For more documentations, please visit [Logistic Regression Documentation](https://cdn.hpccsystems.com/pdf/ml/LogisticRegression.pdf)
+Please visit [Logistic Regression](https://cdn.hpccsystems.com/pdf/ml/LogisticRegression.pdf) for more details.

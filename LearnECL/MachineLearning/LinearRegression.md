@@ -73,10 +73,10 @@ OUTPUT(result, NAMED('predictionResult'));
 //Evaluate the prediction result with metrics such as R2, MSE and RMSE
 eval := ML_Core.Analysis.Regression.Accuracy(predict , y);
 OUTPUT(eval, NAMED('Evaluation'));
-
-
 ```
+
+## Resources
 
 Put it into practice [linearRegression.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-For more documentations, please visit [Linear Regression Documentation](https://cdn.hpccsystems.com/pdf/ml/LinearRegression.pdf)
+Please visit [Linear Regression](https://cdn.hpccsystems.com/pdf/ml/LinearRegression.pdf) for more details.

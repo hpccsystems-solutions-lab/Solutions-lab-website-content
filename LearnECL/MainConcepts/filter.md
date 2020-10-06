@@ -1,7 +1,5 @@
 # Filter
 
-## Quick Look
-
 Data filtering is the process of choosing a smaller part of your data set and using that subset for viewing or analysis. When filtering the complete dataset will remain the same.
 
 Let's start by defining our dataset.
@@ -38,5 +36,7 @@ Filter by income:
 Filter by last name and income:
 
 ![Filter last-name income](./Images/PeopleAndFilter.JPG)
+
+## Resources
 
 Put it into practice [filter.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
