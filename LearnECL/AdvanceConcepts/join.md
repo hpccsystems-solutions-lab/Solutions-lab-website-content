@@ -69,17 +69,14 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-<p  align="center"> sample dataset is working </p>
-<p align="center"> <img align="center" src="Images/EmpInnerJoin.JPG">
+<p  align="center"> Sample Dataset</p>
+<p align="center"> <img align="center" src="./Images/EmpInnerJoin.JPG">
 
-<p align="center"> Sample Dataset </p>
-<img align="center" src="./Images/EmpInnerJoin.JPG">
+<p align="center"> Left Only Join Result</p>
+<p align="center"> <img align="center" src="./Images/EmpLeftOnly.JPG">
 
-Left Only Join Result\
-![Inner Join Result](./Images/EmpLeftOnly.JPG)
-
-Left Outer Join Result\
-![Inner Join Result](./Images/EMp_LeftOuter.JPG)
+<p align="center"> Left Outer Join Result</p>
+<p align="center"> <img align="center" src="./Images/EMp_LeftOuter.JPG">
 
 ## Resources
 
