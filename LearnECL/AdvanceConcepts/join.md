@@ -69,7 +69,7 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-<p  align="center"> Sample Dataset</p>
+<p align="center"> Sample Dataset
 <p align="center"> <img align="center" src="./Images/EmpInnerJoin.JPG">
 
 <p align="center"> Left Only Join Result</p>
