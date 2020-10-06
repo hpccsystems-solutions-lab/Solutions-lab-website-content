@@ -73,7 +73,7 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 <p align="center">
   <p  align="center"> sample dataset is working </p>
-  <img width="350" height="100" src="Images/EmpInnerJoin.JPG">  
+  <img align="center" width="350" height="100" src="Images/EmpInnerJoin.JPG">  
 </p>
 
 ![Inner Join Result](./Images/EmpInnerJoin.JPG#center)
