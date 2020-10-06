@@ -71,8 +71,15 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-Inner Join Result\
-![Inner Join Result](./Images/EmpInnerJoin.JPG)
+<p align="center">
+  <p  align="center"> sample dataset is working </p>
+  <img width="350" height="100" src="Images/EmpInnerJoin.JPG">  
+</p>
+
+![Inner Join Result](./Images/EmpInnerJoin.JPG#center)
+
+<p align="center"> Sample Dataset </p>
+<img align="center" src="./Images/EmpInnerJoin.JPG">
 
 Left Only Join Result\
 ![Inner Join Result](./Images/EmpLeftOnly.JPG)
@@ -80,5 +87,8 @@ Left Only Join Result\
 Left Outer Join Result\
 ![Inner Join Result](./Images/EMp_LeftOuter.JPG)
 
-\
+## Resources
+
 Put it into practice [join.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+
+Please see [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/JOIN.html) for more information.

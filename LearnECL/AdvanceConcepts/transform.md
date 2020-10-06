@@ -1,7 +1,7 @@
 # TRANSFORM
 
-Transform function, loops through an entire dataset, and performs an operation on every field in the dataset.
-When defining a transform you need to tell the function what it needs to do for each field in the input dataset, and what the output dataset should look like.\
+Transform function, defines specific operations that will be performed on every field in result dataset. TRANSFORM functions starts from row one and covers the entire dataset row by row.
+When defining a transform you need to tell the function what it needs to done on each field in the result dataset by using input datasets fields or creating new definitions for the fields.\
 Transform can be used with PROJECT, JOIN, ITERATE, ROLLUP and more.
 
 ```java
@@ -39,39 +39,39 @@ END;
 
 ## Standalone Transform
 
-If you need the transform to be used in multiple places, or it contains many fields or child datasets, you may want to define a standalone transform(a function that can be called multiple times)
+If you need the transform to be used in multiple places, or it contains many fields or child datasets, you may want to define a standalone transform (a function that can be called multiple times)
 
 ```java
-NameRec := RECORD //defining record layout
-	STRING FirstName;
-	STRING LastName;
+nameRec := RECORD //defining record layout
+  STRING firstName;
+  STRING lastName;
 END;
 
 //creating inline dataset
-NameDS := DATASET([
+nameDS := DATASET([
               {'Sun','Shine'},
               {'Blue','Moon'},
               {'Silver','Rose'}],
               NameRec);
 
 //defining new layout for the project result
-NameOutRec := RECORD
-	STRING FirstName;
-	STRING LastName;
-	STRING CatValues;
- 	INTEGER RecCount; //counter
+nameOutRec := RECORD
+  STRING FirstName;
+  STRING LastName;
+  STRING CatValues;
+  INTEGER RecCount; //Counter
 END;
 
 /*
 NameOutRec: result of the project gets saved in this record layout
 CatThem: Tranform name
-NameRec L: Left datasets thats passed through project
+NameRec L: Left datasets that’s passed through project
 INTEGER C: counter
 */
 NameOutRec catThem(NameRec L, INTEGER C) := TRANSFORM
-	SELF.CatValues := L.FirstName + ' ' + L.LastName; // concact fname and last name
-  	SELF.RecCount := C; //counting
-	SELF := L; //assing everything from left recordset
+  SELF.CatValues := L.FirstName + ' ' + L.LastName; // concact fname and last name
+    SELF.RecCount := C; //counting
+  SELF := L; //Assign everything from left recordset
 END;
 
 ```
@@ -116,15 +116,18 @@ CatThemDS := PROJECT(NameDS,
                         TRANSFORM(
                             NameOutRec,
                             SELF.CatValues := LEFT.FirstName + ' ' + LEFT.LastName; // concact fname and last name
-  	                        SELF.RecCount := COUNTER; //counting
-	                        SELF := LEFT; //Assign everything from left recordset
+                            SELF.RecCount := COUNTER; //counting
+                          SELF := LEFT; //Assign everything from left recordset
                             SELF := []; //If undefined assign default value
                         ));
 
-
 ```
 
+## Resources
+
 [Put it into practice](Put it into practice [transform.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
-)\
+
 [Learn PROJECT](./project.md)\
 [Learn JOIN](./join.md)
+
+Please see [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TRANSFORM_Structure.html) for more information.

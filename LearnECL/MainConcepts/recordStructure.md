@@ -1,6 +1,5 @@
 # Record Structure
 
-
 Defines the layout o fields in the dataset, order of the fields should be the same as the dataset.
 
 ```java
@@ -12,9 +11,10 @@ attrLayout := RECORD
     data_type    field100;
 END;
 
-//Inline record structure 
+//Inline record structure
 attrLayout := {data_type field1, ..., data_type field100};
 ```
+
 ![record set example](./Images/RecordLayout.JPG)
 
 The layout for above dataset would be:
@@ -42,8 +42,10 @@ SalaryDS := {STRING  job,
              }
 ```
 
-## Embedded record layouts 
+## Embedded record layouts
+
 ### Embed all layouts
+
 layouts can be called to a new layout you are building.
 
 ```java
@@ -53,6 +55,7 @@ Personnell_layout := RECORD
     SalaryAvg;
 END;
 ```
+
 You can also call specific fields from a record layout.
 
 ```java
@@ -63,7 +66,9 @@ Personnell_layout := RECORD
     SalaryAvg.job;
 END;
 ```
+
 ### Embedded dataset
+
 Child datasets can be embedded in record layouts.
 
 ```java
@@ -73,12 +78,14 @@ Personnell_layout := RECORD
     DATASET(SalaryAvg)  salaryInfo;
 END;
 ```
+
 ## Field Supplements
+
 Followings can be used for field definitions.
 
 **MAXLENGTH**
 `{ MAXLENGTH(length ) }`\
-Specifies the maximum number of characters allowed in the field. 
+Specifies the maximum number of characters allowed in the field.
 
 **MAXCOUNT**
 `{ MAXCOUNT(records ) }`\
@@ -99,12 +106,13 @@ Specifies a default XML value for the field. The value must be
 `{ DEFAULT( value ) }`\
 Specifies a default value for the field. The value must be **constant**.
 This value will be used:
+
 1. When a DICTIONARY lookup returns no match.
 2. When an out-of-range record is fetched using ds[n] (as in ds[5]
-when ds contains only 4 records).
+   when ds contains only 4 records).
 3. In the default records passed to TRANSFORM functions in nonINNER JOINS where there is no corresponding row.
 4. When defaulting field values in a TRANSFORM using SELF
-= [ ].
+   = [ ].
 
 **VIRTUAL, File Position**
 `{ VIRTUAL( fileposition ) }`\
@@ -135,7 +143,6 @@ of an INDEX to allow more than 32K of data per index entry. The
 BLOB data is stored within the index file, but not with the rest of
 the record. Accessing the BLOB data requires an additional seek.
 
-
 ```java
 sampleLayout := RECORD
     STRING someName {MAXLENGTH(400)};
@@ -146,6 +153,5 @@ sampleLayout := RECORD
 END;
 
 ```
-
 
 For how to use record structure to define a dataset please see [dataset](./dataset.md)
