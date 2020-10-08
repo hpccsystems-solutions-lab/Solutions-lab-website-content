@@ -130,4 +130,4 @@ Put it into practice [transform.ecl](https://ide.hpccsystems.com/workspaces/shar
 [Learn PROJECT](./project.md)\
 [Learn JOIN](./join.md)
 
-Please visit [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TRANSFORM_Structure.html) for more details.
+Please visit [TRANSFORM Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TRANSFORM_Structure.html) for more information.

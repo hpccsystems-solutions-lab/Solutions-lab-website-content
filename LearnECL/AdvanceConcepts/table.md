@@ -37,8 +37,6 @@ attr_name := TABLE(dataset,
     - LOCAL: Evaluate the data stored on each Thor node independently and do not merge the results
       - Useful only when the data has been explicitly distributed
 
-![fare dataset](./Images/fare_ds.JPG)
-
 ## Optional Flags
 
 **FEW**\
@@ -61,6 +59,12 @@ Specifies that results are aggregated on each node and then the aggregated inter
 
 **SKEW**\
 Indicates that you know the data will not be spread evenly across nodes.
+
+## GROUP
+
+The GROUP keyword is used within output format parameter (RECORD Structure) of a TABLE definition. <u>_GROUP replaces the recordset parameter_</u> of any aggregate built-in function used in the output to indicate the operation is performed for each group of the expression. This is similar to an SQL "GROUP BY" clause.
+
+![fare dataset](./Images/fare_ds.JPG)
 
 ```java
 //Out definition: Defining all fields for the table
@@ -85,6 +89,6 @@ Result:
 
 ## Resources
 
-[Put it into practice](Put it into practice [table.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+Put it into practice [table.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
 
-Please visit [TABLE Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TABLE.html) for more details.
+Please visit [TABLE Function](https://hpccsystems.com/training/documentation/ecl-language-reference/html/TABLE.html) for more information.

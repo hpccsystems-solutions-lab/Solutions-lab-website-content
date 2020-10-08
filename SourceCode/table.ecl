@@ -1,12 +1,14 @@
 ﻿/*
 Table
-- GROUP option
+- GROUP replaces the recordset parameter of any aggregation function
+- Exp #1 is using a stand alone Transfrom
+- Exp #2 is using an inline Transform with Merge flag.
 */
 
 // Fare Table
 //Defining record layout
 fareLayout := RECORD
-    STRING10 pickup_date;
+    STRING10   pickup_date;
     DECIMAL8_2 fare;
     DECIMAL8_2 distance;
 END;
@@ -31,12 +33,14 @@ crossTabLayout  :=  RECORD
    totalFare := SUM(GROUP, fareDS.fare); //Calculating total fare per each group
 END;
 
+//Creating table
 crossTabDs := TABLE(fareDS, //Input dataset. please see dataset above
                      crossTabLayout, //Result table definition
                      pickup_date //Grouping field
                      );
 OUTPUT(crossTabDs, NAMED('crossTabDs'));
 
+/* Let's look at another example.*/
 // Person Table
 
 //Creating record layout
@@ -46,6 +50,7 @@ personLayout := RECORD
     STRING5   zip_code;
 END;
 
+//Creating inline person dataset
 personDS := DATASET([
     {1000, 'Moon', 30330}, {1001, 'Tardy', 40445}, {1005, 'Black', 30330},
     {2000, 'Zoon', 30000}, {2002, 'Snow', 30330},  {2005, 'Rainy', 40440},
@@ -57,7 +62,7 @@ OUTPUT(personDS, NAMED('personDS'));
 
 //Create table
 people_Count := TABLE(
-                   personDS,
+                   personDS, //Input dataset
                    {
                        zip_code; //Calling specific field from input dataset
                        UNSIGNED4 count_people := COUNT(GROUP);   //Aggregated field                    

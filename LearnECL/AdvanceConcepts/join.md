@@ -1,27 +1,51 @@
 # JOIN
 
-The join function produces a result set based on the intersection of two datasets or indexes.
+The join function produces a result dataset based on the intersection of two datasets or indexes.
 
 ```java
 attribName := JOIN(LEFT_DatasetName,
                    RIGHT_DatasetName,
-				   // fields AND/OR fields that are used to compare datasets
-					LEFT.fieldName = RIGHT.fieldName AND
-					LEFT.fieldName = RIGHT.fieldName,
+				   // AND/OR/NOT_Equal Conditions
+					LEFT.fieldName  = RIGHT.fieldName AND
+					(LEFT.fieldName = RIGHT.fieldName OR,
+					LEFT.fieldName != RIGHT.fieldName),
 					TRANSFORM(Result_RecordLayout,
 							SELF := LEFT,
 							SELF := RIGHT),
 					        JOINType);
 ```
 
+**Condition**
+
+- Boolean test of arbitrary complexity
+- Normally contains at least one equality test
+- Reference attributes within the input datasets via LEFT and RIGHT - ds1 = LEFT - ds2 = RIGHT
+
+**Transform**
+
+- If using an explicit TRANSFORM, it should accept at least two arguments
+  - One representing a LEFT record and the other representing a RIGHT record
+  - Ex: BazRec MakeBaz(FooRec rec1, BarRec rec2) := TRANSFORM … END;
+- If using an inline TRANSFORM, use LEFT and RIGHT to reference input data
+
+**Flags**
+
+- Optional flags that can alter the behavior of the JOIN
+- Commonly used flags
+  - LOOKUP: The RIGHT dataset is relatively small and there should be only one match for anyLEFT record
+  - ALL: The RIGHT dataset is relatively small and can be copied to every node in its entirety
+    - Can have multiple matches (unlike LOOKUP)
+    - Supports join conditions that contain no equalities
+    - Required if there are no equality tests in the condition
+
 ### Join Types
 
-- INNER: Only those records that exist in both datasets.
-- LEFT OUTER: At least one record for every record in the left.
-- RIGHT OUTER: At least one record for every record in the right.
-- LEFT ONLY: One record for each left record with no match in the left.
-- RIGHT ONLY: One record for each left record with no match in the right.
-- FULL ONLY: One record for each left and right record with no match in the opposite.
+- **INNER**: Keep only those records that exist in both datasets.
+- **LEFT OUTER** Keep all records from LEFT, even if there are no matches.
+- **RIGHT OUTER** Keep all records from RIGHT, even if there are no matches.
+- **LEFT ONLY** One record for each left record with no match in the left.
+- **RIGHT ONLY** One record for each left record with no match in the right.
+- **FULL ONLY** One record for each left and right record with no match in the opposite.
 
 Employee Information, EmpDS\
 ![Employee Dataset](./Images/EmpID_DS.JPG)
@@ -69,7 +93,7 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-<p align="center"> Sample Dataset
+<p align="center"> Inner Join Result</p>
 <p align="center"> <img align="center" src="./Images/EmpInnerJoin.JPG">
 
 <p align="center"> Left Only Join Result</p>
