@@ -93,14 +93,14 @@ OUTPUT(LeftOuterJoin, NAMED('LeftOuterJoin'));
 
 ```
 
-<p align="center"> Inner Join Result</p>
-<p align="center"> <img align="center" src="./Images/EmpInnerJoin.JPG">
+<p style="text-align: center"> Inner Join Result</p>
+<img align="center" src="./Images/EmpInnerJoin.JPG" />
 
-<p align="center"> Left Only Join Result</p>
-<p align="center"> <img align="center" src="./Images/EmpLeftOnly.JPG">
+<p style="text-align: center"> Left Only Join Result</p>
+<img align="center" src="./Images/EmpLeftOnly.JPG" />
 
-<p align="center"> Left Outer Join Result</p>
-<p align="center"> <img align="center" src="./Images/EMp_LeftOuter.JPG">
+<p style="text-align: center"> Left Outer Join Result</p>
+<img align="center" src="./Images/EMp_LeftOuter.JPG" />
 
 ## Resources
 
