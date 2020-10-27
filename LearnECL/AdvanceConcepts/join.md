@@ -3,6 +3,8 @@
 The join function produces a result dataset based on the intersection of two datasets or indexes.
 
 ```java
+
+/*** Join with inline Transform ***/
 attribName := JOIN(LEFT_DatasetName,
                    RIGHT_DatasetName,
 				   // JoinConditions - AND/OR/NOT_Equal
@@ -14,7 +16,39 @@ attribName := JOIN(LEFT_DatasetName,
 							SELF := RIGHT),
 					        JOINType
 							[, flags]);
+
+/*** Join with stand-alone Transform ***/
+attribName := JOIN(LEFT_DatasetName,
+                   RIGHT_DatasetName,
+				   // JoinConditions - AND/OR/NOT_Equal
+					LEFT.fieldName  = RIGHT.fieldName AND
+					(LEFT.fieldName = RIGHT.fieldName OR,
+					LEFT.fieldName != RIGHT.fieldName),
+					xFormName(LEFT, RIGHT),
+					        JOINType
+							[, flags]);
 ```
+
+- attribName
+  - The name by which the join will be invoked
+- LEFT_DatasetName
+  - Left dataset name
+- RIGHT_DatasetName
+  - Right dataset name
+- LEFT.fieldName = RIGHT.fieldName
+  - Join condition
+    - can use equal (=) or not-equal (!=)
+  - multiple conditions can exists using AND/OR
+  - Please see below Conditions for additional information
+- Transform/xFormName
+  - Join, inline or stand-alone transform
+  - Please see below Transform for additional information
+- JoinType
+  - Default is Inner join.
+  - Please see below Join Types for available types
+- Flags
+  - Optional
+  - Please see below Flags for additional information
 
 **Condition**
 
@@ -30,6 +64,7 @@ attribName := JOIN(LEFT_DatasetName,
 - If using an inline TRANSFORM, use LEFT and RIGHT to reference input data
 
 **Flags**
+
 Optional flags that can alter the behavior of the JOIN. Followings are the commonly used flags
 
 - **LOOKUP** The <u>right</u> dataset is relatively small and there should be only <u>one match</u> for any LEFT record
@@ -54,7 +89,7 @@ Optional flags that can alter the behavior of the JOIN. Followings are the commo
 - **FULL ONLY** One record for each left and right record with no match in the opposite.
 - **FULL OUTER** One record for each record in left and right dataset.
 
-<img align="center" src="./Images/joinTypes.JPG" />
+<img align="center" src="./Images/joinTypes.jpg" />
 
 <p style="text-align: center"> Employee Information, EmpDS</p>
 <img align="center" src="./Images/EmpID_DS.JPG"/>
