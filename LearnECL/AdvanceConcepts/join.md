@@ -7,25 +7,25 @@ The join function produces a result dataset based on the intersection of two da
 /*** Join with inline Transform ***/
 attribName := JOIN(LEFT_DatasetName,
                    RIGHT_DatasetName,
-				   // JoinConditions - AND/OR/NOT_Equal
-					LEFT.fieldName  = RIGHT.fieldName AND
-					(LEFT.fieldName = RIGHT.fieldName OR,
-					LEFT.fieldName != RIGHT.fieldName),
-					TRANSFORM(Result_RecordLayout,
-							SELF := LEFT,
-							SELF := RIGHT),
+                        // JoinConditions - AND/OR/NOT_Equal
+                        LEFT.fieldName  = RIGHT.fieldName AND
+                        (LEFT.fieldName = RIGHT.fieldName OR,
+                        LEFT.fieldName != RIGHT.fieldName),
+                    TRANSFORM(Result_RecordLayout,
+                            SELF := LEFT,
+                            SELF := RIGHT),
                     JOINType
-					[, flags]);
+                    [, flags]);
 
 
 /*** Join with stand-alone Transform ***/
 attribName := JOIN(LEFT_DatasetName,
                    RIGHT_DatasetName,
-				   // JoinConditions - AND/OR/NOT_Equal
-					LEFT.fieldName  = RIGHT.fieldName AND
-					(LEFT.fieldName = RIGHT.fieldName OR,
-					LEFT.fieldName != RIGHT.fieldName),
-					xFormName(LEFT, RIGHT),
+                        // JoinConditions - AND/OR/NOT_Equal
+                        LEFT.fieldName  = RIGHT.fieldName AND
+                        (LEFT.fieldName = RIGHT.fieldName OR,
+                        LEFT.fieldName != RIGHT.fieldName),
+                    xFormName(LEFT, RIGHT),
                     JOINType
                     [, flags]);
 ```
