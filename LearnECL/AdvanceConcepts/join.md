@@ -96,7 +96,7 @@ Optional flags that can alter the behavior of the JOIN. Followings are the commo
 <img align="center" src="./Images/EmpID_DS.JPG"/>
 
 <p style="text-align: center"> Job Category, JobCatDS</p>
-![Job Category Dataset](./Images/EmpCat_DS.JPG)
+<img align="center" src="./Images/EmpCat_DS.JPG"/>
 
 ```java
 EmpResult_Layout := RECORD
