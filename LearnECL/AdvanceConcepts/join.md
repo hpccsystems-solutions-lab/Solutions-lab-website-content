@@ -14,8 +14,9 @@ attribName := JOIN(LEFT_DatasetName,
 					TRANSFORM(Result_RecordLayout,
 							SELF := LEFT,
 							SELF := RIGHT),
-					        JOINType
-							[, flags]);
+                    JOINType
+					[, flags]);
+
 
 /*** Join with stand-alone Transform ***/
 attribName := JOIN(LEFT_DatasetName,
@@ -25,8 +26,8 @@ attribName := JOIN(LEFT_DatasetName,
 					(LEFT.fieldName = RIGHT.fieldName OR,
 					LEFT.fieldName != RIGHT.fieldName),
 					xFormName(LEFT, RIGHT),
-					        JOINType
-							[, flags]);
+                    JOINType
+                    [, flags]);
 ```
 
 - attribName
