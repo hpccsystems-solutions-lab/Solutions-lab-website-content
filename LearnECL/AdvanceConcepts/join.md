@@ -5,14 +5,15 @@ The join function produces a result dataset based on the intersection of two da
 ```java
 attribName := JOIN(LEFT_DatasetName,
                    RIGHT_DatasetName,
-				   // AND/OR/NOT_Equal Conditions
+				   // JoinConditions - AND/OR/NOT_Equal
 					LEFT.fieldName  = RIGHT.fieldName AND
 					(LEFT.fieldName = RIGHT.fieldName OR,
 					LEFT.fieldName != RIGHT.fieldName),
 					TRANSFORM(Result_RecordLayout,
 							SELF := LEFT,
 							SELF := RIGHT),
-					        JOINType);
+					        JOINType
+							[, flags]);
 ```
 
 **Condition**
@@ -29,28 +30,36 @@ attribName := JOIN(LEFT_DatasetName,
 - If using an inline TRANSFORM, use LEFT and RIGHT to reference input data
 
 **Flags**
+Optional flags that can alter the behavior of the JOIN. Followings are the commonly used flags
 
-- Optional flags that can alter the behavior of the JOIN
-- Commonly used flags
-  - LOOKUP: The RIGHT dataset is relatively small and there should be only one match for anyLEFT record
-  - ALL: The RIGHT dataset is relatively small and can be copied to every node in its entirety
-    - Can have multiple matches (unlike LOOKUP)
-    - Supports join conditions that contain no equalities
-    - Required if there are no equality tests in the condition
+- **LOOKUP** The <u>right</u> dataset is relatively small and there should be only <u>one match</u> for any LEFT record
+- **ALL** The <u>right</u> dataset is relatively small and can be copied to every node in its entirety
+  - Can have multiple matches (unlike LOOKUP)
+  - Supports join conditions that contain no equalities
+  - Required if there are no equality tests in the condition
+- **Few** Specifies the LOOKUP <u>right</u> dataset has few records, so little memory is used
+- **NOSORT** Performs the JOIN without dynamically sorting the tables. This implies that the left and/or right recordset must have been previously sorted and partitioned based on the fields specified in the joinCondition
+- **KEYED** Specifies using indexed access into the <u>right</u> recordset
+- **LOCAL** JOIN performed on each supercomputer node independently, and maintains the pervious distribution of data
+- **KEEP(n)** Specifies the maximum number of matching records (n) to generate into the result set. If omitted, all matches are kept.
+- **LIMIT** Specifies a maximum number of matching records which, if exceeded, either fails the job, or eliminates all those matches from the result set.
 
 ### Join Types
 
-- **INNER**: Keep only those records that exist in both datasets.
+- **INNER**: Keep only those records that exist in both datasets. Default value if no type is listed.
 - **LEFT OUTER** Keep all records from LEFT, even if there are no matches.
 - **RIGHT OUTER** Keep all records from RIGHT, even if there are no matches.
-- **LEFT ONLY** One record for each left record with no match in the left.
-- **RIGHT ONLY** One record for each left record with no match in the right.
+- **LEFT ONLY** One record for each left record with no match in the right.
+- **RIGHT ONLY** One record for each left record with no match in the left.
 - **FULL ONLY** One record for each left and right record with no match in the opposite.
+- **FULL OUTER** One record for each record in left and right dataset.
 
-Employee Information, EmpDS\
-![Employee Dataset](./Images/EmpID_DS.JPG)
+<img align="center" src="./Images/joinTypes.JPG" />
 
-Job Category, JobCatDS\
+<p style="text-align: center"> Employee Information, EmpDS</p>
+<img align="center" src="./Images/EmpID_DS.JPG"/>
+
+<p style="text-align: center"> Job Category, JobCatDS</p>
 ![Job Category Dataset](./Images/EmpCat_DS.JPG)
 
 ```java

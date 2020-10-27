@@ -10,19 +10,59 @@ Number of records in the input dataset is equal to generated table, which means 
 There is at least one field using an aggregate function with the keyword GROUP as its first parameter. The number of records produced is equal to the number of distinct values of the expression.
 
 ```java
+/*** Stand-alone record definition ***/
+
+//Defining result record definition
+out_record_def := RECORD
+              dataset.field;
+              dataset.field;
+              ...
+              field_name := Agg_Func(GROUP, dataset.field);
+              field_name := Agg_Func(GROUP, dataset.field);
+              field_name := COUNT(GROUP);
+              ....
+END;
+//Creating the table
 attr_name := TABLE(dataset,
                     out_record_def,
                     grouping_conditions
-                    [, flags]);
+                    [, flags]
+                    );
+
+
+/*** Inline record definition ***/
+attr_name := TABLE(dataset,
+                    {
+                      field,  //Calling specific field from input dataset
+                      field,
+                      ...
+                      field_name := Agg_Func(GROUP, dataset.field);
+                      field_name := Agg_Func(GROUP, dataset.field);
+                      field_name := COUNT(GROUP);
+                      ....
+                    },
+                    grouping_conditions
+                    [, flags]
+                    );
+
+
 ```
 
-- dataset
-  - Input dataset to create the table from
 - out_record_def
+
+  - dataset.field / field
+    - field(s) from input dataset.
   - Record definition that will contain both the grouping condition results and any new attributes computed as part of the aggregation
   - Functions that operate on TABLE groups
     - SUM, MAX, MIN, COUNT, AVE, VARIANCE, COVARIANCE, CORRELATION
     - When used within TABLE, these functions accept the keyword GROUP to denote currently-grouped table data
+
+- attr_name
+  - The name by which the table will be invoked
+- dataset
+  - Input dataset to create the table from
+- out_record_def
+  - The name by which the record layout will be invoked
 - grouping_conditions
   - One or more comma-delimited expressions
     - An expression could simply be an attribute name within the dataset; this is the most common usage
