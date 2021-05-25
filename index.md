@@ -13,7 +13,8 @@ Here we introduce basics of HPCC Systems, our big data platform, and a complete 
 
 ## HPCC Systems: End to End Data Lake Management
 
-HPCC Systems is a mature platform that has been heavily used in commercial applications for almost two decades, predating the development of Hadoop. Created by LexisNexis® Risk Solutions, an innovative pioneer in big data processing, and open source for nearly a decade now, HPCC Systems features a vibrant development community that continues to push the boundaries of big data.\
+HPCC Systems is a mature platform that has been heavily used in commercial applications for almost two decades, predating the development of Hadoop. Created by LexisNexis® Risk Solutions, an innovative pioneer in big data processing, and open source for nearly a decade now, HPCC Systems features a vibrant development community that continues to push the boundaries of Big Data.
+
 This powerful, versatile platform makes it easier for developers to see the data they’re working with and manipulate it as needed. Flexible information delivery makes it easier for your clients to query and find the data they need — and it runs analysis and queries faster than other platforms such as SQL or Hadoop.
 
 **Key Functionalities**
@@ -26,10 +27,12 @@ This powerful, versatile platform makes it easier for developers to see the data
 - Optimized distributed file system (dfs)
 - Massive scalability and performance
 
-  ## ECL
+## ECL
 
   ECL is an easy-to-learn, advanced, and flexible declarative language that was initially developed for complex data scenarios more than 20 years ago and has been tested and refined continuously ever since.\
   ECL has been designed specifically for massive data projects using the LexisNexis Risk Solutions HPCC Systems platform. ECL's extreme scalability comes from a design that allows you to leverage every query you create for re-use in subsequent queries as needed.
+
+### Quick ECL Overview
 
 * Not case sensitive
 * Declarative Programming Language
@@ -99,8 +102,9 @@ For advanced use, you are encouraged to install VS Code
 
 1) Download and install https://code.visualstudio.com/
 2) Download and install HPCC Client Tools 
+   
 ![Download Client Tools](./Images/download_client_tools.png)
-3) Run VS Code and install the ECL extension 
+1) Run VS Code and install the ECL extension 
 ![Install ECL Extension](./Images/vscode_ecl_extension.png)
 4) In you ECL project, create an ECL launch script:
 ![Create an ECL Launch Script](./Images/vscode_ecl_launch.png)
