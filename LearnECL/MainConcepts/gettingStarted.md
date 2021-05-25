@@ -4,8 +4,23 @@ Getting started is very easy, just go to [ECL Cloud IDE](https://ide.hpccsystems
 
 ## ECL
 
-ECL is an easy-to-learn, advanced, and flexible declarative language that was initially developed for complex data scenarios more than 20 years ago and has been tested and refined continuously ever since.\
- ECL has been designed specifically for massive data projects using the LexisNexis Risk Solutions HPCC Systems platform. ECL's extreme scalability comes from a design that allows you to leverage every query you create for re-use in subsequent queries as needed.
+ECL is designed to read data (aka logical files) stored on a HPCC cluster, manipulate it and write back clean or analyzed data. Alternatively, ECL can also be used as query language like how SQL is used as a query language to query a relational database. 
+
+Here are some similarities of ECL to SQL:
+
+| SQL | ECL |
+| --------- | ---------- |
+| Declarative Language  | Declarative Language |
+| Database Server | Thor Cluster or Roxie Cluster |
+| A SQL Table  | An ECL Logical File  |
+| A SQL Editor | VS Code Editor or ECL Cloud IDE |
+| A SQL File   | A ECL File |
+| Executing SQL means submitting the written SQL to the Database Server which in turn compiles it and executes it| Executing ECL means submitting the written ECL to a Thor or Roxie cluster which in turn compiles and executes it |
+| SQL Execution History/Logs | ECL Workunits Database & ECL Watch Workunits View|
+
+
+### Language Highlights
+
 
 - Not case sensitive
 - White spaces are ignored
