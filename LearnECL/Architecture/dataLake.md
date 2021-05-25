@@ -67,7 +67,7 @@ The **ECL program** is the application/code that is executed to read, transform 
 **ROXIE** is a **real-time** API/Query cluster for ECL programs and data. ROXIE programs execute in sub second times and provide for very high concurrency. 
 
 The core design goals for both Thor and Roxie are the same. Both process the data by using a divide and conquer approach. Data is divided into parts and processed in parallel.
-[[images/data-parts.png]]
+[[./Images/data-parts.png]]
 
 The above is an example of a file with 8 records split into 4 parts with 2 records in each part. Each part is assigned to a process. A 100,000 record file would be split into 4 parts with each part containing 25,000 records.
 
@@ -98,12 +98,12 @@ OUTPUT(joinEmployeeAndSalary);
 
 ...and the ECL programs data flow graph:
 
-![](images/ecl-graph.png) 
+![](./Images/ecl-graph.png) 
 
 ## Thor
 
 The Thor cluster is based on a master/slave design. Each data partition is processed by a slave process, and a master process manages the slave processes.
-![](images/thor-master-slave.png)
+![](./Images/thor-master-slave.png)
 
 ### The Middleware
 
@@ -115,18 +115,18 @@ The Middleware are a set of services that manage Thor clusters. They are respons
 * A management interface to observe the results, start and stop program executions, and manage the cluster components
 
 The Thor middleware components:
-![](images/middleware.png)
+![](./Images/middleware.png)
 
 A Thor cluster can run on a single compute node or multiple compute node as shown below. 
 
 
-![](images/thor-single-server.png)
+![](./Images/thor-single-server.png)
 
 
 
 
 
-![](images/thor-multi-server.png)
+![](./Images/thor-multi-server.png)
 
 
 
@@ -136,7 +136,7 @@ Production environments should run the middleware services on a separate node (o
 
 ECL programs are executed on Thor by submitting the program code to the ESP service. The following describes the execution flow:
 
-![](images/program-execution-thor.png)
+![](./Images/program-execution-thor.png)
 
 1. The client submits the ECL program to ESP
 2. ESP calls Dali to create a workunit entry and embeds the ECL program in the workunit
@@ -153,7 +153,7 @@ ECL programs are executed on Thor by submitting the program code to the ESP serv
 
 ROXIE is an API server used to publish real-time data query services. The service can be invoked using SOAP or REST and can be delivered as JSON or XML.
 
-![](images/program-execution-roxie.png)
+![](./Images/program-execution-roxie.png)
 
 
 ROXIE based ECL programs can be deployed to ROXIE in a couple of ways:
@@ -193,7 +193,7 @@ The **Server** process accepts client requests, executes the query service and r
 
 The **Slave** process is mainly responsible for a disk fetch or a single ECL function like a filtered index read. The Slave process receives requests only from a Server process.
 
-![](images/roxie-components.png)
+![](./Images/roxie-components.png)
 
 
 
