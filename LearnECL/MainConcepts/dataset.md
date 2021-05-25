@@ -1,6 +1,6 @@
 # Dataset
 
-Is a set of records that an ECL program can manipulate. A Dataset can initialized using a logical file, inline data or by another ECL function that filters, queries or transforms data.
+Is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file, inline data or by another ECL function that filters, queries or transforms data.
 
 ## Inline Dataset
 
