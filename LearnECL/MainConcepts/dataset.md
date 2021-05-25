@@ -1,6 +1,6 @@
 # Dataset
 
-A physical data file on disk. It can be defined directly as an inline dataset, or can be brought in from outside.
+Is a set of records that an ECL program can manipulate. A Dataset can initialized using a logical file, inline data or by another ECL function that filters, queries or transforms data.
 
 ## Inline Dataset
 
@@ -109,9 +109,9 @@ recName := RECORD
    BOOLEAN isName;
 END;
 
-fileDS := DATASET(~test::file::cvs, //File Name
+fileDS := DATASET('~test::file.csv', //File Name
                   recName, //defined record structure/layout
-                  CVS     //File Type
+                  CSV     //File Type
                   );
 
 ```
