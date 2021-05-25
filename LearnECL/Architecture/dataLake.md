@@ -67,7 +67,8 @@ The **ECL program** is the application/code that is executed to read, transform 
 **ROXIE** is a **real-time** API/Query cluster for ECL programs and data. ROXIE programs execute in sub second times and provide for very high concurrency. 
 
 The core design goals for both Thor and Roxie are the same. Both process the data by using a divide and conquer approach. Data is divided into parts and processed in parallel.
-[[./Images/data-parts.png]]
+
+![](./Images/data-parts.png)
 
 The above is an example of a file with 8 records split into 4 parts with 2 records in each part. Each part is assigned to a process. A 100,000 record file would be split into 4 parts with each part containing 25,000 records.
 
@@ -102,7 +103,7 @@ OUTPUT(joinEmployeeAndSalary);
 
 ## Thor
 
-The Thor cluster is based on a master/slave design. Each data partition is processed by a slave process, and a master process manages the slave processes.
+The Thor cluster is based on a manager/worker design. Each data partition is processed by a worker process, and a manage process manages the worker processes.
 ![](./Images/thor-master-slave.png)
 
 ### The Middleware
@@ -115,6 +116,7 @@ The Middleware are a set of services that manage Thor clusters. They are respons
 * A management interface to observe the results, start and stop program executions, and manage the cluster components
 
 The Thor middleware components:
+
 ![](./Images/middleware.png)
 
 A Thor cluster can run on a single compute node or multiple compute node as shown below. 
@@ -146,8 +148,8 @@ ECL programs are executed on Thor by submitting the program code to the ESP serv
 6. Dali queues the workunit in the Agent queue
 7. Agent executor de-queues and creates an ECL Agent to execute the job  
 8. If the ECL Agent executes the program, the ECL Agent updates the workunit entry with the results (scenario a). If the ECL Agent determines that it has send it to a Thor cluster, it queues the workunit in the respective Thor's queue (scenario b).
-9. The Thor Master de-queues the workunit entry and executes the ECL program
-10. The Thor Master updates the Dali workunit entry with the results of the execution
+9. The Thor Manager de-queues the workunit entry and executes the ECL program
+10. The Thor Manager updates the Dali workunit entry with the results of the execution
 
 ## ROXIE
 
@@ -189,9 +191,9 @@ A ROXIE cluster can be scaled from a single compute node to 100s. Each compute n
 
 The **compiled query service** as a DLL. Hundreds of query services can be deployed to a ROXIE.
 
-The **Server** process accepts client requests, executes the query service and returns the result to the client. One of the important features of the server is to manage the execution of the data flow graph. If it determines a node in a graph requires data, it sends the request to the slave components in the cluster that have the data. The Server communicates to the Slaves via multicast to account for node failures. The Server then collates the data from the slaves and executes the data flow step. Once the entire graph is executed, the Server returns the result to the calling client.
+The **Server** process accepts client requests, executes the query service and returns the result to the client. One of the important features of the server is to manage the execution of the data flow graph. If it determines a node in a graph requires data, it sends the request to the worker components in the cluster that have the data. The Server communicates to the Worker via multicast to account for node failures. The Server then collates the data from the workers and executes the data flow step. Once the entire graph is executed, the Server returns the result to the calling client.
 
-The **Slave** process is mainly responsible for a disk fetch or a single ECL function like a filtered index read. The Slave process receives requests only from a Server process.
+The **Worker** process is mainly responsible for a disk fetch or a single ECL function like a filtered index read. The Worker process receives requests only from a Server process.
 
 ![](./Images/roxie-components.png)
 
