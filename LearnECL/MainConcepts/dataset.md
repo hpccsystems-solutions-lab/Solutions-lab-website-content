@@ -93,7 +93,7 @@ attr_name := DATASET(path,
 - ( )
   - Contains all dataset information
 - path
-  - Physical address of file, where file is stored on disk.
+  - Logical address of file, where file is stored on the cluster.
   - ~ : Global search for the file
 - attr_layout
   - Record structure the dataset is using
