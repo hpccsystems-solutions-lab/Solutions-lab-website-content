@@ -1,6 +1,6 @@
 # Dataset
 
-Is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file, inline data or by another ECL function that filters, queries or transforms data.
+A Dataset is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file (File Dataset), inline data (Inline Dataset) or by another ECL function that filters, queries or transforms data (Derived Dataset).
 
 ## Inline Dataset
 
@@ -45,7 +45,7 @@ The layout for above dataset:
 
 ```java
 //Record layout
-salaryAvg_Layout := RECORD
+salaryLayout := RECORD
     STRING job;
     STRING category;
     STRING city;
@@ -55,7 +55,7 @@ salaryAvg_Layout := RECORD
     INTEGER upperband;
 END;
 
-salaryAvg_DS := DATASET([
+salaryDS := DATASET([
                 {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
                 {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
                 {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
@@ -67,7 +67,7 @@ salaryAvg_DS := DATASET([
 
 ## File Dataset
 
-This dataset is import or created on disk and can be called for a job.
+The File Dataset is initialized by data from a logical file that is stored on the cluster
 
 ```java
 attr_layout := RECORD
@@ -102,17 +102,22 @@ attr_name := DATASET(path,
 
 ```java
 
-recName := RECORD
-   STRING  valOne;
-   STRING  valTwo;
-   INTEGER numOne;
-   BOOLEAN isName;
+salaryLayout := RECORD
+    STRING job;
+    STRING category;
+    STRING city;
+    STRING2 state;
+    INTEGER avg_Salary;
+    INTEGER lowerBand;
+    INTEGER upperband;
 END;
 
-fileDS := DATASET('~test::file.csv', //File Name
-                  recName, //defined record structure/layout
-                  CSV     //File Type
-                  );
+salaryDS := DATASET
+              (
+                '~salary_file.csv', //File Name
+                 salaryLayout, //defined record structure/layout
+                 CSV     //File Type
+              );
 
 ```
 
@@ -123,6 +128,12 @@ fileDS := DATASET('~test::file.csv', //File Name
 - **JSON**: Data stored as a series of JSON objects
 - **XML**: Data stored as a series of XML documents
 - **PIPE**: Data obtained dynamically via process calls
+
+## Derived Dataset
+
+This is a Dataset that is derived by performing a filter, query or transform on another dataset.
+
+filteredSalaryDS := salaryDS(job='Manager');
 
 ## Resources
 
