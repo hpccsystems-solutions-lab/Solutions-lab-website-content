@@ -18,9 +18,7 @@ Here are some similarities of ECL to SQL:
 | Executing SQL means submitting the written SQL to the Database Server which in turn compiles it and executes it| Executing ECL means submitting the written ECL to a Thor or Roxie cluster which in turn compiles and executes it |
 | SQL Execution History/Logs | ECL Workunits Database & ECL Watch Workunits View|
 
-
-### Language Highlights
-
+### Language Highlights 
 
 - Not case sensitive
 - White spaces are ignored

@@ -24,13 +24,14 @@ This powerful, versatile platform makes it easier for developers to see the data
 - Practical tools and extensions
 - Efficient programming
 - End-to-end configuration
-- Optimized distributed file system (dfs)
+- Optimized distributed file system (DFS)
 - Massive scalability and performance
 
 ## ECL
 
-  ECL is an easy-to-learn, advanced, and flexible declarative language that was initially developed for complex data scenarios more than 20 years ago and has been tested and refined continuously ever since.\
-  ECL has been designed specifically for massive data projects using the LexisNexis Risk Solutions HPCC Systems platform. ECL's extreme scalability comes from a design that allows you to leverage every query you create for re-use in subsequent queries as needed.
+ECL is an easy-to-learn, advanced, and flexible declarative language that was initially developed for complex data scenarios more than 20 years ago and has been tested and refined continuously ever since.
+
+ECL has been designed specifically for massive data projects using the LexisNexis Risk Solutions HPCC Systems platform. ECL's extreme scalability comes from a design that allows you to leverage every query you create for re-use in subsequent queries as needed.
 
 ### Quick ECL Overview
 
