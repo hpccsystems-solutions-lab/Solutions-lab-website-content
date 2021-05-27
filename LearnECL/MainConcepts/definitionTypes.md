@@ -1,5 +1,7 @@
 # Definition Types
 
+Data types in ECL are used to define the layout or structure of your data. 
+
 ## BOOLEAN
 
 A Boolean Definition is a TRUE/FALSE expression.
@@ -7,6 +9,7 @@ A Boolean Definition is a TRUE/FALSE expression.
 ```java
 isFlag := TRUE;
 BOOLEAN hasValidName := FALSE;
+
 ```
 
 ## Value

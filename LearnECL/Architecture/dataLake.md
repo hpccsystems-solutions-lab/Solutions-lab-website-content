@@ -62,9 +62,9 @@ HPCC Systems Data Lake comprises of three elements:
 
 The **ECL program** is the application/code that is executed to read, transform and analyze data.
 
-**Thor** is a **batch** processing cluster for ECL programs and data. The Thor executed programs are usually long running (more than a few seconds).
+**Thor** is a **Bulk** processing cluster for processing data in bulk. The Thor executed programs are usually long running (more than a few seconds).
 
-**ROXIE** is a **real-time** API/Query cluster for ECL programs and data. ROXIE programs execute in sub second times and provide for very high concurrency. 
+**ROXIE** is a **Real-time** API/Query cluster for querying data. ROXIE programs execute in sub second times and provide for very high concurrency. 
 
 The core design goals for both Thor and Roxie are the same. Both process the data by using a divide and conquer approach. Data is divided into parts and processed in parallel.
 
@@ -112,7 +112,7 @@ To define it simply, Thor is like a database server technology. Just like Oracle
 
 **Data Organization in Thor:**
 
-![](./Images/thor-master-slave.png)
+![](./Images/thor-data-organization.png)
 
 The Thor cluster is based on a **manager** and **worker** design. In effect, you have one manager process and many worker processes. The job of the worker processes is to process one portion or part of an input data file. The manager process acts as the delegator and coordinator of all the workers. 
 
@@ -136,7 +136,7 @@ While Thor acts like a Bulk processing Database Server, this data is not easily 
 
 **Data Organization in ROXIE**
 
-![](./Images/roxie-data-flow.png) 
+![](./Images/roxie-data-organization.png) 
 
 While Thor is based on a Manager and Worker design, and while this design works really well for Bulk processing, it is very limited for processing queries. This is because queries are inherently concurrent and need sub second response times. Hence, ROXIE employs a **Server** and **Worker** design. While the workers are similar in function to the Thor worker where the workers process a partition of the data, the ROXIE server acts as 1) a receiver of the query request 2) understands the data partitioning w.r.t workers to fulfill the query request 3) messages all the needed workers for the data 4) consolidates the data and returns the results to the calling process. A single ROXIE cluster can have 1 to many  server and worker combinations. It all depends on how many data partitions make the processing efficient. 
 
@@ -147,6 +147,6 @@ The data partitions are sourced from a Thor cluster as shown in the diagram.
 The API that is made available via ROXIE is written in ECL and is identical to writing an ECL query in Thor.  Once the query is compiled, it is then published to ROXIE as an end point API. 
 
 
-
+[More Details of HPCC Systems internals and middleware?](./dataLakeDetailed.md)
 
 

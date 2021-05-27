@@ -86,5 +86,11 @@ OUTPUT(NumOne, NAMED('ActionThis'));
 2 * 3;
 
 ```
+## Next Topics
+[Setup your Development Environment](./ideSetup.md)
 
-[To see definition types](./definitionTypes.md)
+[Data Handling](./dataHandling.md)
+
+[Anatomy of an ECL Project](./eclProjectAnatomy.md)
+
+[ECL Data Types](./dataTypes.md)

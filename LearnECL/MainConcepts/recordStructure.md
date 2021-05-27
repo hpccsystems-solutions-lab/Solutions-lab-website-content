@@ -1,6 +1,6 @@
 # Record Structure
 
-Defines the layout o fields in the dataset, order of the fields should be the same as the dataset.
+Defines the layout of fields in the dataset, order of the fields should be the same as the dataset.
 
 ```java
 attrLayout := RECORD
