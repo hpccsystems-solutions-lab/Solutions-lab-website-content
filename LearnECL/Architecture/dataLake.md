@@ -4,7 +4,7 @@ Data Lake is a centralized repository that allows you to store structured and un
 
 # HPCC and Data Lake
 
-Data Lake is an architecture and methodology fir continuous management of complex data. More enterprises are accepting data lake technology to manage their internal data, solve complex problems, and improve their relationships with customers and suppliers.
+Data Lake is an architecture and methodology for continuous management of complex data. More enterprises are accepting data lake technology to manage their internal data, solve complex problems, and improve their relationships with customers and suppliers.
 
 In HPCC Systems, data discovery and experimentation is important and with use of data lake, the path from data discovery to production is short and fast.
 
@@ -129,7 +129,7 @@ All this is almost identical to how a relational database like Oracle Server beh
 
 **What is ROXIE?**
 
-While Thor acts like a Bulk processing Database Server, this data is not easily queryable and retrievable in a concurrent manner. This is because the Thor server is organized around bulk processing. However, once data is processed in Thor this data needs to be made available for querying. This is a very common use use. This is why ROXIE was invented. It acts like query/api server for data that has been processed by Thor. 
+While Thor acts like a Bulk processing Database Server, this data is not easily queryable and retrievable in a concurrent manner. This is because the Thor server is organized around bulk processing. However, once data is processed in Thor this data needs to be made available for querying. This is a very common use. This is why ROXIE was invented. It acts like a query/api server for data that has been processed by Thor. 
 
 ![](./Images/what-is-roxie.png) 
 
