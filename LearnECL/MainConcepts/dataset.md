@@ -37,7 +37,7 @@ attr_name := DATASET(
 - [...]
   - Contains all rows for dataset
 - attr_layout
-  - Record structure the dataset is using
+  - Record structure or format of each record in the dataset
 
 ![record set example](./Images/RecordLayout.JPG)
 
@@ -96,7 +96,7 @@ attr_name := DATASET(path,
   - Logical address of file, where file is stored on the cluster.
   - ~ : Global search for the file
 - attr_layout
-  - Record structure the dataset is using
+  - Record structure or format of each record in the dataset
 - file_type
   - Type of file (XML, CSV, logical, etc). Please see below for file types.
 
