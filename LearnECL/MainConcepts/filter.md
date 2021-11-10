@@ -106,3 +106,29 @@ allPeople(lastName = 'Jo' OR avgHouseIncome > 100000);
 <a href="https://hpccsystems-solutions-lab.github.io/hpcc/LearnECL/MainConcepts/sort" class="next">Next &raquo;</a>
 
 
+<body>
+    <div>Code Snippet 1</div>  
+    <pre id="code_1">
+
+Layout_Person := RECORD
+    UNSIGNED1 PersonID; 
+    STRING15 FirstName; 
+    STRING25 LastName; 
+END; 
+
+    </pre>
+    <div>Code Snippet 2</div>  
+    <pre id="code_2">       
+
+allPeople := DATASET([ {1, 'Fred', 'Smith'}, 
+                        {2, 'Joe', 'Blow'}, 
+                        {3, 'Jane', 'Smith'}], Layout_Person); 
+
+somePeople := allPeople(LastName='Smith') 
+
+//Outputs
+somePeople;
+    </pre>
+
+    <button onclick="OpenECLEditor(['code_1', 'code_2'])">Try Me</button> 
+</body>
