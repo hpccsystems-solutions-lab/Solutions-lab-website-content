@@ -25,6 +25,7 @@ Data filtering is the process of choosing a smaller part of your data set and us
 265 | Darling | Jo | TRUE | 5000
 333 | Jane | Smith | FALSE | 50000
 
+<<<<<<< HEAD
 </br>
 
 ## Filter Example
