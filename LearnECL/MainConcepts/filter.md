@@ -25,13 +25,14 @@ Data filtering is the process of choosing a smaller part of your data set and us
 265 | Darling | Jo | TRUE | 5000
 333 | Jane | Smith | FALSE | 50000
 
-<<<<<<< HEAD
+
 </br>
 
 ## Filter Example
 <br>
 <pre id="code_1">
 
+``` java
 // Creating record layout
 Emp_layout := RECORD
     EmpID  PersonID; 
@@ -43,12 +44,12 @@ END;
 
 // Creating inline dataset
 Emp_DS := DATASET([
-    {102,'Fred','Smith','FALSE','0},
-    {012,'Joe','Blow','TRUE','11250},
-    {085,'Blue','Moon','TRUE','185000},
-    {055,'Silver','Jo','FALSE','5000},
-    {265,'Darling','Jo','TRUE','5000},
-    {333,'Jane','Smith','FALSE','50000}
+    {102,'Fred','Smith','FALSE',0},
+    {012,'Joe','Blow','TRUE',11250},
+    {085,'Blue','Moon','TRUE',185000},
+    {055,'Silver','Jo','FALSE',5000},
+    {265,'Darling','Jo','TRUE',5000},
+    {333,'Jane','Smith','FALSE',50000}
     ]);
 
 // Filter Smith last name
@@ -62,7 +63,7 @@ IsWorking := Emp_DS(IsEmp = FALSE AND
 
 OUTPUT(IsWorking, NAMED('IsWorking));
                   
-
+```
 </pre>
 
 <button onclick="OpenECLEditor(['code_1'])" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer; padding:5px 15px;">Try Me</button> 
