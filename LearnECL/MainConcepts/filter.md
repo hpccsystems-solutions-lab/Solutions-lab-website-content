@@ -25,110 +25,106 @@ Data filtering is the process of choosing a smaller part of your data set and us
 265 | Darling | Jo | TRUE | 5000
 333 | Jane | Smith | FALSE | 50000
 
+</br>
 
+## Filter Example
+<br>
+<pre id="code_1">
 
-
-Filter by income:
-
-![Filter Income](./Images/Poeple_FilterIncome.JPG)
-
-Filter by last name and income:
-
-![Filter last-name income](./Images/PeopleAndFilter.JPG)
-
-<div>
-<form method='post' action='https://hpcc-ecl-web-editor.azurewebsites.net/' target='submit' name="ECLCode">
-<p><input type='submit' value="Try It" class="ecl" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer;"></input> </p>
-<textarea name='code' class="code">
-Layout_Person := RECORD  
-    UNSIGNED  PersonID;  
-    STRING15  FirstName; 
-    STRING25  LastName; 
-    BOOLEAN   isEmployed; 
-    UNSIGNED  avgHouseIncome;
+// Creating record layout
+Emp_layout := RECORD
+    EmpID  PersonID; 
+    STRING FirstName; 
+    STRING LastName; 
+    BOOLEAN IsEmp;
+    INTEGER RoundedIncome;
 END; 
 
-allPeople := Dataset('~hthor::samplefile::test::bf::thor', Layout_Person, THOR);
-//Show employed people
-OUTPUT(allPeople(isEmployed), NAMED('isEmployed'));
-//Capture None Smith last names and save the result.
-//Strings are case sensitive
-noSmith := allPeople(lastName != 'Smith');
-OUTPUT(noSmith, NAMED('noSmith'));
-//Show income > 100000 or Jo last name
-allPeople(lastName = 'Jo' OR avgHouseIncome > 100000);
-</textarea>
-</form>
-</script>
-</div>
+// Creating inline dataset
+Emp_DS := DATASET([
+    {102,'Fred','Smith','FALSE','0},
+    {012,'Joe','Blow','TRUE','11250},
+    {085,'Blue','Moon','TRUE','185000},
+    {055,'Silver','Jo','FALSE','5000},
+    {265,'Darling','Jo','TRUE','5000},
+    {333,'Jane','Smith','FALSE','50000}
+    ]);
+
+// Filter Smith last name
+GetSmith := Emp_DS(LastName='Smith');
+
+OUTPUT(GetSmith, NAMED('GetSmith'));
+
+// Filter unemployed with income
+IsWorking := Emp_DS(IsEmp = FALSE AND
+                    RoundedIncome > 0);
+
+OUTPUT(IsWorking, NAMED('IsWorking));
+                  
+
+</pre>
+
+<button onclick="OpenECLEditor(['code_1'])" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer; padding:5px 15px;">Try Me</button> 
+
+## Filter Operators 
+
+|Operator|Description|
+|:----|:---|
+=	  | Equal
+\>  | Greater than
+<	  | Less than
+\>= | Greater than or equal	
+<=  | Less than or equal	
+<>  | Not equal
+!=  | Not equal
+AND | Logical AND
+OR  | Logical OR
+IN  | To specify multiple possible values for a field/column
+NOT IN  | To specify multiple possible values that are not in a field/column
+BETWEEN | Between a certain range
 
 
-<style>
-  a, input.ecl {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 5px;
-  }
 
-  a:hover, input.ecl:hover {
-    color: black;
-    text-decoration: none;
-  }
+  <style>
+    a, input.ecl {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+    }
 
-  textarea.code {
-    min-height: 120px;
-  }
+    a:hover, input.ecl:hover {
+      color: black;
+      text-decoration: none;
+    }
 
-  .previous {
-    background-color: #04AA6D;
-    color: black;
-  }
+    textarea.code {
+      min-height: 120px;
+    }
 
-  .next {
-    background-color: #04AA6D;
-    color: black;
-    position: absolute;
-    right: 0
-  }
+    .previous {
+      background-color: #04AA6D;
+      color: black;
+    }
 
-  .code {
-    width: 100%;
+    .next {
+      background-color: #04AA6D;
+      color: black;
+      position: absolute;
+      right: 0
+    }
 
-  }
-</style>
+    .code {
+      width: 100%;
 
-<br>
-<br>
+    }
+  </style>
 
-<a href="#" class="previous">&laquo; Previous</a>
-<a href="https://hpccsystems-solutions-lab.github.io/hpcc/LearnECL/MainConcepts/sort" class="next">Next &raquo;</a>
+  <br>
+  <br>
+
+  <a href="#" class="previous">&laquo; Previous</a>
+  <a href="https://hpccsystems-solutions-lab.github.io/hpcc/LearnECL/MainConcepts/sort" class="next">Next &raquo;</a>
 
 
-<body>
-    <div>Code Snippet 1</div>  
-    <pre id="code_1">
-
-Layout_Person := RECORD
-    UNSIGNED1 PersonID; 
-    STRING15 FirstName; 
-    STRING25 LastName; 
-END; 
-
-    </pre>
-    <div>Code Snippet 2</div>  
-    <pre id="code_2">       
-
-allPeople := DATASET([ {1, 'Fred', 'Smith'}, 
-                        {2, 'Joe', 'Blow'}, 
-                        {3, 'Jane', 'Smith'}], Layout_Person); 
-
-somePeople := allPeople(LastName='Smith') 
-
-//Outputs
-somePeople;
-    </pre>
-
-    <button onclick="OpenECLEditor(['code_1', 'code_2'])">Try Me</button> 
-</body>
