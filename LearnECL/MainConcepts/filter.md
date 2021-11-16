@@ -66,7 +66,7 @@ OUTPUT(IsWorking, NAMED('IsWorking));
 ```
 </pre>
 
-<button onclick="OpenECLEditor(['code_1'])" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer; padding:5px 15px;">Try Me</button> 
+<button onclick=".\dev_build\OpenECLEditor.html(['code_1'])" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer; padding:5px 15px;">Try Me</button> 
 
 ## Filter Operators 
 
@@ -129,4 +129,34 @@ BETWEEN | Between a certain range
   <a href="#" class="previous">&laquo; Previous</a>
   <a href="https://hpccsystems-solutions-lab.github.io/hpcc/LearnECL/MainConcepts/sort" class="next">Next &raquo;</a>
 
+<br>
 
+##  Orig Version
+
+<br>
+
+
+<div>
+<form method='post' action='https://hpcc-ecl-web-editor.azurewebsites.net/' target='submit' name="ECLCode">
+<p><input type='submit' value="Try It" class="ecl" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer;"></input> </p>
+<textarea name='code' class="code">
+Layout_Person := RECORD  
+    UNSIGNED  PersonID;  
+    STRING15  FirstName; 
+    STRING25  LastName; 
+    BOOLEAN   isEmployed; 
+    UNSIGNED  avgHouseIncome;
+END; 
+allPeople := Dataset('~hthor::samplefile::test::bf::thor', Layout_Person, THOR);
+//Show employed people
+OUTPUT(allPeople(isEmployed), NAMED('isEmployed'));
+//Capture None Smith last names and save the result.
+//Strings are case sensitive
+noSmith := allPeople(lastName != 'Smith');
+OUTPUT(noSmith, NAMED('noSmith'));
+//Show income > 100000 or Jo last name
+allPeople(lastName = 'Jo' OR avgHouseIncome > 100000);
+</textarea>
+</form>
+</script>
+</div>
