@@ -66,7 +66,7 @@ OUTPUT(IsWorking, NAMED('IsWorking));
 ```
 </pre>
 
-<button onclick=".\dev_build\OpenECLEditor.html(['code_1'])" style="color: black; background-color: #04AA6D; margin-bottom:10px; cursor:pointer; padding:5px 15px;">Try Me</button> 
+<a class="trybutton" href="javascript:OpenECLEditor(['code_1'])"> Try Me </a>
 
 ## Filter Operators 
 
