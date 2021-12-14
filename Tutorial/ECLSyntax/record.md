@@ -45,9 +45,9 @@ field1 ... field100 | Name of your fields/columns
 ```java
 // Using keywords
 salaryAvg_1 := RECORD
-    STRING job;
-    STRING category;
-    STRING city;
+    STRING  job;
+    STRING  category;
+    STRING  city;
     STRING2 state;
     INTEGER avgSalary;
     INTEGER lowerBand;

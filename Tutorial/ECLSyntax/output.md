@@ -59,13 +59,13 @@ Sales|General|Chicago|IL|55000|32000|121000
 ``` java
 // Defining record layout
 SalaryAvg_Layout := RECORD
-    STRING Job;
-    STRING Category;
-    STRING City;
-    STRING2	State;
-    INTEGER	Avg_Salary;
-    INTEGER	LowerBand;
-    INTEGER	Upperband;
+    STRING    Job;
+    STRING    Category;
+    STRING    City;
+    STRING2   State;
+    INTEGER   Avg_Salary;
+    INTEGER   LowerBand;
+    INTEGER   Upperband;
 END;
 
 // Getting the dataset

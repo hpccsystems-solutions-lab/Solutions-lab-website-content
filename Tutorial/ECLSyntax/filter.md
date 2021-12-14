@@ -3,7 +3,7 @@
 Data filtering is the process of choosing a smaller part of your data set and using that subset for further processing. It’s recommended to filter down to the desire dataset before any processing. 
 When using filter on STRING values keep in mind that STRING values are case sensitive. For example Sun, sun, SUN are not the same. 
 
-### Syntax
+### Syntax  
 
 ```java
 attr_name := dataset_name (filtering condition(s));
@@ -16,7 +16,7 @@ dataset_name | The dataset to perform action on
 Filtering condition(s) | field or fields and required filtering conditions. Logical operators can be used to execute multiple filters.
 
 <br>
-<br>
+
 
 **Demo Dataset**
 
@@ -30,7 +30,7 @@ Filtering condition(s) | field or fields and required filtering conditions. Logi
 333 | Jane | Smith | FALSE | 50000
 
 <br>
-<br>
+
 
 #### Example
 
