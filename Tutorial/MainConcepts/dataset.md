@@ -32,6 +32,8 @@ attr_name := DATASET(
                     );
 ```
 
+<br> 
+
 |*Value*|*Definition*|
 |:----|:---------|
 attr_name   | The name by which the dataset will be invoked
@@ -40,8 +42,6 @@ DATASET     | Required
 {...}       | Defines one row
 attr_layout | Name of your Record layout
 
-
-<br>
 <br>
 
 **Demo Dataset**
@@ -54,12 +54,9 @@ Director|Art-Entertainment|Atlanta|GA|100000|70000|133000
 CIO|IT|Tampa|FL|112000|69000|131000
 Sales|General|Chicago|IL|55000|32000|121000
 
-<br>
-<br>
 
 #### Example
 
-<br>
 <pre id="SimpleDataset">
 
 ``` java
@@ -91,8 +88,6 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 
 <a class="trybutton" href="javascript:OpenECLEditor(['SimpleDataset'])"> Try Me </a>
 
-<br>
-
 
 ## Logical File
 
@@ -117,6 +112,8 @@ attr_name := DATASET(path,
                        file_type);
 ```
 
+<br>
+
 |*Value*|*Definition*|
 |:----|:---------|
 attr_name   | The name by which the dataset will be invoked
@@ -127,8 +124,6 @@ file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED)
 
 
 #### Example
-
-<br>
 <pre id="LogicalFileExample">
 
 ``` java
@@ -148,7 +143,6 @@ SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, T
 
 ```
 </pre>
-<br>
 
 ### File Type
 

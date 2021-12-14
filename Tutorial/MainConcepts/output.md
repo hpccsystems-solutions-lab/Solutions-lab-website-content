@@ -7,7 +7,6 @@ Following example shows how you can simply view the result. Please pay attention
 
 #### Example
 
-<br>
 <pre id="OutputExample">
 
 ``` java
@@ -25,12 +24,14 @@ OUTPUT(someVal, NAMED('someVal'));
 <a class="trybutton" href="javascript:OpenECLEditor(['OutputExample'])"> Try Me </a>
 
 ## Syntax
-<br>
+
 
 ```java
 OUTPUT(dataset_name/attr_name);
 OUTPUT(dataset_name/attr_name, Named('display-name'));
 ```
+<br> 
+
 |*Value*|*Definition*|
 |:----|:---------|
 OUTPUT | Required 
@@ -38,9 +39,7 @@ dataset_name | The dataset you want to view
 attr_name | The attribute you want to view
 NAMED | Optional, recommended when multiple outputs are being viewed. NAMED specifies the result names. Given name can't start with numbers and shouldn't include spaces or -
 
-
-
-Let's try to output a small dataset. 
+<br>
 
 **Demo Dataset**
 
@@ -54,7 +53,6 @@ Sales|General|Chicago|IL|55000|32000|121000
 
 #### Example
 
-<br>
 <pre id="DatasetExample">
 
 ``` java
