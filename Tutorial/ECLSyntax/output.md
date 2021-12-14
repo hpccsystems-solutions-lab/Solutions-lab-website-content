@@ -12,7 +12,7 @@ Following example shows how you can simply view the result. Please pay attention
 
 ``` java
 // Outputting numeric value
-OUTPUT(100, NAMED('myFirst'));
+OUTPUT(100 + 200, NAMED('myFirst'));
 
 // Assigning a STRING value to an attribute
 someVal := 'My First String';
@@ -68,15 +68,21 @@ SalaryAvg_Layout := RECORD
     INTEGER   Upperband;
 END;
 
-// Getting the dataset
-SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, THOR);
+// Creating the dataset
+SalaryAvg_DS := DATASET([
+                    {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
+                    {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
+                    {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
+                    {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
+                    {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}], 
+                    SalaryAvg_Layout);
 
 // Output with no label, following will display the dataset without labeling the output
 OUTPUT(SalaryAvg_DS);
 
 
-// Looking for an easier way :)
-// Note: too many outputs with no labels, you won't know which result you are looking at.
+// Following will simple output the dataset
+// Note: When you have multiple  outputs with no labels(NAMED option), it will be difficult to identify which output you are looking at.
 SalaryAvg_DS;
 
 // Let's see how we can label outputs

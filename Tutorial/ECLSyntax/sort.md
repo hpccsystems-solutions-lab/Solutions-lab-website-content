@@ -16,6 +16,7 @@ dataset_name | The dataset to perform action on
 \- | Optional, used when sorting descendingly /decreasing 
 field(s) | field or fields for sort
 
+<br> 
 
 **Demo Dataset**
 
@@ -49,14 +50,15 @@ Layout_Person := RECORD
 END;
 
 // Inline dataset
-AllPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
-                       {012,'Joe','Blow', TRUE, 11250},
-                       {085,'Blue','Moon', TRUE, 185000},
-                       {155,'Dan','Jo', FALSE, 4000},
-                       {255,'Silver','Jo', TRUE, 6000},
-                       {265,'Darling','Jo', TRUE,5000},   
-                       {333,'Jane','Smith', FALSE, 50000}]
-											 ,Layout_Person);
+AllPeople := DATASET([ 
+                    {102,'Fred','Smith', FALSE, 0},
+                    {012,'Joe','Blow', TRUE, 11250},
+                    {085,'Blue','Moon', TRUE, 185000},
+                    {155,'Dan','Jo', FALSE, 4000},
+                    {255,'Silver','Jo', TRUE, 6000},
+                    {265,'Darling','Jo', TRUE,5000},   
+                    {333,'Jane','Smith', FALSE, 50000}],
+                    Layout_Person);
 
 
 // Sort using one field
@@ -91,14 +93,15 @@ Layout_Person := RECORD
 END;
 
 // Inline dataset
-AllPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
-                       {012,'Joe','Blow', TRUE, 11250},
-                       {085,'Blue','Moon', TRUE, 185000},
-                       {155,'Dan','Jo', FALSE, 4000},
-                       {255,'Silver','Jo', TRUE, 6000},
-                       {265,'Darling','Jo', TRUE,5000},   
-                       {333,'Jane','Smith', FALSE, 50000}]
-											 ,Layout_Person);
+AllPeople := DATASET([ 
+                    {102,'Fred','Smith', FALSE, 0},
+                    {012,'Joe','Blow', TRUE, 11250},
+                    {085,'Blue','Moon', TRUE, 185000},
+                    {155,'Dan','Jo', FALSE, 4000},
+                    {255,'Silver','Jo', TRUE, 6000},
+                    {265,'Darling','Jo', TRUE,5000},   
+                    {333,'Jane','Smith', FALSE, 50000}],
+                    Layout_Person);
 
 
 // Sort using one field

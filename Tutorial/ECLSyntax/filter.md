@@ -49,13 +49,13 @@ END;
 
 // Creating an inline dataset
 Emp_DS := DATASET([
-    {102,'Fred','Smith',FALSE,0},
-    {012,'Joe','Blow',TRUE,11250},
-    {085,'Blue','Moon',TRUE,185000},
-    {055,'Silver','Jo',FALSE,5000},
-    {265,'Darling','Jo',TRUE,5000},
-    {333,'Jane','Smith',FALSE,50000}
-    ], Emp_layout);
+                {102,'Fred','Smith',FALSE,0},
+                {012,'Joe','Blow',TRUE,11250},
+                {085,'Blue','Moon',TRUE,185000},
+                {055,'Silver','Jo',FALSE,5000},
+                {265,'Darling','Jo',TRUE,5000},
+                {333,'Jane','Smith',FALSE,50000}],
+                Emp_layout);
 
 // Filter Smith last name
 GetSmith := Emp_DS(LastName='Smith');

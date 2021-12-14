@@ -24,8 +24,8 @@ attr_name := DATASET(
                         [ 
                             {'', '', 0, '', FALSE, ..., ''}, 
                             {'', '', 0, '', FALSE, ..., ''},
-                            ...
-                            ...
+                            {...},
+                            {...},
                             {'', '', 0, '', FALSE, ..., ''}
                         ],
                         attr_layout
@@ -38,8 +38,8 @@ attr_name := DATASET(
 |:----|:---------|
 attr_name   | The name by which the dataset will be invoked
 DATASET     | Required
-[...]       | Contains all rows for dataset
-{...}       | Defines one row
+[ ... ]       | Contains all rows for dataset
+{ ... }       | Defines one row
 attr_layout | Name of your Record layout
 
 <br>
@@ -63,24 +63,23 @@ Sales|General|Chicago|IL|55000|32000|121000
 ``` java
 // Defining record layout
 SalaryAvg_Layout := RECORD
-    STRING Job;
-    STRING Category;
-    STRING City;
-    STRING2	State;
-    INTEGER	Avg_Salary;
-    INTEGER	LowerBand;
-    INTEGER	Upperband;
+    STRING   Job;
+    STRING   Category;
+    STRING   City;
+    STRING2  State;
+    INTEGER  Avg_Salary;
+    INTEGER  LowerBand;
+    INTEGER  Upperband;
 END;
 
 // Creating the dataset
 SalaryAvg_DS := DATASET([
-                {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
-                {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
-                {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
-                {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
-                {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}
-                ], SalaryAvg_Layout //Layout definition
-                );
+                    {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
+                    {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
+                    {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
+                    {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
+                    {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}], 
+                    SalaryAvg_Layout);
 
 
 OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
