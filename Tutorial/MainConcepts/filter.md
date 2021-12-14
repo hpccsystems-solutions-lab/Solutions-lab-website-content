@@ -85,7 +85,7 @@ OUTPUT(Emp_DS(IsEmp), NAMED('Employed'));
 <br>
 
 
-## Filter Operators 
+## Logical Operators 
 
 |Operator|Description|
 |:----|:---|
@@ -102,5 +102,5 @@ IN  | To specify multiple possible values for a field/column
 NOT IN  | To specify multiple possible values that are not in a field/column
 BETWEEN | Between a certain range
 
-<br>
+
 

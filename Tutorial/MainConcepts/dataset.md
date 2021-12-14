@@ -57,7 +57,7 @@ Sales|General|Chicago|IL|55000|32000|121000
 
 #### Example
 
-<pre id="SimpleDataset">
+<pre id="">
 
 ``` java
 // Defining record layout
@@ -83,10 +83,13 @@ SalaryAvg_DS := DATASET([
 
 
 OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
+
+
 ```
 </pre>
 
-<a class="trybutton" href="javascript:OpenECLEditor(['SimpleDataset'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor([''])"> Try Me </a>
+
 
 
 ## Logical File
@@ -124,7 +127,6 @@ file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED)
 
 
 #### Example
-<pre id="LogicalFileExample">
 
 ``` java
 // Defining record layout
@@ -142,7 +144,7 @@ END;
 SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, THOR);
 
 ```
-</pre>
+
 
 ### File Type
 

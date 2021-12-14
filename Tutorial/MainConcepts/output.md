@@ -7,6 +7,7 @@ Following example shows how you can simply view the result. Please pay attention
 
 #### Example
 
+<br>
 <pre id="OutputExample">
 
 ``` java
@@ -52,7 +53,7 @@ CIO|IT|Tampa|FL|112000|69000|131000
 Sales|General|Chicago|IL|55000|32000|121000
 
 #### Example
-
+<br>
 <pre id="DatasetExample">
 
 ``` java
