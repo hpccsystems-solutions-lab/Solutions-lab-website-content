@@ -2,10 +2,14 @@
 
 Defines the layout of fields in the dataset, order of the fields should be exactly the same as the dataset columns.
 
-There are two ways to define the record structure. Doesn't matter which one you pick results would be the same.
+There are two ways to define the record structure. Doesn't matter which one you use results would be exactly the same.
 
-## 1- Recommended Way
-<br>
+Keep in mind that you can't output RECORD as it is a definition.  RECORD can be used with other  functions such as DATASET, and TABLE. 
+
+## Using Keywords
+
+
+### Syntax
 
 ```java
 attr_layout := RECORD
@@ -17,10 +21,17 @@ attr_layout := RECORD
 END;
 ```
 
-## 2- Inline Record Definition
+## Using Braces { }
+
+### Syntax
 
 ```java
-attr_layout := {data_type field1, ..., data_type field100};
+attr_layout := {
+               data_type field1;
+               ...;
+               ...; 
+               data_type field100
+               };
 ```
 
 |*Value*|*Definition*|
@@ -32,7 +43,7 @@ field1 ... field100 | Name of your fields/columns
 #### Example
 
 ```java
-// Recommended way
+// Using keywords
 salaryAvg_1 := RECORD
     STRING job;
     STRING category;
@@ -43,15 +54,16 @@ salaryAvg_1 := RECORD
     INTEGER upperband;
 END;
 
-// Inline record definition
-salaryAvg_2 := {STRING  job,
-                STRING  category,
-                STRING  city,
-                STRING2 state,
-                INTEGER avgSalary,
-                INTEGER lowerBand,
+// Using { }
+salaryAvg_2 := {
+                STRING  job;
+                STRING  category;
+                STRING  city;
+                STRING2 state;
+                INTEGER avgSalary;
+                INTEGER lowerBand;
                 INTEGER upperband
-                }
+                };
 ```
 
 

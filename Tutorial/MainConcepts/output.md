@@ -3,43 +3,7 @@
 OUTPUT is an action that allows user to view results. OUTPUT can be used to save recordset result in a file. 
 There are a few ways to generate output.
 
-Following example shows how you can simply view the result. Please pay attention that your results named liked  `Result 1`, and  `Result 2`. 
-
-#### Example
-<br>
-<pre id="SimpleOutput">
-
-``` java
-// Outputting a numeric
-100;
-
-// Outputting a string
-'My first output';
-
-// Performing arithmetic and saving result to an attribute
-simpleMath := 12 * 12;
-
-// Outputting the result
-simpleMath;
-
-```
-</pre>
-
-<a class="trybutton" href="javascript:OpenECLEditor(['SimpleOutput'])"> Try Me </a>
-
-## Syntax
-<br>
-
-```java
-OUTPUT(dataset_name/attr_name);
-OUTPUT(dataset_name/attr_name, Named('display-name'));
-```
-|*Value*|*Definition*|
-|:----|:---------|
-OUTPUT | Required 
-dataset_name | The dataset you want to view 
-attr_name | The attribute you want to view
-NAMED | Optional, recommended when multiple outputs are being viewed. NAMED specifies the result names. Given name can't start with numbers and shouldn't include spaces or -
+Following example shows how you can simply view the result. Please pay attention that your results are named liked  `Result 1`, and  `Result 2`. 
 
 #### Example
 
@@ -59,6 +23,21 @@ OUTPUT(someVal, NAMED('someVal'));
 </pre>
 
 <a class="trybutton" href="javascript:OpenECLEditor(['OutputExample'])"> Try Me </a>
+
+## Syntax
+<br>
+
+```java
+OUTPUT(dataset_name/attr_name);
+OUTPUT(dataset_name/attr_name, Named('display-name'));
+```
+|*Value*|*Definition*|
+|:----|:---------|
+OUTPUT | Required 
+dataset_name | The dataset you want to view 
+attr_name | The attribute you want to view
+NAMED | Optional, recommended when multiple outputs are being viewed. NAMED specifies the result names. Given name can't start with numbers and shouldn't include spaces or -
+
 
 
 Let's try to output a small dataset. 

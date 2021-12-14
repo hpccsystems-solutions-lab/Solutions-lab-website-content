@@ -2,9 +2,13 @@
 
 A Dataset is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file (File Dataset), inline data (Inline Dataset) or by another ECL function that filters, queries or transforms data (Derived Dataset).
 
+When defining DATASET you need to define the [RECORD(layout)](./record.md) of the dataset first. 
+
 ## Inline Dataset
 
 A temporary dataset that's created and used while job is running. Inline dataset definition can be used for small datasets.
+
+### Syntax
 
 ```java
 attr_layout := RECORD
@@ -38,6 +42,7 @@ attr_layout | Name of your Record layout
 
 
 <br>
+<br>
 
 **Demo Dataset**
 
@@ -49,6 +54,7 @@ Director|Art-Entertainment|Atlanta|GA|100000|70000|133000
 CIO|IT|Tampa|FL|112000|69000|131000
 Sales|General|Chicago|IL|55000|32000|121000
 
+<br>
 <br>
 
 #### Example
@@ -68,7 +74,7 @@ SalaryAvg_Layout := RECORD
     INTEGER	Upperband;
 END;
 
-// Getting the dataset
+// Creating the dataset
 SalaryAvg_DS := DATASET([
                 {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
                 {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
@@ -91,6 +97,8 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 ## Logical File
 
 A file stored physically on cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV . 
+
+### Syntax
 
 ```java
 attr_layout := RECORD
@@ -126,13 +134,13 @@ file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED)
 ``` java
 // Defining record layout
 SalaryAvg_Layout := RECORD
-    STRING Job;
-    STRING Category;
-    STRING City;
-    STRING2	State;
-    INTEGER	Avg_Salary;
-    INTEGER	LowerBand;
-    INTEGER	Upperband;
+    STRING   Job;
+    STRING   Category;
+    STRING   City;
+    STRING2  State;
+    INTEGER  Avg_Salary;
+    INTEGER  LowerBand;
+    INTEGER  Upperband;
 END;
 
 // Getting the dataset
