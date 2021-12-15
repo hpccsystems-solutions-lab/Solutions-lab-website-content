@@ -1,8 +1,45 @@
-# Sort
+# SORT
 
-Need to sort ascending or descending?
+Sorting refers to ordering data in an increasing or decreasing fashion. Sort can be done on one field or multiple fields. 
 
-Let's start by defining our dataset.
+### Syntax
+```java
+attr_name := SORT(dataset_name, [-]field(s));
+```
+ 
+
+|Value|Definition|
+|:----|:---------|
+attr_name | The name by which the function will be invoked
+SORT  | Required 
+dataset_name | The dataset to perform action on 
+\- | Optional, used when sorting descending/decreasing 
+field(s) | field or fields for sort
+
+<br> 
+
+**Demo Dataset**
+
+|PersonID|FirstName|LastName|isEmployed|avgHouseIncome|
+|:----|:---|:---|:----|:---|
+102 | Fred | Smith | FALSE | 0
+012 | Joe | Blow | TRUE | 11250
+085 | Blue | Moon | TRUE | 185000
+155 | Dan | Jo | FALSE | 4000
+255 | Silver | Jo | TRUE | 6000
+265 | Darling | Jo | TRUE | 5000
+333 | Jane | Smith | FALSE | 50000
+
+</br>
+
+## Ascending Sort
+
+Sorting from A to Z or 0 to 9.
+
+#### Example
+
+</br>
+<pre id="SortExp_1">
 
 ```java
 // Define record layout
@@ -14,46 +51,71 @@ Layout_Person := RECORD
   UNSIGNED  avgHouseIncome;
 END;
 
-//Inline dataset
-allPeople := DATASET([ {102,'Fred','Smith', FALSE, 0},
-                       {012,'Joe','Blow', TRUE, 11250},
-                       {085,'Blue','Moon', TRUE, 185000},
-                       {055,'Silver','Jo', FALSE, 5000},
-                       {265,'Darling','Jo', TRUE, 5000},
-                       {333,'Jane','Smith', FALSE, 50000}]
-											 ,Layout_Person);
-OUTPUT(allPeople, NAMED('allPeople'));
+// Inline dataset
+AllPeople := DATASET([ 
+                    {102,'Fred','Smith', FALSE, 0},
+                    {012,'Joe','Blow', TRUE, 11250},
+                    {085,'Blue','Moon', TRUE, 185000},
+                    {155,'Dan','Jo', FALSE, 4000},
+                    {255,'Silver','Jo', TRUE, 6000},
+                    {265,'Darling','Jo', TRUE,5000},   
+                    {333,'Jane','Smith', FALSE, 50000}],
+                    Layout_Person);
+
+
+// Sort using one field
+SortedLastName := SORT(AllPeople, LastName);
+OUTPUT(SortedLastName, NAMED('Asc_SortedLastName'));
+
+// Sort using multiple fields
+SortedIncome := SORT(AllPeople, LastName, avgHouseIncome);
+OUTPUT(SortedIncome, NAMED('Asc_SortedIncome'));
+
 ```
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['SortExp_1'])"> Try Me </a>
 
-![Complete People Dataset](./Images/allPeople.JPG)
 
-### Ascending Sort
 
-Sorting from A to Z or 0 to 9.
+## Descending Sort
 
-```Java
-A_SortedLastName := SORT(allPeople, LastName);
-OUTPUT(A_SortedLastName, NAMED('Asc_SortedLastName'));
+Sorting Z to A or 9 to 0. 
 
-A_SortedIncome := SORT(A_SortedLastName, avgHouseIncome);
-OUTPUT(A_SortedIncome, NAMED('Asc_SortedIncome'));
-```
+#### Example
 
-![Asc Sort People LastName](./Images/AscSort_Lname.JPG)
-
-![Asc Sort People Income](./Images/AscSort_Income.JPG)
-
-### Descending Sort
-
-Sorting Z to A or 9 to 0.
+<br>
+<pre id="SortExp_2">
 
 ```java
-D_SortedIncome := SORT(allPeople, -avgHouseIncome);
-OUTPUT(D_SortedIncome, NAMED('Des_SortedIncome'));
+// Define record layout
+Layout_Person := RECORD
+  UNSIGNED  PersonID;
+  STRING15  FirstName;
+  STRING25  LastName;
+  BOOLEAN   isEmployed;
+  UNSIGNED  avgHouseIncome;
+END;
+
+// Inline dataset
+AllPeople := DATASET([ 
+                    {102,'Fred','Smith', FALSE, 0},
+                    {012,'Joe','Blow', TRUE, 11250},
+                    {085,'Blue','Moon', TRUE, 185000},
+                    {155,'Dan','Jo', FALSE, 4000},
+                    {255,'Silver','Jo', TRUE, 6000},
+                    {265,'Darling','Jo', TRUE,5000},   
+                    {333,'Jane','Smith', FALSE, 50000}],
+                    Layout_Person);
+
+
+// Sort using one field
+SortFirstName := SORT(AllPeople, -FirstName);
+OUTPUT(SortFirstName, NAMED('SortFirstName'));
+
+// Sort using more than one field
+SortedIncome := SORT(AllPeople, -LastName, avgHouseIncome);
+OUTPUT(SortedIncome, NAMED('Asc_SortedIncome'));
+
 ```
-
-![Des Sort People Income](./Images/DesSort_Income.JPG)
-
-## Resources
-
-Put it into practice [sort.ecl](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['SortExp_2'])"> Try Me </a>
