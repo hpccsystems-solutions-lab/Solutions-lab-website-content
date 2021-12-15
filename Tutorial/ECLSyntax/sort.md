@@ -1,4 +1,4 @@
-# Sort
+# SORT
 
 Sorting refers to ordering data in an increasing or decreasing fashion. Sort can be done on one field or multiple fields. 
 
@@ -13,7 +13,7 @@ attr_name := SORT(dataset_name, [-]field(s));
 attr_name | The name by which the function will be invoked
 SORT  | Required 
 dataset_name | The dataset to perform action on 
-\- | Optional, used when sorting descendingly /decreasing 
+\- | Optional, used when sorting descending /decreasing 
 field(s) | field or fields for sort
 
 <br> 
@@ -35,6 +35,8 @@ field(s) | field or fields for sort
 ## Ascending Sort
 
 Sorting from A to Z or 0 to 9.
+
+#### Example
 
 </br>
 <pre id="SortExp_1">
@@ -78,6 +80,8 @@ OUTPUT(SortedIncome, NAMED('Asc_SortedIncome'));
 ## Descending Sort
 
 Sorting Z to A or 9 to 0. 
+
+#### Example
 
 <br>
 <pre id="SortExp_2">

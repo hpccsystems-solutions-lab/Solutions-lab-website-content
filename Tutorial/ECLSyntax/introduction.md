@@ -18,9 +18,9 @@ Here are some similarities of ECL to SQL:
 
 ## Language Highlights 
 
-- ECL is NOT case sensitive language, but it is recommended to use uppercase for reserved words
-- White spaces are ignored, but it is strongly recommended to use white space for clarity and readability.
-- Declarative Programming Language, which means you specifies what needs to be done rather than how to do it.
+- ECL is not case sensitive language, but it is recommended to use uppercase for reserved words
+- White spaces are ignored, but it is strongly recommended to use white space for clarity and readability
+- Declarative Programming Language, which means you specifies what needs to be done rather than how to do it
 - Source-to-source compiler
 - ECL code translated to C++ that is compiled to shared libraries and executed within a custom frame-work
 
@@ -52,20 +52,20 @@ Here are some similarities of ECL to SQL:
 `/* ..... */` is used for block commenting out.
 
   ```java
-  /* this is a block comment
+  /* This is a block comment.
       It can be used to comment out multiple lines.*/
   ```
 
 ## Field Access
 
-Use of object.property to access dataset fields and definitions.
+You can use of object.property to access dataset fields and definitions.
   - `dataset.fieldName`
   - `moduleName.definition`
 
 ```java
-MyData.FisrtName
+MyDataset.FieldName
 
-MyMod.GetValue
+MyModule.ExportedValue
 ```
 
 
@@ -74,8 +74,7 @@ MyMod.GetValue
 
 ### Definition\Expression 
 
-Assign an expression to an attribute. Definitions are evaluated.\
-Definitions always contain `:=`
+Assigning an expression to an attribute. Definitions always contain `:=`
 
 ```java
 [attrib_type] attrib_name := value
@@ -85,14 +84,32 @@ Definitions always contain `:=`
 |:----|:---------|
 attrib_type | Optional, compiler can infer it from Definition
 attrib_name | The name by which the Definition will be invoked
-value | Assigned value to the definition
+value | Assigned value to the Definition
+
+#### Example
+
+<br>
+<pre id = "IntroExp_1">
 
 ```java
-STRING def := 'this is a definition';
-INTEGER Num := 900;
+STRING  Def1  := 'OUTPUT turns definition ';
+STRING  Def2  := 'to action.';
 
+// String concatenation 
+Def1 + Def2;
+
+
+Val1 := 12;
+Val2 := 50; 
 SomeResult := Val1 + Val2;
+
+// Show result
+SomeResult;
 ```
+</pre>
+
+<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
+
 
 ### Action
 
@@ -103,10 +120,13 @@ OUTPUT('this is an action');
 SUM(1,2);
 ```
 
-</br>
-<pre id="IntroExp_1">
+#### Example
 
 ```java
+
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_2'])"> Try Me </a>
+
 
 /* Simple use of block comment.
    Following are simple ECL syntax
