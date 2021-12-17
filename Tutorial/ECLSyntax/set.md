@@ -7,9 +7,15 @@ Keep in mind that SET doesn't order the list nor it will remove duplicates.
 ## Syntax
 ```java
 attr_name := SET(dataset_name, field_name)
-attr_name := SET[val1, val2, .... , valn]
+attr_name := SET[elem1, elem2, .... , elemN]
 ```
 
+|Value|Definition|
+|:----|:---------|
+attr_name | The name by which the function will be invoked
+dataset_name | The dataset to perform action on 
+
+<br>
 
 #### Example
 
@@ -52,6 +58,7 @@ Indio|CA|Riverside|417059
 Englewood|CO|Arapahoe|6183
 Keywest|FL|Monroe|31401
 
+<br>
 
 #### Example
 
@@ -72,8 +79,8 @@ Pop_DS := DATASET([
                 {'El Centro','CA','Imperial',111425},
                 {'Indio','CA','Riverside',417059},
                 {'Englewood','CO','Arapahoe',6183},
-                {'Keywest','FL','Monroe',31401}
-                 ], Pop_Layout);
+                {'Keywest','FL','Monroe',31401}], 
+                Pop_Layout);
 
 // Converting a field to SET
 CitySet := SET(Pop_DS, City);

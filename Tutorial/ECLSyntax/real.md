@@ -14,6 +14,8 @@ attribName |  The name by which the variable will be invoked
 
 <br>
 
+### Value Range
+
 |TypeSignificant Digits|Largest Value|Smallest Value|
 |----------------------|-------------|--------------|
 REAL4 | 7 (9999999) | 3.402823e+038 } 1.175494e-038
