@@ -1,5 +1,19 @@
 # About US
 
-HPCC Systems and HPCC Systems Solutions Lab are groups within LexisNexis Risk Solution's (LNRS) that aim to advance the cause of Data Science through a solutions based approach. Bringing the 20+ years of experience of working with Big Data in the form of core technology, libraries and solutions. At LNRS, our business is based on consuming and processing Big Data on a daily basis. Hence, we are in a unique position to help others understand data analytics.
+The HPCC Systems Solution Lab group is part of [LexisNexis Risk Solutions](https://risk.lexisnexis.com),
+a [RELX](https://www.relx.com) company.
 
-Please contact us at bahareh.fardanian@lexisnexisrisk.com
+We work closely with organizations interested in the HPCC Systems big data platform.
+By educating newcomers on the advantages of the platform, or by demonstrating those
+advantages through proof of concept solutions tailored to a customer's specific needs,
+we strive to show the world how HPCC Systems can make processing big data manageable.
+
+In addition to simply demonstrating the HPCC Systems platform's native capabilities,
+we also develop tools and libraries that extend those capabilities in new directions.
+We firmly believe in Open Source Software, so all of our public tools are available on Github.
+
+Our group directly supports the education community through semester-long university
+classes and shorter, more focused hands-on workshops.  Our intern program is heavily
+populated by attendees of these classes and workshops.
+
+Please contact us at <hpcc-solutions-lab@lexisnexisrisk.com>
