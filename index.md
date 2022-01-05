@@ -33,12 +33,3 @@ This powerful, versatile platform makes it easier for developers to see the data
 [Introducing the HPCC Systems Data Lake Platform](./LearnECL/Architecture/dataLake.md)
 
 [Getting Started with Learning ECL](./LearnECL/MainConcepts/gettingStarted.md)
-
-
-## Contact Us
-
-Please contact us for questions and feedback:
-
-bahareh.fardanian@lexisnexisrisk.com
-
-test0.3
