@@ -15,5 +15,3 @@ We firmly believe in Open Source Software, so all of our public tools are availa
 Our group directly supports the education community through semester-long university
 classes and shorter, more focused hands-on workshops.  Our intern program is heavily
 populated by attendees of these classes and workshops.
-
-Please contact us at <hpcc-solutions-lab@lexisnexisrisk.com>
