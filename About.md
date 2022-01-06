@@ -16,4 +16,4 @@ Our group directly supports the education community through semester-long univer
 classes and shorter, more focused hands-on workshops.  Our intern program is heavily
 populated by attendees of these classes and workshops.
 
-Please contact us at <hpcc-solutions-lab@lexisnexisrisk.com>
+test 1.1
