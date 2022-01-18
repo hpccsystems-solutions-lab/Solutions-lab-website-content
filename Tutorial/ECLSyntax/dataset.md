@@ -36,11 +36,11 @@ attr_name := DATASET(
 
 |*Value*|*Definition*|
 |:----|:---------|
-attr_name   | The name by which the dataset will be invoked
-DATASET     | Required
-[ ... ]       | Contains all rows for dataset
-{ ... }       | Defines one row
-attr_layout | Name of your Record layout
+attr_name   | The name by which the dataset will be invoked.
+DATASET     | Required.
+[ ... ]       | Contains all rows for dataset.
+{ ... }       | Defines one row.
+attr_layout | Name of your Record layout.
 
 <br>
 
@@ -61,6 +61,11 @@ Sales|General|Chicago|IL|55000|32000|121000
 <pre id="">
 
 ``` java
+/*
+DATASET Example:
+Creating an inline dataset.
+*/
+
 // Defining record layout
 SalaryAvg_Layout := RECORD
     STRING   Job;
@@ -119,16 +124,21 @@ attr_name := DATASET(path,
 
 |*Value*|*Definition*|
 |:----|:---------|
-attr_name   | The name by which the dataset will be invoked
-DATASET     | Required
-path        | Logical file name stored on the cluster
-attr_layout | Name of your Record layout
-file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED)
+attr_name   | The name by which the dataset will be invoked.
+DATASET     | Required.
+path        | Logical file name stored on the cluster.
+attr_layout | Name of your Record layout.
+file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED).
 
 
 #### Example
 
 ``` java
+/*
+DATASET Example:
+Defining a logical file as input dataset.
+*/
+
 // Defining record layout
 SalaryAvg_Layout := RECORD
     STRING   Job;

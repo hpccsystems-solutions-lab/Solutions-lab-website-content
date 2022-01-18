@@ -13,9 +13,9 @@ EXISTS(value_set)
 
 |Value|Definition|
 |:----|:---------|
-EXISTS | Required
-recordset | Dataset to be checked
-value_set | Values in a SET to be check
+EXISTS | Required.
+recordset | Dataset to be checked.
+value_set | Values in a SET to be check.
 
 <br>
 
@@ -62,6 +62,11 @@ OUTPUT(Emp_DS, NAMED('Emp_DS'));
 <pre id="ExistsExp_1">
 
 ```java
+/*
+EXISTS Example:
+Showing different examples of EXIST function values.
+*/
+
 CheckMe := EXISTS(4,8,16,2,1); 
 OUTPUT(CheckMe, NAMED('CheckMe'));
 
@@ -72,3 +77,4 @@ OUTPUT(CheckIt, NAMED('CheckIt'));
 ```
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['ExistsExp_2'])"> Try Me </a>
+

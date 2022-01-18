@@ -9,8 +9,8 @@ BOOLEAN attribName
 ```
 |*Value*|*Definition*|
 |:------|:---------|
-BOOLEAN | Optional
-attribName | The name by which the variable will be invoked
+BOOLEAN | Optional.
+attribName | The name by which the variable will be invoked.
 
 <br>
 #### Example
@@ -19,6 +19,12 @@ attribName | The name by which the variable will be invoked
 <pre id = 'BoolExp_1'>
 
 ```java
+/*
+BOOLEAN Example:
+Showing different ways of how a boolean value works.
+*/
+
+
 isFlag := TRUE;
 OUTPUT(isFlag, NAMED('isFlag'));
 

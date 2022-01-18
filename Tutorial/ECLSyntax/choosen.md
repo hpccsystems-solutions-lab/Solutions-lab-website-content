@@ -12,10 +12,10 @@ attr_name := CHOOSEN(dataset_name,
 
 |Value|Definition|
 |:----|:---------|
-attr_name | The name by which the function will be invoked
-CHOOSEN | Required
-n | number of records to return
-start_position |  Optional, to indicate which row to start with. Default is row 1
+attr_name | The name by which the function will be invoked.
+CHOOSEN | Required.
+n | number of records to return.
+start_position |  Optional, to indicate which row to start with. Default is row 1.
 
 
 <br>
@@ -40,6 +40,11 @@ Atlanta|GA|Fulton|5449398
 <pre id="ChoosnExp_1">
 
 ```java
+/*
+CHOOSEN Example:
+Displaying  different rows from the input dataset.
+*/
+
 Pop_Layout := RECORD
 STRING   City;
 STRING   State;

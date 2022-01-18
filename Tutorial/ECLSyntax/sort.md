@@ -10,11 +10,11 @@ attr_name := SORT(dataset_name, [-]field(s));
 
 |Value|Definition|
 |:----|:---------|
-attr_name | The name by which the function will be invoked
-SORT  | Required 
-dataset_name | The dataset to perform action on 
+attr_name | The name by which the function will be invoked.
+SORT  | Required.
+dataset_name | The dataset to perform action on.
 \- | Optional, used when sorting descending /decreasing 
-field(s) | field or fields for sort
+field(s) | field or fields for sort.
 
 <br> 
 
@@ -42,6 +42,11 @@ Sorting from A to Z or 0 to 9.
 <pre id="SortExp_1">
 
 ```java
+/*
+SORT Example:
+Sorting a dataset based on different fields and ascendingly.
+*/
+
 // Define record layout
 Layout_Person := RECORD
   UNSIGNED  PersonID;
@@ -87,6 +92,11 @@ Sorting Z to A or 9 to 0.
 <pre id="SortExp_2">
 
 ```java
+/*
+SORT Example:
+Sorting a dataset based on different fields and desscendingly.
+*/
+
 // Define record layout
 Layout_Person := RECORD
   UNSIGNED  PersonID;

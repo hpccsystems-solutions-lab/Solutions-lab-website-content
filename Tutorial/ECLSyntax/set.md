@@ -12,8 +12,11 @@ attr_name := SET[elem1, elem2, .... , elemN]
 
 |Value|Definition|
 |:----|:---------|
-attr_name | The name by which the function will be invoked
-dataset_name | The dataset to perform action on 
+attr_name | The name by which the function will be invoked.
+SET | Required.
+dataset_name | The dataset to perform action on.
+field_name | Fields in the dataset.
+[elem1, .... , elemN] | Values to create a set from.
 
 <br>
 
@@ -23,6 +26,11 @@ dataset_name | The dataset to perform action on
 <pre id="SetExp_1">
 
 ```java
+/*
+SET Example:
+Showing different examples  of how to define and use SET.
+*/
+
 // A set of strings
 NameSet := ['alex', 'Joe', 'Sam']; 
 OUTPUT(NameSet, NAMED('NameSet'));

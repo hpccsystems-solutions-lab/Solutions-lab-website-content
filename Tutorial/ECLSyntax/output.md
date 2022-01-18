@@ -35,9 +35,9 @@ OUTPUT(dataset_name/attr_name, Named('display-name'));
 
 |*Value*|*Definition*|
 |:----|:---------|
-OUTPUT | Required 
-dataset_name | The dataset you want to view 
-attr_name | The attribute you want to view
+OUTPUT | Required.
+dataset_name | The dataset you want to view.
+attr_name | The attribute you want to view.
 NAMED | Optional, recommended when multiple outputs are being viewed. NAMED specifies the result names. Given name can't start with numbers and shouldn't include spaces or -
 
 <br>
@@ -57,6 +57,10 @@ Sales|General|Chicago|IL|55000|32000|121000
 <pre id="DatasetExample">
 
 ``` java
+/*
+OUTPUT Example:
+*/
+
 // Defining record layout
 SalaryAvg_Layout := RECORD
     STRING    Job;
