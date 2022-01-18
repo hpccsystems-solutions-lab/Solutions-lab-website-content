@@ -8,9 +8,9 @@ STRING[n] attribName
 ```
 |*Value*|*Definition*|
 |:------|:---------|
-STRING | Optional
-[n] | Optional, if omitted, the string will store entire value
-attribName | The name by which the variable will be invoked
+STRING | Optional.
+[n] | Optional, if omitted, the string will store entire value.
+attribName | The name by which the variable will be invoked.
 
 <br>
 
@@ -20,6 +20,12 @@ attribName | The name by which the variable will be invoked
 <pre id = 'String_Exp_1'>
 
 ```java
+
+/*
+STRING Example:
+Examples of defining string values, concatenation, and using them in OUTPUT.
+*/
+
 Address := '123 Main Rd, ATL, 30300, USA.';
 OUTPUT(Address, NAMED('Address'));
 

@@ -11,9 +11,9 @@ DEDUP(dataset, [, condition])
 ```
 |Value|Definition|
 |:----|:---------|
-DEDUP | Required 
-dataset | Input dataset to process 
-condition | A comma-delimited list of expressions or key fields in the dataset that defines "duplicate" records
+DEDUP | Required.
+dataset | Input dataset to process.
+condition | A comma-delimited list of expressions or key fields in the dataset that defines "duplicate" records.
 
 <br>
 
@@ -40,6 +40,12 @@ condition | A comma-delimited list of expressions or key fields in the dataset t
 
 
 ```java
+/*
+DEDUP Example:
+Deduping the input dataset based on different fields.
+Keep in mind that for DEDUP your dataset must be sorted.
+*/
+
 Student_Rec := RECORD
   INTEGER   StudentID;
   STRING    Name;

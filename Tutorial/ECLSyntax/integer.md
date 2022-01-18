@@ -8,9 +8,9 @@ INTEGER data type is an n-byte integer value. Valid values for n are: 1, 2, 3, 4
 
 |*Value*|*Definition*|
 |:----|:---------|
-UNSIGNED | Optional, if omitted the integer is signed
-INTEGER  | OPtional, recommended
-attribName | The name by which the variable will be invoked
+UNSIGNED | Optional, if omitted the integer is signed.
+INTEGER  | OPtional, recommended.
+attribName | The name by which the variable will be invoked.
 
 <br>
 
@@ -35,6 +35,11 @@ attribName | The name by which the variable will be invoked
 <pre id="TypeInt_Exp">
 
 ``` java
+/*
+INTEGER Example:
+Showing different examples  of integer values.
+*/
+
 INTEGER Val1 := 12;
 INTEGER Val2 := 12.5;
 

@@ -62,7 +62,7 @@ Names_layout := RECORD
     STRING LastName;
 END;
 
-// Creating inline dataset
+// Creating Explicit dataset
 Names_DS := DATASET([
               {'Sun','Shine'},
               {'Blue','Moon'},
@@ -111,7 +111,7 @@ OUTPUT(Result, NAMED('Result'));
 
 <br> 
 
-## TRANSFORM Type Two (Inline TRANSFORM)
+## TRANSFORM Type Two (Explicit TRANSFORM)
 
 Often times TRANSFORM is small enough to used within PROJECT, JOIN, ROLLUP and other functions. Let's take a look at how it can be used within PROJECT. Similar principal is applied in using transform with other functions mentioned above, at transform definition.
 

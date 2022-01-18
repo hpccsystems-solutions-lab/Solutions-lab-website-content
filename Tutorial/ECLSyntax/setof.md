@@ -9,10 +9,10 @@ SET OF <dataType> attr_name := [elem1, elem2, ... elemN]
 ```
 |Value|Definition|
 |:----|:---------|
-SET OF | Required
-dataType | Elements type
-attr_name | The name by which the operation will be invoked
-[ .. ] | Input values
+SET OF | Required.
+dataType | Elements type.
+attr_name | The name by which the operation will be invoked.
+[ .. ] | Input values.
 
 <br>
 
@@ -22,6 +22,11 @@ attr_name | The name by which the operation will be invoked
 <pre id="SetOfExp_1">
 
 ```java
+/*
+SET Example:
+Showing different examples  of SET OF.
+*/
+
 SET OF INTEGER IntSet := [1,3,3,5];
 OUTPUT(IntSet, NAMED('IntSet'));
 

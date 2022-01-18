@@ -8,7 +8,7 @@ PROJECT is like SQL's SELECT … INTO TABLE …
 ## Syntax
 
 ```java
-// Inline TRANSFORM
+// Explicit TRANSFORM
 EXPORT project_name := PROJECT(input_dataset,
                             TRANSFORM(
                                 SELF.return_field_name := LEFT.input_Dataset_fieldname;

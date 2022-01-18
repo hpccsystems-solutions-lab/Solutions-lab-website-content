@@ -36,9 +36,9 @@ attr_layout := {
 
 |*Value*|*Definition*|
 |:----|:---------|
-attr_layout | The name by which the dataset will be invoked 
-data_type   | Data type for the field
-field1 ... field100 | Name of your fields/columns
+attr_layout | The name by which the dataset will be invoked. 
+data_type   | Data type for the field.
+field1 ... field100 | Name of your fields/columns.
 
 #### Example
 
@@ -62,7 +62,7 @@ salaryAvg_2 := {
                 STRING2 state;
                 INTEGER avgSalary;
                 INTEGER lowerBand;
-                INTEGER upperband
+                INTEGER upperband;
                 };
 ```
 

@@ -11,8 +11,8 @@ attr_name := dataset_name (filtering condition(s));
 
 |Value|Definition|
 |:----|:---------|
-attr_name | The name by which the function will be invoked
-dataset_name | The dataset to perform action on 
+attr_name | The name by which the function will be invoked.
+dataset_name | The dataset to perform action on.
 Filtering condition(s) | field or fields and required filtering conditions. Logical operators can be used to execute multiple filters.
 
 <br>
@@ -38,6 +38,12 @@ Filtering condition(s) | field or fields and required filtering conditions. Logi
 <pre id="FilterExp_1">
 
 ``` java
+/*
+FILTER Example:
+Showing different examples of FILTER function 
+based on different fields or logical operator.
+*/
+
 // Creating record layout
 Emp_layout := RECORD
     INTEGER  PersonID; 
@@ -98,9 +104,9 @@ OUTPUT(Emp_DS(IsEmp), NAMED('Employed'));
 !=  | Not equal
 AND | Logical AND
 OR  | Logical OR
-IN  | To specify multiple possible values for a field/column
-NOT IN  | To specify multiple possible values that are not in a field/column
-BETWEEN | Between a certain range
+IN  | To specify multiple possible values for a field/column.
+NOT IN  | To specify multiple possible values that are not in a field/column.
+BETWEEN | Between a certain range.
 
 <br></br>
 

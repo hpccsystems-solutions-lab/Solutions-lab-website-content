@@ -10,9 +10,9 @@ SAMPLE(dataset, interval, [, which])
 
 |Value|Definition|
 |:----|:---------|
-SAMPLE | Required
-dataset | Input dataset to process 
-interval | The intervals between records to return
+SAMPLE | Required.
+dataset | Input dataset to process. 
+interval | The intervals between records to return.
 which | Optional. An integer specifying the ordinal number of the sample set to return. This is used to obtain multiple non-overlapping samples from the same recordset.
 
  <br>
@@ -38,6 +38,11 @@ Purple| 108
 <pre id="SampleExp_1">
 
 ```java
+/*
+REAL Example:
+Collecting different sample sizes from the input dataset.
+*/
+
 Color_Layout := RECORD
     STRING   Color;
     INTEGER ID;
