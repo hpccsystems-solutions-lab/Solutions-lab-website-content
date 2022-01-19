@@ -1,3 +1,10 @@
+---
+layout: home
+id: index
+# title: Welcome to HPCCSystems Solutions Lab!
+description: Welcome to HPCCSystems Solutions Lab!
+---
+
 # Learn ECL
 
 Our HPCC Systems Solutions Lab is proud to provide and support ECL tutorials.
