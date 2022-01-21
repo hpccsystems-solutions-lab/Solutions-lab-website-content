@@ -38,11 +38,7 @@ For non matched rows, the fields from opposite dataset will remain null.
 </br>
 </br>
 
-<<<<<<< HEAD
-![Join Types](./images/JoinTypesDia.png)
-=======
 ![Join Types Image](./images/JoinTypesDia.png)
->>>>>>> c88222ddd29ab9fcc265a3a8906145826517a61c
 
 ## Syntax
 ```java
@@ -72,7 +68,7 @@ attribName := JOIN(LEFT_DatasetName,
                     [, flags]);
 ```
 
-|Value|Definition|
+|*Value*|*Definition*|
 |:----|:---------|
 attribName | The name by which the join will be invoked.
 LEFT_DatasetName | Left dataset of the join. LEFT is the first dataset passed to JOIN. 
