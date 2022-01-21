@@ -38,7 +38,11 @@ For non matched rows, the fields from opposite dataset will remain null.
 </br>
 </br>
 
+<<<<<<< HEAD
 ![Join Types](./images/JoinTypesDia.png)
+=======
+![Join Types Image](./images/JoinTypesDia.png)
+>>>>>>> c88222ddd29ab9fcc265a3a8906145826517a61c
 
 ## Syntax
 ```java
