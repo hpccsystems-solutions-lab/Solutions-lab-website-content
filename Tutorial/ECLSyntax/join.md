@@ -68,7 +68,7 @@ attribName := JOIN(LEFT_DatasetName,
                     [, flags]);
 ```
 
-|Value|Definition|
+|*Value*|*Definition*|
 |:----|:---------|
 attribName | The name by which the join will be invoked.
 LEFT_DatasetName | Left dataset of the join. LEFT is the first dataset passed to JOIN. 

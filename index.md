@@ -30,4 +30,4 @@ This powerful, versatile platform makes it easier for developers to see the data
 
 <br>
 
-[**Start Learning ECL**](./Tutorial/ECLSyntax/introduction.md)
+[**Start Learning ECL**](./hpcc/Tutorial/ECLSyntax/introduction.md)
