@@ -17,7 +17,7 @@ HPCC Systems is a mature platform that has been heavily used in commercial appli
 
 This powerful, versatile platform makes it easier for developers to see the data they’re working with and manipulate it as needed. Flexible information delivery makes it easier for your clients to query and find the data they need — and it runs analysis and queries faster than other platforms such as SQL or Hadoop.
 
-**Key Functionalities**
+#### Key Functionalities
 
 - Data Lake Architecture
 - Cloud Native, Standard hardware, operating system and protocols
