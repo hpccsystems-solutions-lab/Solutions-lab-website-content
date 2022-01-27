@@ -12,7 +12,7 @@ jobs:
       - name: PING - Dispatch initiating repository event
         if: github.event.action != 'pong'
         run: |
-          echo "Pinging remote repo hpccsystems-solutions-lab/hpccsystems-solutions-lab.github.io"
+          echo "Pinging remote repo - hpccsystems-solutions-lab/hpccsystems-solutions-lab.github.io"
           curl -X POST https://api.github.com/repos/hpccsystems-solutions-lab/hpccsystems-solutions-lab.github.io/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
