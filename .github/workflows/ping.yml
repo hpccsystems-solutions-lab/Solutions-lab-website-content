@@ -14,6 +14,7 @@ jobs:
         run: |
           echo "Checking the flow "
           echo "'"$GITHUB_REPOSITORY"'"
+          echo ${{ secrets.ACCESS_TOKEN }}
           curl -X POST https://api.github.com/repos/hpccsystems-solutions-lab/hpccsystems-solutions-lab.github.io/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
