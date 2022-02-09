@@ -4,6 +4,35 @@ A Dataset is a set of records that an ECL program can manipulate. A Dataset can 
 
 When defining DATASET you need to define the [RECORD(layout)](./record.md) of the dataset first. 
 
+
+## SQL vs. ECL
+
+DATASET is similar to TABLE in SQL.
+
+```java
+// SQL 
+SimpleLayout = CREATE TABLE (
+                      PersonID  INTEGER,
+                      Name      STRING,
+                      Age       INTEGER,
+                      Wage      REAL,
+                      HasHouse  BOOLEAN
+                      );
+
+SimpleTable = select * from '~simpledata.csv'  type csv layout SimpleLayout as simpleDS offset 1;
+// ECL
+SimpleLayout := RECORD
+    INTEGER  PersonID;
+    STRING   Name ;
+    INTEGER  Age ;
+    REAL     Wage ;
+    BOOLEAN  HasHouse;
+END;
+
+simpleDS := DATASET('~simpledata.csv', SimpleLayout, CSV);
+
+```
+
 ## Inline Dataset
 
 A temporary dataset that's created and used while job is running. Inline dataset definition can be used for small datasets.
