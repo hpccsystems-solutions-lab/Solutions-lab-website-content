@@ -1,10 +1,7 @@
-# Data
-Data is a raw facts that represents types, characteristics, and measurements. Data is stored in computer and it's used for processing and analytical work. Some examples of data are prices, quantities, identities, and numbers representation. 
-
 # Big Data
 Big data refers to a large amount of data that is hard to be processed and managed using traditional data management systems.  
 
-Big data is defined by three common properties called 3Vs: volume, variety and velocity. While there are other Vs involved such as vale and visualization, the 3Vs are the most famous ones. 
+Big data is defined by three common properties called 3Vs: volume, variety and velocity. While there are other Vs involved such as Value and Veracity, the 3Vs are the most famous ones. 
 
 __Velocity__ 
 It's the measurement of how fast data is coming into the system, it's processed and it's transferred to desire destination. The higher the velocity rate, the faster data is processed.
