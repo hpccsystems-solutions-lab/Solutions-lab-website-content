@@ -17,15 +17,23 @@ Volume is the size of the dataset. Larger datasets could require different proce
 
 ## Big Data Types
 
+</br>
 <p style='color:pink'>Structured </p>
-Structured Data can be processes, analyzed, stored and retrieved in a fixed (defined) format. It has both form and format.
+Structured data is data that is clearly defined and formatted following organization standards and relational database rules. Since data is formatted and clearly defined  querying the data easier and faster. 
+Keep in mind that in order to work with data it must be structured.
+
 Exp: Employee table, address book.
 
+</br>
 <p style='color:pink'>Unstructured </p>
-Unstructured data refers to the data that lacks any specific form or structure whatsoever. Processing data is difficult, time consuming and prone to errors. 
-Exp: Email, pictures, videos, audios. 
+Unstructured data refers to the data that lacks any specific form or structure. Processing data is difficult, time consuming and prone to errors.  Unstructured data is stored in its native format and remains undefined until needed. Many organization store data in their native format until the data is needed. 
 
+Exp: Emails, pictures, videos, audios. 
+
+</br>
 <p style='color:pink'>Semi-structured </p>
-Contains both Structure and Unstructured data. Exp: CSV, Json, YAML
+Contains both Structure and Unstructured data. Semi-structured data has internal tags and marking to describes the data elements. 
+
+Exp: CSV, Json, YAML
 
 
