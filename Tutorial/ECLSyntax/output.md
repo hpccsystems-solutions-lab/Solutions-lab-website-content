@@ -24,6 +24,23 @@ OUTPUT(someVal, NAMED('someVal'));
 
 <a class="trybutton" href="javascript:OpenECLEditor(['OutputExample'])"> Try Me </a>
 
+## SQL vs. ECL
+
+OUTPUT is similar to SELECT in SQL.
+
+```java
+// SQL 
+SELECT * From PeopleDSeDS;
+SELECT name, address FROM PeopleDS;
+
+// ECL
+OUTPUT(peopleDS);
+OUTPUT(TABLE(common.PeopleDSeDS, {name, address}));
+
+```
+
+
+
 ## Syntax
 
 

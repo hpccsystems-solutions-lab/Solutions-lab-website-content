@@ -3,6 +3,19 @@
 Data filtering is the process of choosing a smaller part of your data set and using that subset for further processing. It’s recommended to filter down to the desire dataset before any processing. 
 When using filter on STRING values keep in mind that STRING values are case sensitive. For example Sun, sun, SUN are not the same. 
 
+
+## SQL vs. ECL
+
+Filter is similar to SELECT. In ECL the filtering fields are in ( ).
+
+```java
+// SQL 
+SELECT name, address FROM PeopleDS WHERE name = 'Jo';
+
+// ECL
+OUTPUT(peopleDS(name = 'Jo'));
+```
+
 ### Syntax  
 
 ```java

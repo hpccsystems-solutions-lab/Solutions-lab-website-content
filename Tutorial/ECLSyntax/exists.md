@@ -19,6 +19,20 @@ value_set | Values in a SET to be check.
 
 <br>
 
+**Demo Dataset**
+
+|City|State|County|Population|
+|:----|:---|:---|:----|
+Dauphin Island |AL|Mobile|1335
+Guy|AR|Faulkner|778
+El Centro|CA|Imperial|111425
+Indio|CA|Riverside|417059
+Englewood|CO|Arapahoe|6183
+Keywest|FL|Monroe|31401
+Manatee Road|FL|Levy|2670
+Villa Rica|GA|Carroll|16058
+Atlanta|GA|Fulton|5449398
+
 #### Example
 
 <br>

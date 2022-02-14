@@ -4,6 +4,30 @@ Defines the layout of fields in the dataset, order of the fields should be exact
 
 Keep in mind that you can't output RECORD as it is a definition.  RECORD can be used with other  functions such as DATASET, and TABLE. 
 
+## SQL vs. ECL
+
+RECORD functions the same way as CREATE TABLE in SQL.
+
+```java
+// SQL 
+SimpleLayout = CREATE TABLE (
+                      personID  INTEGER,
+                      name      STRING,
+                      age       INTEGER,
+                      wage      REAL,
+                      hasHouse  INTEGER
+                      );
+// ECL
+SimpleLayout := RECORD
+    INTEGER  personID;
+    STRING   name ;
+    INTEGER  age ;
+    REAL     wage ;
+    INTEGER  hasHouse;
+END;
+
+```
+
 ## Using Keywords
 
 
