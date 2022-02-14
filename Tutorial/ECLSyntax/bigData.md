@@ -20,7 +20,7 @@ Exp: Relational database tables, address books.
 </br>
 <p style='color:pink'>Unstructured </p>
 Unstructured data refers to the data that lacks any specific form or structure. Processing data is difficult, time consuming and prone to errors.  Unstructured data is stored in its original format and remains that way until needed.  
-Keep in mind that in order to meangingfully work with data, some kind of structure must be imposed on it.
+Keep in mind that in order to meaningfully work with data, some kind of structure must be imposed on it.
 
 Exp: Pictures, videos, audios. 
 
