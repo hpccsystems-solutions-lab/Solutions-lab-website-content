@@ -1,9 +1,13 @@
 # Big Data
 Big data refers to a large amount of data that is hard to process and manage using traditional data management systems.  
 
-<video width="320" height="240" controls>
-  <source src="./Videos/SomeTest.mp4" type="video/mp4">
-</video>
+<div class="center">
+    <video width="430" height="340" controls="controls" src="./videos/SomeTest.mp4">
+        Your browser does not support the HTML5 Video element.
+    </video>
+</div>
+
+</br>
 
 Big data is defined by three common properties called the 3Vs: Volume, Variety and Velocity. While there are other Vs involved such as Value and Veracity, the 3Vs are the most famous ones. 
 
