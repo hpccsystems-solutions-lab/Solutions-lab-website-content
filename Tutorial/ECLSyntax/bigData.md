@@ -7,7 +7,7 @@ Big data refers to a large amount of data that is hard to process and manage usi
     </video> -->
      <video width="430" height="340" controls="controls">
         <source src="/Videos/SomeTest.mp4">
-        <!-- <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"> -->
+        <source src="https://github.com/hpccsystems-solutions-lab/Learn-ECL/blob/56c7df93e61ede89e6536f362dcc4bd0c168955e/Tutorial/ECLSyntax/Videos/SomeTest.mp4">
         Your browser does not support the HTML5 Video element.
     </video>
 </div>
