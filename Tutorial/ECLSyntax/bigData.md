@@ -1,15 +1,10 @@
 # Big Data
 Big data refers to a large amount of data that is hard to process and manage using traditional data management systems.  
 
-![Big Data video ](./Videos/SomeTest.mp4)
 
 <div class="center">
-    <!-- <video width="430" height="340" controls="controls" src="./Videos/SomeTest.mp4">
-        Your browser does not support the HTML5 Video element.
-    </video> -->
-     <video width="430" height="340" controls="controls">
-        <!-- <source src="/Videos/SomeTest.mp4"> -->
-        <source src="https://github.com/hpccsystems-solutions-lab/Learn-ECL/blob/56c7df93e61ede89e6536f362dcc4bd0c168955e/Tutorial/ECLSyntax/Videos/SomeTest.mp4">
+     <video width="640" height="640" controls="controls">
+        <source src="https://user-images.githubusercontent.com/26202818/158273069-340afdcf-87e7-4d88-8647-700b78b4fc25.mp4" data-canonical-src="https://user-images.githubusercontent.com/26202818/158273069-340afdcf-87e7-4d88-8647-700b78b4fc25.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
         Your browser does not support the HTML5 Video element.
     </video>
 </div>
