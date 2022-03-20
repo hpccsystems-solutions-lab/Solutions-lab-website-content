@@ -87,7 +87,7 @@ Sales|General|Chicago|IL|55000|32000|121000
 #### Example
 
 <br>
-<pre id="">
+<pre id="ds_example1">
 
 ``` java
 /*
@@ -122,7 +122,7 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 ```
 </pre>
 
-<a class="trybutton" href="javascript:OpenECLEditor([''])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['ds_example1'])"> Try Me </a>
 
 
 
