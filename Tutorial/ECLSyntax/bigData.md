@@ -2,7 +2,8 @@
 Big data refers to a large amount of data that is hard to process and manage using traditional data management systems.  
 
 <div class="center">
-    <video width="430" height="340" controls="controls" src="./videos/SomeTest.mp4">
+     <video width="640"  controls="controls">
+        <source src="https://user-images.githubusercontent.com/26202818/158868066-e832976c-0924-4736-b057-45023349a369.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
         Your browser does not support the HTML5 Video element.
     </video>
 </div>
@@ -20,20 +21,20 @@ __Volume__ is the size of the dataset. Larger datasets could require different p
 ## Big Data Types
 
 </br>
-<p style='color:pink'>Structured </p>
-Structured data is data that is clearly defined and formatted following organization standards and (possibly) relational database rules. Since data is formatted and clearly defined, querying this kind of data is easier and faster.
+<p style='color:green'>Structured </p>
+Structured data is data that is clearly defined and formatted following organization standards and (possibly) relational database rules. Since data is formatted and clearly defined, querying this kind of data is easier and faster. 
 
 Exp: Relational database tables, address books.
 
 </br>
-<p style='color:pink'>Unstructured </p>
+<p style='color:green'>Unstructured </p>
 Unstructured data refers to the data that lacks any specific form or structure. Processing data is difficult, time consuming and prone to errors.  Unstructured data is stored in its original format and remains that way until needed.  
 Keep in mind that in order to meaningfully work with data, some kind of structure must be imposed on it.
 
 Exp: Pictures, videos, audios. 
 
 </br>
-<p style='color:pink'>Semi-structured </p>
+<p style='color:green'>Semi-structured </p>
 Contains both Structure and Unstructured data. Semi-structured data has internal tags and markings to describe the data elements. 
 
 Exp: Emails; data saved in CSV, JSON, or YAML formats.

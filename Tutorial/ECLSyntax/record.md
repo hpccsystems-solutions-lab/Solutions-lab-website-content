@@ -17,6 +17,7 @@ SimpleLayout = CREATE TABLE (
                       wage      REAL,
                       hasHouse  INTEGER
                       );
+                      
 // ECL
 SimpleLayout := RECORD
     INTEGER  personID;

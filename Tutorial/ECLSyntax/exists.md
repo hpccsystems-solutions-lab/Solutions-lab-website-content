@@ -68,7 +68,6 @@ OUTPUT(Emp_DS, NAMED('Emp_DS'));
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['ExistsExp_2'])"> Try Me </a>
 
-### SET Example
 
 #### Example
 
