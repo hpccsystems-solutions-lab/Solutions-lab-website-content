@@ -17,7 +17,7 @@ attribName | The name by which the variable will be invoked.
 #### Example
 
 <br>
-<pre id = 'String_Exp_1'>
+<pre id = 'StringExp_1'>
 
 ```java
 
@@ -41,4 +41,4 @@ OUTPUT(FirstName + ' ' + LastName, NAMED('Concatenation'));
 ```
 
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['DecimalExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['StringExp_1'])"> Try Me </a>
