@@ -26,4 +26,4 @@ __ECL vs SQL__
 
 Please refer [ECL syntax](./syntax.md) to learn about ECL standards. 
 
-[Jump right into coding](./output.me) and skip all the introductions.
+[Jump right into coding](./output.md) and skip all the introductions.
