@@ -1,9 +1,9 @@
-----
+---
 layout: home
 id: index
 # title: Welcome to HPCCSystems Solutions Lab!
 description: Welcome to HPCCSystems Solutions Lab!
-----
+---
 
 # Learn ECL
 
