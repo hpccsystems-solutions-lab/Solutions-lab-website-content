@@ -41,4 +41,4 @@ OUTPUT(FirstName + ' ' + LastName, NAMED('Concatenation'));
 ```
 
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['DecimalExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['String_Exp_1'])"> Try Me </a>
