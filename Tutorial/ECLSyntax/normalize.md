@@ -172,8 +172,8 @@ extractChild := NORMALIZE(parentDS,
 
 OUTPUT(extractChild, NAMED('extractChild'));
 
-```
 
+```
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['Norm2Exp_1'])"> Try Me </a>
 
@@ -183,6 +183,7 @@ OUTPUT(extractChild, NAMED('extractChild'));
 ### With COUNTER Syntax
 
 ```java
+
 Child_Layout := RECORD
     ...
     ...
