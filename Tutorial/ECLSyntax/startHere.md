@@ -1,14 +1,19 @@
 
-ECL is designed to read data (aka logical files) stored on a HPCC cluster, manipulate it and write back clean or analyzed data. Alternatively, ECL can also be used as query language like how SQL is used as a query language to query a relational database. 
+# ECL 
 
-__ECL vs SQL__
+ECL - Enterprise Control Language is designed to handle and manipulate peta byte of data which makes it a prefect language to solve big data problems. ECL can be used for both ETL (Extract, Transform, and Load) and querying data. ECL is a declarative language which allows processing big data without the need of programmer being involved with details and in-depth of imperative decisions. 
+
+
+
+## ECL vs SQL
+ECL and SQL can both be used to query a relational database. Following tables displays similar features between ECL and SQL. 
 
 | SQL | ECL |
 | --------- | ---------- |
 | Declarative Language  | Declarative Language |
 | Database Server | Thor Cluster or Roxie Cluster |
 | A SQL Table  | An ECL Logical File  |
-| A SQL Editor | VS Code Editor or ECL Cloud IDE |
+| A SQL Editor | VSCode Editor or ECL Cloud IDE |
 | A SQL File   | A ECL File |
 | Executing SQL means submitting the written SQL to the Database Server which in turn compiles it and executes it| Executing ECL means submitting the written ECL to a Thor or Roxie cluster which in turn compiles and executes it |
 | SQL Execution History/Logs | ECL Workunits Database & ECL Watch Workunits View|
@@ -24,6 +29,8 @@ __ECL vs SQL__
 - ECL code translated to C++ that is compiled to shared libraries and executed within a custom frame-work
 
 
-Please refer [ECL syntax](./syntax.md) to learn about ECL standards. 
+Please refer [ECL syntax](./syntax.md) to learn about ECL standards. Or, 
+[jump right into coding](./output.md) and skip all the introductions.
 
-[Jump right into coding](./output.md) and skip all the introductions.
+</br>
+</br>

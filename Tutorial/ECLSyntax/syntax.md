@@ -35,8 +35,8 @@
 ## Field Access
 
 You can use of object.property to access dataset fields and definitions.
-  - `dataset.fieldName`
-  - `moduleName.definition`
+  - `dataset.fieldName` Referencing an attribute from a module
+  - `moduleName.definition` Referencing a field from dataset
 
 ```java
 MyDataset.FieldName
@@ -45,12 +45,16 @@ MyModule.ExportedValue
 ```
 
 
-## Two Statement Types
+## Statement Types
+There are two types of coding in ECL. Definitions and Actions. 
 
+### Definition 
 
-### Definition\Expression 
+Assigning an expression to an attribute. Definitions can't not be executing unless it is wrapped in an action. Definitions are defined by `:=`. Let's take a look at an example:
 
-Assigning an expression to an attribute. Definitions always contain `:=`
+`Val := 23;` is a definition. Attribute Val is defined and value 23  is assigned to it. To turn `Val` to an action we can wrap it in an OUTPUT.
+
+ `OUTPUT(Val);` is executable if you run this, the result would be 23. 
 
 ```java
 [attrib_type] attrib_name := value
@@ -79,13 +83,13 @@ Val1 := 12;
 Val2 := 50; 
 SomeResult := Val1 + Val2;
 
-// Show result
+// Show result. An action
 SomeResult;
 ```
 </pre>
-
 <a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
 
+</br>
 
 ### Action
 
@@ -95,6 +99,7 @@ Action simply means "do something." Actions trigger execution of a workunit that
 OUTPUT('this is an action');
 SUM(1,2);
 ```
+</br>
 
 #### Example
 
@@ -129,3 +134,5 @@ OUTPUT(NumOne, NAMED('ActionThis'));
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
 
+</br>
+</br>
