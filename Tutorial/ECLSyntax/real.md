@@ -12,7 +12,7 @@ REAL| Optional, recommended.
 [n] | Optional, if omitted, REAL is a double-precision floating-point value (8-bytes).
 attribName |  The name by which the variable will be invoked.
 
-<br>
+</br>
 
 ### Value Range
 
@@ -23,13 +23,13 @@ REAL8 | 15 (999999999999999) | 1.797693e+308 | 2.225074e-308
 
 #### Example
 
-<br>
+</br>
+
 <pre id="TypeReal_Exp">
 
 ``` java
 /*
-REAL Example:
-Showing different examples  of real values.
+REAL Examples
 */
 
 REAL Real_Num1 := 21.2545;
@@ -38,6 +38,10 @@ REAL Real_Num2 := 23.154;
 OUTPUT(Real_Num1, NAMED('Real_Num1'));
 OUTPUT(Real_Num2, NAMED('Real_Num2'));
 OUTPUT( Real_Num1 + Real_Num2, NAMED('TotalSum'));
+
 ```
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['TypeReal_Exp'])"> Try Me </a>
+
+</br>
+</br>

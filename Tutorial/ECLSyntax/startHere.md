@@ -1,7 +1,7 @@
 
 # ECL 
 
-ECL - Enterprise Control Language is designed to handle and manipulate peta byte of data which makes it a prefect language to solve big data problems. ECL can be used for both ETL (Extract, Transform, and Load) and querying data. ECL is a declarative language which allows processing big data without the need of programmer being involved with details and in-depth of imperative decisions. 
+ECL - Enterprise Control Language is designed to handle and manipulate immense datasets which makes it a prefect language to solve big data problems. ECL can be used for both ETL (Extract, Transform, and Load) and querying data. ECL is a declarative language which allows processing big data without the need of programmer being involved with details and in-depth of imperative decisions. 
 
 
 

@@ -19,13 +19,13 @@ Keep in mind that y should always be less than or equal to n, and max is 32 lead
 
 #### Example
 
-<br>
+</br>
+
 <pre id = 'DecimalExp_1'>
 
 ```java
 /*
-DECIMAL Example:
-Showing different examples  of decimal values.
+DECIMAL Examples.
 */
 
 // Defining a four digit value with two digit decimal placeholder.
@@ -40,3 +40,6 @@ OUTPUT(Num2, NAMED('Num2'));
 
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['DecimalExp_1'])"> Try Me </a>
+
+</br>
+</br>
