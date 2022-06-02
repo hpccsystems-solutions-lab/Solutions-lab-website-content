@@ -23,13 +23,12 @@ REAL8 | 15 (999999999999999) | 1.797693e+308 | 2.225074e-308
 
 #### Example
 
-</br>
-
+<br>
 <pre id="TypeReal_Exp">
 
 ``` java
 /*
-REAL Examples
+REAL Examples.
 */
 
 REAL Real_Num1 := 21.2545;

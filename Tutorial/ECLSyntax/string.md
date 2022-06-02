@@ -17,6 +17,7 @@ attribName | The name by which the variable will be invoked.
 
 #### Example
 
+</br>
 <pre id = 'String_Exp_1'>
 
 ```java

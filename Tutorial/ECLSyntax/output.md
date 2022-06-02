@@ -7,11 +7,12 @@ Following examples show how you can simply view results. 'NAMED' allows you to l
 
 #### Example
 
+<br>
 <pre id="OutputExample">
 
 ``` java
 /*
-OUTPUT Examples
+OUTPUT Examples.
 */
 
 // Outputting numeric value
@@ -26,6 +27,7 @@ OUTPUT(someVal, NAMED('someVal'));
 </pre>
 
 <a class="trybutton" href="javascript:OpenECLEditor(['OutputExample'])"> Try Me </a>
+</br>
 </br>
 
 ## SQL vs. ECL
@@ -70,11 +72,13 @@ Sales|General|Chicago|IL|55000|32000|121000
 
 #### Example
 
+<br>
 <pre id="DatasetExample">
 
 ``` java
 /*
-OUTPUT Example:
+OUTPUT Examples.
+Outputting a dataset.
 */
 
 // Defining record layout

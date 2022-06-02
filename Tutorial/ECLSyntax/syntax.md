@@ -50,9 +50,8 @@ There are two types of coding in ECL. Definitions and Actions.
 
 #### Example
 
+<br>
 <pre id = "IntroExp_1">
-
-</br>
 
 ```java
 /*
@@ -77,6 +76,7 @@ SomeResult;
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
 
+</br>
 </br>
 
 
@@ -109,13 +109,12 @@ SUM(1,2);
 ```
 </br>
 
-#### Example
+#### Example 
+
+<br>
+<pre id = 'IntroExp_2'>
 
 ```java
-
-</pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_2'])"> Try Me </a>
-
 /*
 Action vs Definition Examples.
 */
@@ -139,7 +138,7 @@ OUTPUT(NumOne, NAMED('ActionThis'));
 
 ```
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_2'])"> Try Me </a>
 
 </br>
 </br>

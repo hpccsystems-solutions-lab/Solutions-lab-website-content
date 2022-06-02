@@ -19,8 +19,7 @@ Keep in mind that y should always be less than or equal to n, and max is 32 lead
 
 #### Example
 
-</br>
-
+<br>
 <pre id = 'DecimalExp_1'>
 
 ```java
