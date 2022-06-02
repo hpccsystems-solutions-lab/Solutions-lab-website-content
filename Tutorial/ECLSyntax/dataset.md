@@ -9,29 +9,11 @@ When defining DATASET you need to define the [RECORD(layout)](./record.md) of th
 
 DATASET is similar to TABLE in SQL.
 
-```java
-// SQL 
-SimpleLayout = CREATE TABLE (
-                      PersonID  INTEGER,
-                      Name      STRING,
-                      Age       INTEGER,
-                      Wage      REAL,
-                      HasHouse  BOOLEAN
-                      );
+SQL|ECL
+---|---|
+SimpleTable = select * from '~simpledata.csv'  type csv layout SimpleLayout as simpleDS offset 1;| simpleDS := DATASET('~simpledata.csv', SimpleLayout, CSV);
 
-SimpleTable = select * from '~simpledata.csv'  type csv layout SimpleLayout as simpleDS offset 1;
-// ECL
-SimpleLayout := RECORD
-    INTEGER  PersonID;
-    STRING   Name ;
-    INTEGER  Age ;
-    REAL     Wage ;
-    BOOLEAN  HasHouse;
-END;
 
-simpleDS := DATASET('~simpledata.csv', SimpleLayout, CSV);
-
-```
 
 ## Inline Dataset
 
@@ -124,11 +106,11 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 
 <a class="trybutton" href="javascript:OpenECLEditor(['ds_example1'])"> Try Me </a>
 
-
+</br>
 
 ## Logical File
 
-A file stored physically on cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV . 
+A sprayed file on cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV. 
 
 ### Syntax
 
@@ -185,7 +167,7 @@ SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, T
 ```
 
 
-### File Type
+### File Types
 
 - **THOR**: Native file type for Thor; also used for fixed-length raw records
 - **CSV**:  Any kind of delimited data, including CSV-encoded data
@@ -193,3 +175,5 @@ SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, T
 - **XML**:  Data stored as a series of XML documents
 - **PIPE**: Data obtained dynamically via process calls
 
+</br>
+</br>
