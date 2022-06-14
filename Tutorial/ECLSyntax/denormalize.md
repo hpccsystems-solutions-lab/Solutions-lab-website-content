@@ -142,8 +142,6 @@ OUTPUT(DeNorm, NAMED('DeNorm'));
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['ecl_code'], ['ecl_data'])"> Try Me </a>
 
-
-
 </br>
 </br>
 
