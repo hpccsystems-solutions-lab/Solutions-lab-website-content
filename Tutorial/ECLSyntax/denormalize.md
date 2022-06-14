@@ -57,11 +57,10 @@ Adam|0
  #### Example
 
 <br>
-<pre id="DenormExp_1">
-
+<pre className="ecl_example">
+<pre id="ecl_data">
 
 ```java
-
 /*
 DENORMALIZE Example:
 Example on form one denormalization.
@@ -121,7 +120,11 @@ Parent_layout xForm(Parent_layout Le, childDS Ri, INTEGER C) := TRANSFORM
     self := [];
 
 END;
+```
+</pre>
+<pre id='ecl_code'>
 
+``` java
 DeNorm := DENORMALIZE(ParentDS, childDS,
                         LEFT.lastName = RIGHT.lastName,
                         xForm(LEFT,RIGHT,COUNTER));
@@ -134,11 +137,10 @@ OUTPUT(ParentDS, NAMED('ParentDS'));
 
 // Viewing denormalize result
 OUTPUT(DeNorm, NAMED('DeNorm'));
-
 ```
-
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['DenormExp_1'])"> Try Me </a>
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['ecl_code'], ['ecl_data'])"> Try Me </a>
 
 
 
