@@ -1,4 +1,4 @@
-# About US
+# About Us
 
 The HPCC Systems Solution Lab group is part of [LexisNexis Risk Solutions](https://risk.lexisnexis.com),
 a [RELX](https://www.relx.com) company.
