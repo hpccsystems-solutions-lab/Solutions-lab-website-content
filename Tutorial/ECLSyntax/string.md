@@ -6,6 +6,7 @@ STRING data type is a sequence of characters, digits, and special characters inc
 ```java
 STRING[n] attribName
 ```
+
 |*Value*|*Definition*|
 |:------|:---------|
 STRING | Optional.
@@ -16,7 +17,7 @@ attribName | The name by which the variable will be invoked.
 
 #### Example
 
-<br>
+</br>
 <pre id = 'String_Exp_1'>
 
 ```java
@@ -42,3 +43,6 @@ OUTPUT(FirstName + ' ' + LastName, NAMED('Concatenation'));
 
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['String_Exp_1'])"> Try Me </a>
+
+</br>
+</br>

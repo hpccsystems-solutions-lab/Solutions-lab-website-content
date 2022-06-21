@@ -13,6 +13,7 @@ BOOLEAN | Optional.
 attribName | The name by which the variable will be invoked.
 
 <br>
+
 #### Example
 
 <br>
@@ -20,15 +21,13 @@ attribName | The name by which the variable will be invoked.
 
 ```java
 /*
-BOOLEAN Example:
-Showing different ways of how a boolean value works.
+BOOLEAN Examples.
 */
-
 
 isFlag := TRUE;
 OUTPUT(isFlag, NAMED('isFlag'));
 
-// When defined BOOLEAN 1 = TRUE, 0 = FALSE
+// When defined BOOLEAN 1 = TRUE and 0 = FALSE
 BOOLEAN hasValidName := 0;
 OUTPUT(HasValidName, NAMED('HasValidName'));
 
@@ -37,3 +36,6 @@ OUTPUT(10 >= 2, NAMED('Evaluation'));
 ```
 </pre>
 <a class="trybutton" href="javascript:OpenECLEditor(['BoolExp_1'])"> Try Me </a>
+
+</br>
+</br>

@@ -35,8 +35,8 @@
 ## Field Access
 
 You can use of object.property to access dataset fields and definitions.
-  - `dataset.fieldName`
-  - `moduleName.definition`
+  - `dataset.fieldName` Referencing an attribute from a module
+  - `moduleName.definition` Referencing a field from dataset
 
 ```java
 MyDataset.FieldName
@@ -45,22 +45,8 @@ MyModule.ExportedValue
 ```
 
 
-## Two Statement Types
-
-
-### Definition\Expression 
-
-Assigning an expression to an attribute. Definitions always contain `:=`
-
-```java
-[attrib_type] attrib_name := value
-```
-
-|Value|Definition|
-|:----|:---------|
-attrib_type | Optional, compiler can infer it from Definition
-attrib_name | The name by which the Definition will be invoked
-value | Assigned value to the Definition
+## Statement Types
+There are two types of coding in ECL. Definitions and Actions. 
 
 #### Example
 
@@ -68,24 +54,50 @@ value | Assigned value to the Definition
 <pre id = "IntroExp_1">
 
 ```java
+/*
+Action vs Definition Examples.
+*/
 STRING  Def1  := 'OUTPUT turns definition ';
 STRING  Def2  := 'to action.';
 
-// String concatenation 
+// Action: String concatenation 
 Def1 + Def2;
 
 
 Val1 := 12;
 Val2 := 50; 
+
+// Definition
 SomeResult := Val1 + Val2;
 
-// Show result
+// Action: print result
 SomeResult;
 ```
 </pre>
-
 <a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
 
+</br>
+</br>
+
+
+
+### Definition 
+
+Assigning an expression to an attribute. Definitions can't not be executing unless it is wrapped in an action and are defined by `:=`. Let's take a look at an example:
+
+`Val := 23;` is a Definition. Attribute Val is defined and value 23  is assigned to it. To turn `Val` to an action we can wrap it in an OUTPUT.
+
+ `OUTPUT(Val);` is an Action and result would be 23. 
+
+```java
+[attrib_type] attrib_name := value
+```
+
+|Value|Definition|
+|:----|:---------|
+attrib_type | Optional, compiler can infer it from Definition.
+attrib_name | The name by which the Definition will be invoked
+value | Assigned value to the Definition.
 
 ### Action
 
@@ -95,37 +107,38 @@ Action simply means "do something." Actions trigger execution of a workunit that
 OUTPUT('this is an action');
 SUM(1,2);
 ```
+</br>
 
-#### Example
+#### Example 
+
+<br>
+<pre id = 'IntroExp_2'>
 
 ```java
-
-</pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_2'])"> Try Me </a>
-
-
-/* Simple use of block comment.
-   Following are simple ECL syntax
+/*
+Action vs Definition Examples.
 */
 
 // Defining an attribute
 str := 'Hello Word';
 
-// Putting it into action
+// Turning it into Action
 OUTPUT(str, NAMED('My_First_Program'));
 
-// Defining an action
+// Defining an Action
 NumOne := MAX(1,2,5,6);
 
-// Turning to action
+// Turning to Action
 OUTPUT(NumOne, NAMED('ActionThis'));
 
-// Simple actions, followings produce result
+// Simple Actions, followings produce result
 'my first ECL code';
 1 + 4 + 5;
 2 * 3;
 
 ```
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['IntroExp_2'])"> Try Me </a>
 
+</br>
+</br>

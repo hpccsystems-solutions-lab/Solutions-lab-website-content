@@ -8,26 +8,12 @@ Keep in mind that you can't output RECORD as it is a definition.  RECORD can be 
 
 RECORD functions the same way as CREATE TABLE in SQL.
 
-```java
-// SQL 
-SimpleLayout = CREATE TABLE (
-                      personID  INTEGER,
-                      name      STRING,
-                      age       INTEGER,
-                      wage      REAL,
-                      hasHouse  INTEGER
-                      );
-                      
-// ECL
-SimpleLayout := RECORD
-    INTEGER  personID;
-    STRING   name ;
-    INTEGER  age ;
-    REAL     wage ;
-    INTEGER  hasHouse;
-END;
+| SQL   | ECL     |
+| ----- | --------|
+CREATE TABLE (<br>&emsp;&emsp;PersonID&emsp;INTEGER,<br>&emsp;&emsp;Name &emsp;&emsp;      STRING,<br>&emsp;&emsp;Age &emsp;&emsp;&emsp;INTEGER,<br>&emsp;&emsp;Wages &emsp;&emsp;REAL,<br>&emsp;&emsp;hasHome&emsp;INTEGER<br>); | RECORD<br>&emsp;&emsp;INTEGER&emsp;PersonID;<br>&emsp;&emsp;STRING &emsp; Name ;<br>&emsp;&emsp;INTEGER&emsp;  Age;<br>&emsp;&emsp;REAL&emsp;&emsp;&emsp;Wages;<br>&emsp;&emsp;INTEGER&emsp;  hasHome;<br>END;
 
-```
+
+</br>
 
 ## Using Keywords
 
@@ -70,25 +56,27 @@ field1 ... field100 | Name of your fields/columns.
 ```java
 // Using keywords
 salaryAvg_1 := RECORD
-            STRING  job;
-            STRING  category;
-            STRING  city;
-            STRING2 state;
-            INTEGER avgSalary;
-            INTEGER lowerBand;
-            INTEGER upperband;
+            STRING  Job;
+            STRING  Category;
+            STRING  City;
+            STRING2 State;
+            INTEGER AvgSalary;
+            INTEGER LowerBand;
+            INTEGER Upperband;
 END;
 
 // Using { }
 salaryAvg_2 := {
-                STRING  job;
-                STRING  category;
-                STRING  city;
-                STRING2 state;
-                INTEGER avgSalary;
-                INTEGER lowerBand;
-                INTEGER upperband;
+                STRING  Job;
+                STRING  Category;
+                STRING  City;
+                STRING2 State;
+                INTEGER AvgSalary;
+                INTEGER LowerBand;
+                INTEGER Upperband;
                 };
 ```
 
 
+</br>
+</br>

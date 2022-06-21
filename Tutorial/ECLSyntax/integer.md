@@ -14,6 +14,32 @@ attribName | The name by which the variable will be invoked.
 
 <br>
 
+#### Example
+
+<br>
+<pre id="TypeInt_Exp">
+
+``` java
+/*
+INTEGER Examples.
+*/
+
+INTEGER Val1 := 12;
+INTEGER Val2 := 12.5;
+
+// Notice the decimal point isn't in the result
+Val1 + Val2;
+
+Val3 := 67;
+Val4 := 10;
+
+Val3 * Val4;
+```
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['TypeInt_Exp'])"> Try Me </a>
+
+</br>
+
 ### Value Range
 
 |Size | Signed Values |	Unsigned Values |
@@ -27,30 +53,6 @@ attribName | The name by which the variable will be invoked.
 7-byte | -36,028,797,018,963,968 to 36,028,797,018,963,967 |	0 to 72,057,594,037,927,935
 8-byte | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807	| 0 to 18,446,744,073,709,551,615
 
-<br>
-
-#### Example
-
-<br>
-<pre id="TypeInt_Exp">
-
-``` java
-/*
-INTEGER Example:
-Showing different examples  of integer values.
-*/
-
-INTEGER Val1 := 12;
-INTEGER Val2 := 12.5;
-
-// Notice the decimal point has been cut off
-Val1 + Val2;
-
-Val3 := 67;
-Val4 := 10;
-
-Val3 * Val4;
-```
-</pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['TypeInt_Exp'])"> Try Me </a>
+</br>
+</br>
 
