@@ -121,5 +121,101 @@ IN  | To specify multiple possible values for a field/column.
 NOT IN  | To specify multiple possible values that are not in a field/column.
 BETWEEN | Between a certain range.
 
-<br></br>
+</br>
+</br>
 
+
+
+
+#### Example
+<br>
+<pre className="FilterExp_2">
+<pre id="file2" className="ecl_data">
+
+```java
+/*
+Filter Example
+*/
+
+/*
+Filter Example
+*/
+StrokRec := RECORD
+    STRING   ID;	
+    STRING   Gender;	
+    INTEGER  Age;	
+    BOOLEAN  Hypertension;	
+    BOOLEAN  Heart_Disease;	
+    STRING   Ever_Married;	
+    STRING   Work_Type;	
+    STRING   Residence_Type;	
+    STRING   Avg_Glucose_Level;	
+    STRING   BMI;	
+    STRING   Smoking_status;	
+    BOOLEAN  Stroke;
+END;
+
+
+StrokDS := DATASET('~raw::healthcare-dataset-stroke-data.csv', StrokRec, CSV(HEADING(1)));
+
+```
+</pre>
+<pre id='code2' className="ecl_code">
+
+``` java
+// Filtering men over age of 80
+Over80 := StrokDS(Age >= 80);
+OUTPUT(Over80, NAMED('Over80'));
+
+```
+</pre>
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['code2'], ['file2'])"> Try Me </a>
+</br>
+</br>
+
+
+#### Example
+<br>
+<pre className="FilterExp_3">
+<pre id="file3" className="ecl_data">
+
+```java
+/*
+Filter Example
+*/
+
+/*
+Filter Example
+*/
+StrokRec := RECORD
+    STRING   ID;	
+    STRING   Gender;	
+    INTEGER  Age;	
+    BOOLEAN  Hypertension;	
+    BOOLEAN  Heart_Disease;	
+    STRING   Ever_Married;	
+    STRING   Work_Type;	
+    STRING   Residence_Type;	
+    STRING   Avg_Glucose_Level;	
+    STRING   BMI;	
+    STRING   Smoking_status;	
+    BOOLEAN  Stroke;
+END;
+
+
+StrokDS := DATASET('~raw::healthcare-dataset-stroke-data.csv', StrokRec, CSV(HEADING(1)));
+
+```
+</pre>
+<pre id='code3' className="ecl_code">
+
+``` java
+// Over 80 years old men with heart disease 
+OUTPUT(StrokDS(Gender = 'Male' AND Age >= 80 AND Heart_Disease), NAMED('Males'));
+```
+</pre>
+</pre>
+<a class="trybutton" href="javascript:OpenECLEditor(['code3'], ['file3'])"> Try Me </a>
+</br>
+</br>
