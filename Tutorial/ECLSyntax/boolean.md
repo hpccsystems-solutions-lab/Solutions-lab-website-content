@@ -12,7 +12,6 @@ BOOLEAN attribName
 BOOLEAN | Optional.
 attribName | The name by which the variable will be invoked.
 
-<br>
 
 #### Example
 
