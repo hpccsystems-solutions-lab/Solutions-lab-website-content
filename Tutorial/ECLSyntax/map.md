@@ -55,7 +55,7 @@ OUTPUT(Assessment, NAMED('Assessment'));
 ```
 
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['MAPExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['MapExp_1'])"> Try Me </a>
 
 ## Logical Operators 
 Logical values that can be used for comparison of two values.
@@ -99,7 +99,7 @@ OUTPUT(Assessment, NAMED('Assessment'));
 ```
 
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['MAPExp_2'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['MapExp_2'])"> Try Me </a>
 
 </br>
 

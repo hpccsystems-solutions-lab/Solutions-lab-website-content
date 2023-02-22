@@ -35,4 +35,4 @@ OUTPUT(DecSet, NAMED('DecSet'));
 
 ```
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['SetoFExp_1'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['SetOfExp_1'])"> Try Me </a>

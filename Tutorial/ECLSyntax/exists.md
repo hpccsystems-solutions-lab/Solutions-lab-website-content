@@ -66,13 +66,13 @@ Emp_DS := DATASET([], Pop_Layout);
 OUTPUT(Emp_DS, NAMED('Emp_DS'));
 ```
 </pre>
-<a class="trybutton" href="javascript:OpenECLEditor(['ExistsExp_2'])"> Try Me </a>
+<a class="trybutton" href="javascript:OpenECLEditor(['ExistsExp_1'])"> Try Me </a>
 
 
 #### Example
 
 <br>
-<pre id="ExistsExp_1">
+<pre id="ExistsExp_2">
 
 ```java
 /*
