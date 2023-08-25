@@ -1,0 +1,4 @@
+---
+title: Denormalize
+slug: denormalize
+---

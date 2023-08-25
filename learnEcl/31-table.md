@@ -1,0 +1,4 @@
+---
+title: Table
+slug: table
+---
