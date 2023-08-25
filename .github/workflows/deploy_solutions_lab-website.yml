@@ -14,5 +14,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
-          repository: ydahal1/solutions-lab-personal # Update with your Repo B details
+          repository: hpccsystems-solutions-lab/hpccsystems-solutions-lab.github.io # Update with your Repo B details
           event-type: content-updated
