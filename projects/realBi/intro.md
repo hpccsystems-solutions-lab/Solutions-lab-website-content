@@ -16,4 +16,4 @@ One of the primary advantages of real-time BI is its ability to enable proactive
 
 Security is a critical aspect of real-time BI systems. They need to ensure that data is accessed by authorized individuals only and that sensitive information is protected. This often involves role-based access control, encryption, and monitoring user activities to detect any anomalies.
 
-In summary, real-time BI systems transform raw data into actionable insights on the fly, enabling organizations to make informed decisions in real time. They play a pivotal role in staying agile, competitive, and adaptable in today's data-driven business landscape, facilitating the transition from reacting to changes to proactively anticipating them.
+In summary, real-time BI systems transform raw data into actionable insights on the fly, enabling organizations to make informed decisions in real time. They play a pivotal role in staying agile, competitive, and adaptable in today's data-driven business landscape, facilitating the transition from reacting to changes to proactively anticipating them. 
