@@ -17,3 +17,5 @@ Modern authentication services often provide a unified and streamlined user expe
 In addition to handling authentication and authorization, auth services may also offer features like user management (account creation, deletion, profile updates), password recovery, and security enhancements like rate limiting, IP filtering, and anomaly detection to thwart potential attacks.
 
 In summary, an auth service plays a crucial role in ensuring the security and smooth operation of modern software applications. It centralizes the complex processes of authentication and authorization, allowing developers to focus on building application features while maintaining strong security measures.
+
+## TEST
