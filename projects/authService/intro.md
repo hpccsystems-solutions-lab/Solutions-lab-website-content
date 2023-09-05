@@ -18,4 +18,3 @@ In addition to handling authentication and authorization, auth services may also
 
 In summary, an auth service plays a crucial role in ensuring the security and smooth operation of modern software applications. It centralizes the complex processes of authentication and authorization, allowing developers to focus on building application features while maintaining strong security measures.
 
-## TEST
