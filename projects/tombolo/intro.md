@@ -1,6 +1,6 @@
 ---
 title: HPCC Tombolo
-shortDescription: Tombolo is a geospatial data integration platform that facilitates the seamless merging and analysis of diverse spatial datasets. With tools for data discovery, integration, and visualization, Tombolo simplifies the creation of location-based insights. It's particularly useful for applications like urban planning and environmental analysis, where comprehensive geospatial data is essential for informed decision-making.
+shortDescription: The Tombolo Data Lake Curation System 1.0 is the first open-source Data Lake Curation system for the HPCC Systems Platform. It allows creation of documentation along with the data and analyses that provides a roadmap into all aspects (assets) of the Data Lake: Data Files, Data Providers and Consumers, Data Ingestion and Analytics, and User Queries. Its global find facility allows users to rapidly locate any asset, or browse hierarchically to get the lay-of-the-land.
 link: tombolo
 gitHubRepo: https://github.com/hpcc-systems/Tombolo
 imageName: tombolo
