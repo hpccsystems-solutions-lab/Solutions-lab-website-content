@@ -1,6 +1,6 @@
 ---
 title: HPCC Tombolo
-shortDescription: The Tombolo Data Lake Curation System 1.0 is the first open-source Data Lake Curation system for the HPCC Systems Platform. It allows creation of documentation along with the data and analyses that provides a roadmap into all aspects (assets) of the Data Lake: Data Files, Data Providers and Consumers, Data Ingestion and Analytics, and User Queries. Its global find facility allows users to rapidly locate any asset, or browse hierarchically to get the lay-of-the-land.
+shortDescription: The Tombolo Data Lake Curation System is the first open-source Data Lake Curation system for the HPCC Systems Platform. It allows creation of documentation along with the data and analyses that provides a roadmap into all aspects (assets) of the Data Lake -  Data Files, Data Providers and Consumers, Data Ingestion and Analytics, and User Queries. Its global find facility allows users to rapidly locate any asset, or browse hierarchically to get the lay-of-the-land.
 link: tombolo
 gitHubRepo: https://github.com/hpcc-systems/Tombolo
 imageName: tombolo
