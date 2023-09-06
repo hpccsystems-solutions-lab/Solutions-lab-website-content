@@ -1,6 +1,6 @@
 ---
 title: HPCC Real-BI
-shortDescription: RealBI is a robust business intelligence platform that transforms data into actionable insights through visualization, reporting, and analysis tools. It aids in decision-making by presenting data trends and patterns via user-friendly dashboards and charts. RealBI enhances operational efficiency and strategic planning by providing accessible data-driven insights for informed actions. It's a valuable solution for businesses aiming to leverage data effectively and achieve their objectives.
+shortDescription: Real BI, a dynamic and powerful data tool, plays a pivotal role in bridging the gap between data stored in HPCC clusters and insightful visualizations. This innovative solution provides organizations with the means to harness the wealth of information within their HPCC data repositories effectively.
 link: real-bi
 gitHubRepo: https://github.com/hpcc-systems/REAL-BI
 imageName: real-bi
