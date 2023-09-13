@@ -4,19 +4,19 @@ title: about
 
 # About Us
 
-Welcome to the HPCC Systems &#174; Solutions Lab, where our dedicated team of professionals is passionately devoted to tackling intricate big data challenges. Our mission is to empower organizations, ranging from startups to well-established enterprises, by unlocking the full potential of their data for success.
+Welcome to the HPCC Systems&#174; Solutions Lab, where our dedicated team of professionals is passionately devoted to tackling intricate big data challenges. Our mission is to empower organizations, ranging from startups to well-established enterprises, by unlocking the full potential of their data for success.
 
-We collaborate closely with organizations interested in harnessing the capabilities of the HPCC Systems big data platform. Whether we're educating newcomers about the platform's advantages or crafting tailor-made proof-of-concept solutions to address specific needs, our goal is to showcase how HPCC Systems simplifies the management of big data.
+We collaborate closely with organizations interested in harnessing the capabilities of the HPCC Systems&#174; big data platform. Whether we're educating newcomers about the platform's advantages or crafting tailor-made proof-of-concept solutions to address specific needs, our goal is to showcase how HPCC Systems&#174; simplifies the management of big data.
 
-Furthermore, we're not content with just demonstrating the native capabilities of the HPCC Systems platform. We actively develop tools and libraries that push these capabilities in exciting new directions. Our commitment to open-source software means that all our public tools are readily accessible on GitHub.
+Furthermore, we're not content with just demonstrating the native capabilities of the HPCC Systems&#174; platform. We actively develop tools and libraries that push these capabilities in exciting new directions. Our commitment to open-source software means that all our public tools are readily accessible on GitHub.
 
-The HPCC Systems Solutions Lab is proud to be part of [LexisNexis Risk Solutions](https://risk.lexisnexis.com), a subsidiary of [RELX](https://www.relx.com), a leading global provider of information-based analytics and decision tools for professional and business customers.
+The HPCC Systems&#174; Solutions Lab is proud to be part of [LexisNexis Risk Solutions](https://risk.lexisnexis.com), a subsidiary of [RELX](https://www.relx.com), a leading global provider of information-based analytics and decision tools for professional and business customers.
 
 ## Mission
 
-Our mission is to help customers implement their big data solutions using HPCC Systems. We're dedicated to providing the expertise and support needed to turn your data challenges into opportunities. Our team provides end-to-end big data solutions, guiding you from the initial Proof of Concept (PoC) to a fully functional Production solution. We offer unwavering support, mentorship, and expertise throughout your journey.
+Our mission is to help customers implement their big data solutions using HPCC Systems&#174;. We're dedicated to providing the expertise and support needed to turn your data challenges into opportunities. Our team provides end-to-end big data solutions, guiding you from the initial Proof of Concept (PoC) to a fully functional Production solution. We offer unwavering support, mentorship, and expertise throughout your journey.
 
-We understand the power of HPCC Systems in transforming big data challenges into opportunities. HPCC is at the heart of what we do. We leverage its robust capabilities to efficiently manage, process, and analyze vast amounts of data in real-time. With our expertise, we'll tailor HPCC to your specific needs, ensuring seamless integration and maximizing your data's potential.
+We understand the power of HPCC Systems&#174; in transforming big data challenges into opportunities. HPCC is at the heart of what we do. We leverage its robust capabilities to efficiently manage, process, and analyze vast amounts of data in real-time. With our expertise, we'll tailor HPCC to your specific needs, ensuring seamless integration and maximizing your data's potential.
 
 ## Partnerships for Success
 
