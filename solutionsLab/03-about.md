@@ -26,13 +26,13 @@ We believe in partnerships. Whether you're a small startup with big dreams or a 
 
 **Dan Camper - Enterprise Architect**
 
-<img src="../images/project-images/DanCamp.jpg" alt="Dan Camper" title="Dan" width="120" height="150"/>
+<img src="/DanCamp.jpg" alt="Dan Camper" title="Dan" width="120" height="150"/>
 
 Dan brings a wealth of experience and expertise in architecting solutions for enterprises. His role is pivotal in ensuring that our big data solutions align seamlessly with your organization's architectural goals and requirements.
 
 **Bahar Fardanian - Solutions Engineering Manager**
 
-<img src="../images/project-images/Bahar.png" alt="Bahar Fardanian" title="Bahar" width="100" height="150"/>
+<img src="/Bahar.png" alt="Bahar Fardanian" title="Bahar" width="100" height="150"/>
 
 Bahar Fardanian serves as the Solutions Engineering Manager at HPCC Systems Solutions Lab. With a passion for results and a background in leadership, Bahar specializes in designing and implementing tailored big data solutions. Her expertise lies in collaborating closely with customers to understand their unique business needs, delivering efficient solutions, and fostering strong customer relationships. Bahar is driven by a commitment to delivering value and ensuring the successful implementation of scalable solutions.
 
