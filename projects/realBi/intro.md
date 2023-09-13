@@ -1,9 +1,9 @@
 ---
-title: HPCC Real-BI
+title: HPCC REAL-BI
 shortDescription: Real BI, a dynamic and powerful data tool, plays a pivotal role in bridging the gap between data stored in HPCC clusters and insightful visualizations. This innovative solution provides organizations with the means to harness the wealth of information within their HPCC data repositories effectively.
-link: real-bi
+link: REAL-BI
 gitHubRepo: https://github.com/hpcc-systems/REAL-BI
-imageName: real-bi
+imageName: REAL-BI
 ---
 
 Real BI, a dynamic and powerful data tool, plays a pivotal role in bridging the gap between data stored in HPCC clusters and insightful visualizations. This innovative solution provides organizations with the means to harness the wealth of information within their HPCC data repositories effectively.
@@ -13,5 +13,3 @@ At its core, Real BI serves as a versatile conduit to connect with HPCC, tapping
 One of the standout features of Real BI is its ability to source data from multiple facets of HPCC. Whether it's drawing data from the output of ROXIE queries, logical files, or custom-executed ECL scripts, Real BI seamlessly integrates these data sources into its visualization engine. This flexibility empowers organizations to tailor their visualizations to specific needs, extracting meaningful insights from a variety of data types and structures.
 
 In essence, Real BI goes beyond mere data visualization; it transforms raw data into a visual narrative that empowers organizations to make data-driven decisions with confidence. By connecting to HPCC's data clusters and offering a wide array of data sources, Real BI is an indispensable tool for organizations seeking to unlock the true potential of their data resources. It streamlines the process of turning complex data into actionable insights, facilitating smarter decision-making and ultimately driving business success.
-
-
