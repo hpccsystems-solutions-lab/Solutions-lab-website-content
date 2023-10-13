@@ -1,6 +1,6 @@
 ---
 title: HPCC Systems® REAL BI
-shortDescription: REAL BI (Roxie Enabled Business Intelligence), a dynamic and powerful data tool, plays a pivotal role in bridging the gap between data stored in HPCC Systems clusters and insightful visualizations. This innovative solution provides organizations with the means to harness the wealth of information within their HPCC Systems data repositories effectively.
+shortDescription: REAL BI (Roxie Enabled Business Intelligence), a dynamic and powerful data tool, plays a pivotal role in bridging the gap between data stored in HPCC clusters and insightful visualizations. This innovative solution provides organizations with the means to harness the wealth of information within their HPCC data repositories effectively.
 link: real-bi
 gitHubRepo: https://github.com/hpcc-systems/REAL-BI
 imageName: real-bi
@@ -24,3 +24,4 @@ For more information, please contact us at customer-solutions@hpccsystems.com.
 
 <img src="../images/RealbiMap.JPG" alt="" title="REAL BI Map" border= "5px solid #191919;"/> 
 <figcaption>REAL BI Map</figcaption>
+
