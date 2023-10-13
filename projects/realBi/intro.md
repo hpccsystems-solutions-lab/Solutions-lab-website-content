@@ -6,7 +6,7 @@ gitHubRepo: https://github.com/hpcc-systems/REAL-BI
 imageName: real-bi
 ---
 
-REAL BI (Roxie Enabled Business Intelligence) is a potent data tool that bridges the gap between HPCC Systems clusters and insightful visualizations. It efficiently taps into HPCC Systems's extensive data resources, allowing users to create visualizations that unveil hidden data patterns and insights. With the ability to source data from various HPCC Systems facets, including ROXIE queries, logical files, and ECL scripts, REAL BI empowers organizations to tailor their visualizations to specific needs, making data-driven decisions easier and more informed. Ultimately, REAL BI transforms complex data into actionable insights, facilitating smarter decision-making and driving business success.
+REAL BI (Roxie Enabled Business Intelligence) is a potent data tool that bridges the gap between HPCC Systems clusters and insightful visualizations. It efficiently taps into HPCC Systems's extensive data resources, allowing users to create visualizations that unveil hidden data patterns and insights. With the ability to source data from various HPCC Systems facets, including Roxie queries, logical files, and ECL scripts, REAL BI empowers organizations to tailor their visualizations to specific needs, making data-driven decisions easier and more informed. Ultimately, REAL BI transforms complex data into actionable insights, facilitating smarter decision-making and driving business success.
 
 Key features of REAL BI include:
 
