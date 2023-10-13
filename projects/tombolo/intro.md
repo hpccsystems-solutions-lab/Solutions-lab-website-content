@@ -34,9 +34,9 @@ For more information and inquiries, please contact us at customer-solutions@hpcc
 
 ### Tombolo Images
 
-<img src="/StorageUsage.JPG" alt="Tombolo Storage Usage" title="Tombolo Storage Usage" border= "5px solid #191919;"/>
+<img src="../images/ClusterUsage.JPG" alt="Tombolo Cluster Usage" title="Tombolo Storage Usage" border= "5px solid #191919;"/>
 <figcaption>Tombolo Storage Usage</figcaption>
 
-<img src="/Workflow.JPG" alt="Tombolo Workflow" title="Tombolo workflow" border= "5px solid #191919;"/> 
+<img src="../images/Workflow.JPG" alt="Tombolo Workflow" title="Tombolo workflow" border= "5px solid #191919;"/> 
 <figcaption>Tombolo Workflow</figcaption>
 
