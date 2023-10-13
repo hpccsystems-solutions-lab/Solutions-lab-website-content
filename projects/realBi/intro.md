@@ -20,7 +20,8 @@ Key features of REAL BI include:
 
 5. **Streamlined Data Analysis:** By connecting directly to HPCC Systems data clusters, REAL BI simplifies the process of extracting actionable insights from complex data. This streamlining of data analysis supports more informed and efficient decision-making.
 
-For more information, please contact us at customer-solutions@hpccsystems.com.
+</br>
+For more information and inquiries, please contact us at . <span style="color:blue">customer-solutions@hpccsystems.com</span>.
 
 <img src="../images/RealbiMap.JPG" alt="" title="REAL BI Map" border= "5px solid #191919;"/> 
 <figcaption>REAL BI Map</figcaption>

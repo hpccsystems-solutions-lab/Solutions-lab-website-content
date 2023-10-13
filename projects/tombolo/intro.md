@@ -30,7 +30,7 @@ For more information and inquiries, please contact us at **customer-solutions@hp
 
 
 </br>
-For more information and inquiries, please contact us at customer-solutions@hpccsystems.com. <span style="color:blue">some *blue* text</span>.
+For more information and inquiries, please contact us at . <span style="color:blue">customer-solutions@hpccsystems.com</span>.
 
 ### Tombolo Images
 
