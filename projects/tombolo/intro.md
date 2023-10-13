@@ -12,7 +12,6 @@ The open source [Tombolo Data Lake Curation](https://github.com/hpcc-systems/Tom
 
 Key features of Tombolo include:
 
-Certainly, here's the enhanced section with the additional information:
 
 **Key features of Tombolo include:**
 
