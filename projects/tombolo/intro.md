@@ -6,12 +6,9 @@ gitHubRepo: https://github.com/hpcc-systems/Tombolo
 imageName: tombolo
 ---
 
-
-
 The open source [Tombolo Data Lake Curation](https://github.com/hpcc-systems/Tombolo) offers a comprehensive data catalog solution, primarily designed to optimize the functionality and performance of HPCC Systems clusters. This innovative tool simplifies data management for both technical and non-technical users by providing an intuitive web application interface.
 
 Key features of Tombolo include:
-
 
 **Key features of Tombolo include:**
 
@@ -27,15 +24,13 @@ Key features of Tombolo include:
 
 For more information and inquiries, please contact us at **customer-solutions@hpccsystems.com**.
 
-
 </br>
 For more information and inquiries, please contact us at . <span style="color:blue">customer-solutions@hpccsystems.com</span>.
 
 ### Tombolo Images
 
-<img src="../images/ClusterUsage.JPG" alt="Tombolo Cluster Usage" title="Tombolo Storage Usage" border= "5px solid #191919;"/>
+<img src="/ClusterUsage.JPG" alt="Tombolo Cluster Usage" title="Tombolo Storage Usage" border= "5px solid #191919;"/>
 <figcaption>Tombolo Storage Usage</figcaption>
 
-<img src="../images/Workflow.JPG" alt="Tombolo Workflow" title="Tombolo workflow" border= "5px solid #191919;"/> 
+<img src="/Workflow.JPG" alt="Tombolo Workflow" title="Tombolo workflow" border= "5px solid #191919;"/> 
 <figcaption>Tombolo Workflow</figcaption>
-

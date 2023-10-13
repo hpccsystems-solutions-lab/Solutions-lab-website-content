@@ -23,6 +23,5 @@ Key features of REAL BI include:
 </br>
 For more information and inquiries, please contact us at . <span style="color:blue">customer-solutions@hpccsystems.com</span>.
 
-<img src="../images/RealbiMap.JPG" alt="" title="REAL BI Map" border= "5px solid #191919;"/> 
+<img src="/RealbiMap.JPG" alt="" title="REAL BI Map" border= "5px solid #191919;"/> 
 <figcaption>REAL BI Map</figcaption>
-
