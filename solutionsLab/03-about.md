@@ -38,7 +38,9 @@ We believe in partnerships. Whether you're a small startup with big dreams or a 
 
 **Bahar Fardanian - Solutions Engineering Manager**
 
-<img src="../images/project-images/Bahar.png" alt="Bahar Fardanian" title="Bahar" width="100" height="150"/>
+
+
+<img src="../media/images/project-images/Bahar.png" alt="Tombolo Workflow" title="Tombolo workflow" border= "5px solid #191919;" width="100" height="150"/> <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
 
   Bahar Fardanian serves as the Solutions Engineering Manager at HPCC Systems Solutions Lab. With a passion for results and a background in leadership, Bahar specializes in designing and implementing tailored big data solutions. Her expertise lies in collaborating closely with customers to understand their unique business needs, delivering efficient solutions, and fostering strong customer relationships. Bahar is driven by a commitment to delivering value and ensuring the successful implementation of scalable solutions.
 
@@ -46,3 +48,5 @@ We believe in partnerships. Whether you're a small startup with big dreams or a 
 ## Contact Us
 
 Feel free to reach out to the team at customer-solutions@hpccsystems.com to embark on this exciting journey together, unleashing the power of big data for your success.
+
+xyz is the press

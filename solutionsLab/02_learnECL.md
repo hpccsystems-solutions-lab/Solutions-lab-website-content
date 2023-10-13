@@ -3,4 +3,4 @@ title: learn-ecl-intro
 buttonText: Start Learning ECL
 ---
 
-HPCC Systems Solutions Lab is proud to provide and support ECL tutorials.Here we introduce basics of HPCC Systems, our big data platform, and a complete tutorial on ECL (Enterprise Control Language).
+LearnECL offers interactive tutorials and sample code for mastering ECL, a language for big data processing with HPCC Systems. Ideal for beginners and experts, it covers data handling and analysis, making it a valuable resource for ECL learners.
