@@ -7,19 +7,19 @@ slug: dataset
 
 A Dataset is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file (File Dataset), inline data (Inline Dataset) or by another ECL function that filters, queries or transforms data (Derived Dataset).
 
-When defining DATASET you need to define the [RECORD](/learn-ecl/record.md) of the dataset first.
+When defining a DATASET you need to define the [RECORD](./1100-record.md) of the dataset first.
 
 ## SQL vs. ECL
 
 DATASET is similar to TABLE in SQL.
 
-| SQL                                                                                               | ECL                                                        |
-| ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| SQL | ECL |
+| - | - |
 | SimpleTable = select \* from '~simpledata.csv' type csv layout SimpleLayout as simpleDS offset 1; | simpleDS := DATASET('~simpledata.csv', SimpleLayout, CSV); |
 
 ## Inline Dataset
 
-A temporary dataset that's created and used while job is running. Inline dataset definition can be used for small datasets.
+A temporary dataset that's created and used while a job is running. Inline dataset definition can be used for small datasets.
 
 ### Syntax
 
@@ -102,7 +102,7 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 
 ## Logical File
 
-A sprayed file on cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV.
+A sprayed file on the cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV.
 
 ### Syntax
 
@@ -118,7 +118,7 @@ END;
 
 path := '~some::sample::path';
 
-//File Dataset
+// File Dataset
 attr_name := DATASET(path,
                        attr_layout,
                        file_type);"
@@ -131,7 +131,7 @@ attr_name := DATASET(path,
 | :---------- | :------------------------------------------------ |
 | attr_name   | The name by which the dataset will be invoked.    |
 | DATASET     | Required.                                         |
-| path        | Logical file name stored on the cluster.          |
+| path        | Path where the Logical file is stored on the cluster. |
 | attr_layout | Name of your Record layout.                       |
 | file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED). |
 
@@ -155,7 +155,7 @@ SalaryAvg_Layout := RECORD
     INTEGER  Upperband;
 END;
 
-// Getting the dataset
+// Logical file dataset
 SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, THOR);
 ">
 </EclCode>

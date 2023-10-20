@@ -5,7 +5,7 @@ slug: project
 
 # PROJECT
 
-The PROJECT function processes through all records in the record-set performing the TRANSFORM function on each record in turn. PROJECT result always have the same number of rows as input dataset.
+The PROJECT function processes through all records in the record-set performing the TRANSFORM function on each record in turn.
 
 PROJECT is like SQL's SELECT … INTO TABLE …
 

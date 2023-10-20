@@ -5,7 +5,7 @@ slug: sample
 
 # SAMPLE
 
-SAMPLE function returns a sample set of dataset. Returned value is a dataset.
+SAMPLE function returns a set of sample records.
 
 ## Syntax
 
@@ -16,7 +16,7 @@ SAMPLE function returns a sample set of dataset. Returned value is a dataset.
 
 | _Value_ | _Definition_ |
 | :- | :- |
-| dataset | Input dataset to process. |
+| dataset | Input records to sample. |
 | interval | The intervals between records to return. |
 | which | Optional. An integer specifying the ordinal number of the sample set to return. This is used to obtain multiple non-overlapping samples from the same recordset. |
 

@@ -190,7 +190,7 @@ DeNorm := DENORMALIZE(ParentDS, ChildrenDS,
 
 ## Form Two
 
-In this format TRANSFORM function takes at least two parameters. The difference from form one is instead of listing the fields in parents records, we can nest the children's dataset(s)
+In this format TRANSFORM function takes at least two parameters. The difference from form one is instead of listing the fields in the parent records, we can nest the children's dataset(s).
 
 * A LEFT record of the same format as the combined ParentDataset and ChildDataset (the resulting de-normalized record structure)
 * ROWS(RIGHT) dataset of the same format as the child layout.

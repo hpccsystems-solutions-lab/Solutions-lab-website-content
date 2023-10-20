@@ -5,11 +5,11 @@ slug: introduction
 
 # ECL
 
-ECL - Enterprise Control Language is designed to handle and manipulate immense datasets which makes it a prefect language to solve big data problems. ECL can be used for both ETL (Extract, Transform, and Load) and querying data. ECL is a declarative language which allows processing big data without the need of programmer being involved with details and in-depth of imperative decisions.
+ECL - Enterprise Control Language is designed to handle and manipulate immense datasets which make it a prefect language to solve big data problems. ECL can be used for both ETL (Extract, Transform, and Load) and querying data. ECL is a declarative language which allows processing big data without the need of a programmer being involved with details and in-depth imperative decisions.
 
 ## ECL vs SQL
 
-ECL and SQL can both be used to query a relational database. Following tables displays similar features between ECL and SQL.
+ECL and SQL can both be used to query a relational database. Following is a table displaying similar features between ECL and SQL.
 
 | SQL                                                                                                             | ECL                                                                                                              |
 | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -23,11 +23,11 @@ ECL and SQL can both be used to query a relational database. Following tables di
 
 ## Language Highlights
 
-- ECL is not case sensitive language, but it is recommended to use uppercase for reserved words
+- ECL is not a case sensitive language, but it is recommended to use uppercase for reserved words
 - White spaces are ignored, but it is strongly recommended to use white space for clarity and readability
-- Declarative Programming Language, which means you specifies what needs to be done rather than how to do it
+- Declarative Programming Language, which means you specify what needs to be done rather than how to do it
 - Source-to-source compiler
 - ECL code translated to C++ that is compiled to shared libraries and executed within a custom frame-work
 
-Please refer [ECL syntax](./syntax.md) to learn about ECL standards. Or,
-[jump right into coding](./output.md) and skip all the introductions.
+Please refer [ECL syntax](./0200-syntax.md) to learn about ECL standards. Or,
+[jump right into coding](./0500-output.md) and skip all the introductions.

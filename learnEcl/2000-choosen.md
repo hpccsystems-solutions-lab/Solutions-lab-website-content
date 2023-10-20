@@ -5,7 +5,7 @@ slug: choosen
 
 # CHOOSEN
 
-CHOOSEN function allows you to display certain number of rows from a dataset. It can start either from row one, or the row you defined.
+CHOOSEN function (choose-n) allows you to display the first `n` number of records in a dataset starting from the specified record position.
 
 ## Syntax
 
@@ -44,7 +44,7 @@ CHOOSEN function allows you to display certain number of rows from a dataset. It
 
 code="/*
 CHOOSEN Example:
-Displaying  different rows from the input dataset.
+Displaying different rows from the input dataset.
 */
 
 Pop_Layout := RECORD
@@ -70,7 +70,7 @@ Pop_DS := DATASET([
 DisRow := CHOOSEN(Pop_DS, 3);
 OUTPUT(DisRow, NAMED('DisRow'));
 
-// Displaying 2 rows from row 4
+// Display 2 rows starting from row 4
 OUTPUT(CHOOSEN(Pop_DS, 2, 4));">
 </EclCode>
 </pre>

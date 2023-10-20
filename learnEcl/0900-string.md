@@ -5,7 +5,7 @@ slug: string
 
 # STRING
 
-STRING data type is a sequence of characters, digits, and special characters including space. STRINGs are wrapped in single quotation `''`.
+STRING data type is a sequence of characters, digits, and special characters including space. STRINGs are wrapped in single quotation marks `'This is a string.'`.
 
 ## Syntax
 

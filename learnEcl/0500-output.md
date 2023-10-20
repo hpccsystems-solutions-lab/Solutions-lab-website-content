@@ -5,10 +5,10 @@ slug: output
 
 # OUTPUT
 
-OUTPUT is an action that allows user to view results. OUTPUT can be used to save dataset result in a file.
+OUTPUT is an action that allows users to view results. OUTPUT can be used to save dataset results in a file.
 There are a few ways to generate output.
 
-Following examples show how you can simply view results. 'NAMED' allows you to label your outputs, and it's very useful when you have many outputs.
+The following examples demonstrate how you can simply view results. 'NAMED' allows you to label your outputs making it very useful when you have multiple outputs.
 
 **Example**
 
@@ -48,12 +48,12 @@ OUTPUT(dataset_name/attr_name, Named('display-name'));"
 > </EclCode>
 </pre>
 
-| Value        | Definition                                                                                                                                                                                    |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OUTPUT       | Required. The name of the dataset to output the result to.                                                                                                                                    |
-| dataset_name | The name of the dataset you want to output the result to.                                                                                                                                     |
-| attr_name    | The attribute (field) in the dataset.                                                                                                                                                         |
-| NAMED        | Optional but recommended, especially when multiple outputs are being viewed. Specifies a label for the result. The given name must not start with numbers and should avoid spaces or hyphens. |
+| Value | Definition |
+| :- | - |
+| OUTPUT | Required. The name of the dataset to output the result to. |
+| dataset_name | The name of the dataset you want to output the result to. |
+| attr_name | The attribute (field) in the dataset. |
+| NAMED | Optional but recommended, especially when multiple outputs are being viewed. Specifies a label for the result. The given name must not start with numbers and should avoid spaces or hyphens. |
 
 **Demo Dataset**
 

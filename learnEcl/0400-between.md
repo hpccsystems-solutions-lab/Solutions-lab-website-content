@@ -5,7 +5,7 @@ slug: between
 
 # BETWEEN
 
-BETWEEN is an operator to check ranges of values. It is the same as `<=` and `=>`. It's the same as SQL BETWEEN operator.
+BETWEEN is an ECL operator to select values within a given range. It's the same as `>= and <=` and the same as the SQL BETWEEN operator.
 
 ## Syntax
 
@@ -15,15 +15,15 @@ attr_name := seek_val NOT BETWEEN low_val AND high_val;">
 </EclCode>
 </pre>
 
-| _Value_    | _Definition_                                         |
-| :--------- | :--------------------------------------------------- |
-| attribName | The name by which the variable will be invoked.      |
-| seek_val   | The value to be checked. Can be a dataset field too. |
-| BETWEEN    | Required.                                            |
-| NOT        | Optional, used for certain searches.                 |
-| Low_val    | Low value in the range                               |
-| AND        | Required                                             |
-| high_val   | High value in the range                              |
+| _Value_    | _Definition_ |
+| :- | :- |
+| attribName | The name by which the variable will be invoked. |
+| seek_val | The value to be checked. Can be a dataset field too. |
+| BETWEEN | Required. |
+| NOT | Optional, used for certain searches. |
+| Low_val | Low value in the range. |
+| AND | Required. |
+| high_val | High value in the range. |
 
 **Example**
 
@@ -31,7 +31,7 @@ attr_name := seek_val NOT BETWEEN low_val AND high_val;">
 <EclCode
 id = "BetweenExp_1"
 tryMe="BetweenExp_1"
-code="// BETWEEN Example: Examples using set of values.
+code="// BETWEEN Examples:
 
 SomeInt := 12;
 SomeReal := 120.5;
@@ -67,8 +67,8 @@ OUTPUT(CheckRealTwo, NAMED('CheckRealTwo'));"></EclCode>
 <EclCode
 id = "BetweenExp_2"
 tryMe="BetweenExp_2"
-code = "//BETWEEN Example:
-//Examples using dataset.
+code = "//BETWEEN Examples:
+//Examples using an inline dataset.
 
 Pop_Layout := RECORD
 STRING City;
@@ -90,7 +90,7 @@ Pop_Layout);
 
 PopEval_Layout := RECORD
 STRING City;
-STRING State;
+STRING State
 BOOLEAN isMiddleSize;
 END;
 

@@ -5,7 +5,7 @@ slug: boolean
 
 # BOOLEAN
 
-A boolean data type is used to represent a logical value that can have one of two possible states: true or false. It is commonly used to express conditions, comparisons, and decisions. In a boolean context, true indicates that a condition is met or that something is valid, while false indicates the opposite.
+A boolean data type is used to represent a logical value that can have one of two possible states: true or false. It is commonly used to express conditions, comparisons or decisions. In a boolean context, true indicates that a condition is met or that something is valid, while false indicates the opposite.
 
 ## Syntax
 

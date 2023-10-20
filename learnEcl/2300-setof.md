@@ -4,7 +4,7 @@ slug: set-of
 ---
 # SET OF
 
-SET OF is an array of data element with the same data type. Indexing in SET OF start with 1. Since data isn't distributed it has to fit in the memory.
+SET OF is a data type which defines attributes that are a set of data elements. All elements must contain the same data type. Indexing in SET OF start with 1. Since data isn't distributed it has to fit in memory.
 
 ## Syntax
 
@@ -15,7 +15,7 @@ SET OF is an array of data element with the same data type. Indexing in SET OF s
 
 | _Value_    | _Definition_                                         |
 | :- | :- |
-| dataType | Elements type. |
+| dataType | Element data type. |
 | attr_name | The name by which the operation will be invoked. |
 | [...] | Input values. |
 

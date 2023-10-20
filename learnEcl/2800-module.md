@@ -5,21 +5,22 @@ slug: module
 
 # MODULE
 
-MODULE is s a container that allows you to group related definitions and functionalities. The parameters passed to the module are shared by all the related members definitions.
+MODULE is a fundamental organizational unit that contains one or more functions, actions, or definitions. Modules are used to group together code that serves a common purpose, making it easier to manage and reuse code components. 
 
 ## Notes
-* OUTPUT can not be used within a module
-* For modules to be called/used from outside, EXPORT is required
-* Module name should match the file name. if not "Error: Definition must contain EXPORT or SHARED " is generated
-* To call a module: ModuleName.attributeName;
+* OUTPUTs can not be used within a module.
+* For modules to be called/used from outside the current module, EXPORT is required.
+* A Module's name should match the file name it's in. If not "Error: Definition must contain EXPORT or SHARED " is generated.
+* How to call a module: ModuleName.attributeName;
+* Each .ECL file may only contain a single EXPORT or SHARED definition
 
 ## Variable Scope
 
-* LOCAL Definitions are visible only up to an EXPORT or SHARED.
+* LOCAL Definitions are limited only to the next SHARED or EXPORT definition.
 
-* SHARED Definitions are visible through module.
+* SHARED Definitions are available to other modules within the same folder that IMPORTs them.
 
-* EXPORT Definitions are visible within and outside of a module.
+* EXPORT Definitions are available throughout the module in which they are defined and throughout any other module that IMPORTs them.
 
 * Modules can contain multiple, SHARED and EXPORT values.
 

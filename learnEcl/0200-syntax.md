@@ -30,7 +30,7 @@ Result := Val1 + Val2;"
 
 ## Field Access
 
-You can use of object.property to access dataset fields and definitions.
+You can use object.property to access dataset fields and definitions.
 
 - `dataset.fieldName` Referencing an attribute from a module
 - `moduleName.definition` Referencing a field from dataset
@@ -77,21 +77,21 @@ SomeResult;"
 
 ## Definition
 
-Assigning an expression to an attribute. Definitions can't not be executing unless it is wrapped in an action and are defined by `:=`. Let's take a look at an example:
+Assigning an expression to an attribute. Definitions cannot be executing unless it is wrapped in an action and are defined by `:=`. Let's take a look at an example:
 
-`Val := 23;` is a Definition. Attribute Val is defined and value 23 is assigned to it. To turn `Val` to an action we can wrap it in an OUTPUT.`OUTPUT(Val);` is an Action and result would be 23.
+`Val := 23;` is a Definition. Attribute `Val` is defined and value `23` is assigned to it. To turn `Val` to an action we can wrap it in an OUTPUT. `OUTPUT(Val);` is an Action and the result would be `23`.
 
 <EclCode code="[attrib_type] attrib_name := value"></EclCode>
 
-| Value       | Definition                                       |
-| :---------- | :----------------------------------------------- |
+| Value | Definition |
+| :- | :- |
 | attrib_type | Optional, compiler can infer it from Definition. |
-| attrib_name | The name by which the Definition will be invoked |
-| value       | Assigned value to the Definition.                |
+| attrib_name | The name by which the Definition will be invoked. |
+| value | Assigned value to the Definition. |
 
 ## Action
 
-Action simply means "do something." Actions trigger execution of a workunit that produces results.
+Action simply means "do something". Actions trigger execution of a workunit that produce results.
 
 <pre>
 <EclCode code="OUTPUT('this is an action');
