@@ -5,12 +5,11 @@ slug: big-data
 
 # BIG DATA
 
-Big data refers to a large amount of data that is hard to process and manage using traditional data management systems.
+Big data refers to a large amount of data that is difficult to process and manage using traditional data management systems.
 
-Big data is defined by three common properties called the 3Vs: Volume, Variety and Velocity. While there are other Vs involved such as Value and Veracity, the 3Vs are the most famous ones.
+Big data is defined by three common properties called the 3Vs; Volume, Variety and Velocity. While there are other Vs involved such as Value and Veracity, the 3Vs are the most famous ones.
 
-**Velocity**
-is the measurement of how fast data is coming into the system, how fast it's processed and how fast it's transferred to the desired destination. The higher the velocity rate, the faster data is processed.
+**Velocity** is the measurement of how fast data is coming into the system, how fast it's processed and how fast it's transferred to the desired destination. The higher the velocity rate, the faster data is processed.
 
 **Variety** refers to different types of data. Big data is often comprised of all different kinds of data, each of which needs to processed separately.
 
@@ -20,7 +19,7 @@ is the measurement of how fast data is coming into the system, how fast it's pro
 
 Structured data is data that is clearly defined and formatted following organization standards and (possibly) relational database rules. Since data is formatted and clearly defined, querying this kind of data is easier and faster.
 
-Exp: Relational database tables, address books.
+E.g. relational database tables, address books.
 
 ### Unstructured
 

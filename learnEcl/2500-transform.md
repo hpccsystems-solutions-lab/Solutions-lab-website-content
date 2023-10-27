@@ -5,7 +5,10 @@ slug: transform
 
 # TRANSFORM
 
-TRANSFORM functions are invoked by another function and make operations that must be performed on entire datasets. TRANSFORM functions start from row one and cover the entire dataset row by row. When defining a transform you need to tell the function what needs to be done on each field in the dataset by using input dataset fields or by creating new definitions for the fields.
+TRANSFORM functions perform data transformations on datasets. They allow you to apply a series of operations to a record creating a new record of a given type.
+
+They may accept arguements or use global context variables.
+
 Transform can be used with PROJECT, JOIN, ITERATE, ROLLUP and more.
 
 ## Syntax

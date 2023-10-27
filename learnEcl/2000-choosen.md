@@ -5,7 +5,7 @@ slug: choosen
 
 # CHOOSEN
 
-CHOOSEN function (choose-n) allows you to display the first `n` number of records in a dataset starting from the specified record position.
+CHOOSEN function (choose-n) allows you to display `n` number of records in a dataset starting from the specified record position.
 
 ## Syntax
 

@@ -5,7 +5,7 @@ slug: table
 
 # TABLE
 
-TABLE is the most commonly-used data aggregation functions in ECL. It creates a new dataset in memory while workunit is running. The new table inherits the implicit rationality the recordset has (if any), unless the optional expression is used to perform aggregation. There are two forms  of Table usage:
+TABLE is the most commonly-used data aggregation functions in ECL. It creates a new dataset in memory while a workunit is running. There are two forms of TABLE usage:
 
 Vertical Slice form, which there is no expression parameter specified. The number of rows/records in the input record-set is equal to the number of records produced. 
 

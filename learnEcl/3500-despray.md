@@ -5,7 +5,7 @@ slug: despray
 
 # DESPRAY
 
-Despray (or export) is the relocation of a logical file from a Data Refinery cluster to a single machine location (such as the Landing Zone)
+Despray (or Export) is the process of copying a logical file from a Data Refinery cluster to a single machine location (such as the Landing Zone)
 
 ### Syntax
 

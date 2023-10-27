@@ -5,9 +5,9 @@ slug: record
 
 # RECORD
 
-Defines the layout of fields in the dataset; the order of the fields should be exactly the same as the dataset columns. There are two ways to define the record structure. Doesn't matter which one you use, the results will be exactly the same.
+Defines the layout of fields in the dataset; the order of the fields should be exactly the same as the dataset columns. There are two ways to define the record structure. It doesn't matter which one you use, the results will be exactly the same.
 
-Keep in mind that you can't output RECORD as it is a definition. RECORD can be used with other functions such as DATASET and TABLE.
+Keep in mind that you can't output a RECORD as it is a definition. RECORD can be used with other functions such as DATASET and TABLE.
 
 ## SQL vs. ECL
 

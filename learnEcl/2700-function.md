@@ -66,11 +66,11 @@ OUTPUT(MyFunc('Sunny'), NAMED('Sunny'));
 
 ## Outputs in Functions - Using WHEN
 
-OUTPUT can be used to return multiple values from a function. 
+OUTPUT is an action used to create logical files or display result values in the result section of a workunit. 
 
 PARALLEL is an action which allows items in an actionlist to execute simultaneously and the WHEN function behaves as a trigger. 
 
-WHEN allows actions based on triggers such as after a value is computed.
+WHEN executes an action based on a trigger, such as when a value is computed.
 
 **Example**
 

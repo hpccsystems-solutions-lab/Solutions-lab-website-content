@@ -19,7 +19,7 @@ DATASET is similar to TABLE in SQL.
 
 ## Inline Dataset
 
-A temporary dataset that's created and used while a job is running. Inline dataset definition can be used for small datasets.
+A (typically small) static dataset defined in the code.
 
 ### Syntax
 
@@ -102,7 +102,7 @@ OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
 
 ## Logical File
 
-A sprayed file on the cluster. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV.
+Logical files are any file saved on the cluster. Using a logical file's single name refers to all the file's data even if it's distributed among many storage locations. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV.
 
 ### Syntax
 

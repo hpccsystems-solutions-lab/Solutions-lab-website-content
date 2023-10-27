@@ -7,7 +7,7 @@ slug: dedup
 
 The DEDUP function removes duplicates from a dataset based on the defined conditions. The result is a dataset with unique values for selected fields.
 
-**Note** To use DEDUP your dataset must be **sorted**.
+**Note** DEDUP compares only adjacent records, therfore your dataset must be **sorted** beforehand.
 
 ## Syntax
 

@@ -5,7 +5,7 @@ slug: spray
 
 # SPRAY
 
-Spray or import is the relocation of a data file from one location (such as a Landing Zone) to a Data Refinery cluster.
+Spray (or Import) is the process of copying a data file from one location (such as a Landing Zone) to a Data Refinery cluster.
 
 # 
 # SPRAYXML

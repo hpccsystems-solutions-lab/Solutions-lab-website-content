@@ -10,13 +10,14 @@ MODULE is a fundamental organizational unit that contains one or more functions,
 ## Notes
 * OUTPUTs can not be used within a module.
 * For modules to be called/used from outside the current module, EXPORT is required.
-* A Module's name should match the file name it's in. If not "Error: Definition must contain EXPORT or SHARED " is generated.
-* How to call a module: ModuleName.attributeName;
-* Each .ECL file may only contain a single EXPORT or SHARED definition
+* A .ecl file (that is not a BWR) MUST contain exactly one EXPORTed attribute. That attribute MUST be named the same as the filename.
+* Any non-EXPORT attributes prior to the EXPORTed attribute in the file are allowed.
+* How to call a module: `ModuleName.attributeName;`
+
 
 ## Variable Scope
 
-* LOCAL Definitions are limited only to the next SHARED or EXPORT definition.
+* LOCAL Definitions are limited only to the next SHARED or EXPORT definition. This is the default scope if no scope is given for an attribute
 
 * SHARED Definitions are available to other modules within the same folder that IMPORTs them.
 

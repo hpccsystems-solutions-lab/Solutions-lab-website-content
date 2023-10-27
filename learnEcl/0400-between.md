@@ -5,14 +5,15 @@ slug: between
 
 # BETWEEN
 
-BETWEEN is an ECL operator to select values within a given range. It's the same as `>= and <=` and the same as the SQL BETWEEN operator.
+BETWEEN is an ECL operator used to select values within a given range. It's the same as `>= and <=` and the same as the SQL BETWEEN operator.
 
-## Syntax
-
+**Syntax**
 <pre>
-<EclCode code="attr_name := seek_val BETWEEN low_val AND high_val;
-attr_name := seek_val NOT BETWEEN low_val AND high_val;">
-</EclCode>
+    <EclCode code="
+    attr_name := seek_val BETWEEN low_val AND high_val;
+    attr_name := seek_val NOT BETWEEN low_val AND high_val;
+    ">
+    </EclCode>
 </pre>
 
 | _Value_    | _Definition_ |

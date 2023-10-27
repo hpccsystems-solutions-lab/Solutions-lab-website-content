@@ -7,7 +7,7 @@ slug: exists
 
 EXISTS function checks to see if there are any records in the dataset and returns TRUE if there is at least 1 record in the dataset.
 
-EXISTS is more efficient than COUNT, since COUNT will count all the rows in dataset, where EXISTS just checks to see row 1 exists.
+EXISTS is more efficient than COUNT, since COUNT will count all the rows in dataset, where EXISTS aborts as soon as it determines that the dataset is non-empty.
 
 ## Syntax
 
