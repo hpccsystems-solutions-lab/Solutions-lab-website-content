@@ -5,11 +5,11 @@ slug: table
 
 # TABLE
 
-TABLE is the most commonly-used data aggregation functions in ECL. It creates a new dataset in memory while workunit is running. The new table inherits the implicit rationality the recordset has (if any), unless the optional expression is used to perform aggregation. There are two types of Table:
+TABLE is the most commonly-used data aggregation functions in ECL. It creates a new dataset in memory while a workunit is running. There are two forms of TABLE usage:
 
-Vertical Number of records in the input dataset is equal to generated table, which means no aggregation is involved.
+Vertical Slice form, which there is no expression parameter specified. The number of rows/records in the input record-set is equal to the number of records produced. 
 
-CrossTab There is at least one field using an aggregate function with the keyword Grouping Condition as its first parameter. The number of records produced is equal to the number of distinct values of the expression.
+CrossTab Report form, usually includes an expression parameter and, for its output, at least one field uses an aggregate function with the keyword Grouping Condition as its first parameter. The number of records produced is equal to the number of distinct values of the expression.
 
 ## Syntax
 
@@ -41,7 +41,7 @@ attr_name := TABLE(dataset,
 | attr_name | The name by which the table will be invoked. |
 | TABLE | Required. |
 | dataset | Input dataset to create the table from. |
-| grouping_condition | One or more comma-delimited expressions. Please see Grouping Condition for more information. |
+| grouping_condition | One or more comma-delimited expressions. Please see Grouping Condition below for more information. |
 | flags | Optional flags that can alter the behavior of TABLE. |
 
 <pre>
@@ -73,12 +73,12 @@ attr_name := TABLE(dataset,
 
 ### Grouping Condition
 
-* One or more comma-delimited expressions
-* An expression could simply be an attribute name within the dataset; this is the most common usage
-* An expression could be a computed value, such as (myValue % 2) to group on even/odd values
-* All records within dataset that evaluate to the same set of condition values will be grouped together
-* Each group will result in one output record
-* Functions evaluated within outrecorddef will operate on the group
+* One or more comma-delimited expressions.
+* An expression could simply be an attribute name within the dataset; this is the most common usage.
+* An expression could be a computed value, such as (myValue % 2) to group on even/odd values.
+* All records within a dataset that evaluate to the same set of condition values will be grouped together.
+* Each group will result in one output record.
+* Functions evaluated within out_record_def will operate on the group.
 
 ### Optional Flags
 
@@ -180,8 +180,7 @@ OUTPUT(crossTabDs, NAMED('crossTabDs'));
 <EclCode
 id="TableExp_2"
 tryMe="TableExp_2"
-code="/*Table Example:*/
-
+code="
 /*
 TABLE Example:
 Cross table example.
@@ -228,9 +227,6 @@ AvgIncome := TABLE(AllPeopleDS,
                     LastName);
 
 OUTPUT(AvgIncome, NAMED('AvgIncome'));
-
-    
-  
 
 
 "></EclCode>

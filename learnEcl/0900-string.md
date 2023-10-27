@@ -5,7 +5,7 @@ slug: string
 
 # STRING
 
-STRING data type is a sequence of characters, digits, and special characters including space. STRINGs are wrapped in single quotation `''`.
+STRING data type is a sequence of ASCII characters, digits, and special characters including space; see Unicode and UTF8 datatypes for further information. STRINGs are wrapped in single quotation marks such as the following `'This is a string.'`.
 
 ## Syntax
 
@@ -23,7 +23,7 @@ code="STRING[n] attribName">
 
 **Example**
 
-<pre >
+<pre>
 <EclCode
 id = 'String_Exp_1'
 tryMe="String_Exp_1"

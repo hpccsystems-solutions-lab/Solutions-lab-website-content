@@ -5,24 +5,24 @@ slug: exists
 
 # EXISTS
 
-EXISTS functions checks to see if there are any rows int the dataset. EXISTS returns TRUE if there is at least 1 record in the dataset.
+EXISTS function checks to see if there are any records in the dataset and returns TRUE if there is at least 1 record in the dataset.
 
-EXISTS is more efficient than COUNT, since COUNT will count all the rows in dataset, versus EXITS just checks to see row 1 exists.
+EXISTS is more efficient than COUNT, since COUNT will count all the rows in dataset, where EXISTS aborts as soon as it determines that the dataset is non-empty.
 
 ## Syntax
 
 <pre>
 <EclCode code="EXISTS(recordset)
-EXISTS(value_set)>">
+EXISTS(value_set)">
 
 </EclCode>
 </pre>
 
-| Value     | Definition                   |
-| :-------- | :--------------------------- |
-| EXISTS    | Required.                    |
-| recordset | Dataset to be checked.       |
-| value_set | Values in a SET to be check. |
+| Value     | Definition                     |
+| :-------- | :----------------------------- |
+| EXISTS    | Required.                      |
+| recordset | Dataset to be checked.         |
+| value_set | Values in a SET to be checked. |
 
 **Demo Dataset**
 
@@ -61,22 +61,18 @@ Pop_DS := DATASET([
 {'Keywest','FL','Monroe',31401}],
 Pop_Layout);
 
-// Converting a field to SET
+// Check to see if Pop_DS dataset has values
 HasData := EXISTS(Pop_DS);
-OUTPUT(HasData, NAMED('HasData'));
-
-// Creating an empty dataset
-Emp_DS := DATASET([], Pop_Layout);
-
-// Check to see if dataset has values
-OUTPUT(Emp_DS, NAMED('Emp_DS'));">
+OUTPUT(HasData, NAMED('HasData'));>
 </EclCode>
 </pre>
 
 **Example**
 
 <pre >
-<EclCode id="ExistsExp_2"
+<EclCode 
+id="ExistsExp_2"
+tryMe="ExistsExp_2"
 code="/*
 EXISTS Example:
 Showing different examples of EXIST function values.

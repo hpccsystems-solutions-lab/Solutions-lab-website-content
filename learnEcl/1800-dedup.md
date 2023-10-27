@@ -5,9 +5,9 @@ slug: dedup
 
 # DEDUP
 
-The DEDUP function removes duplicates from a dataset based on the defined conditions. The result is dataset with unique values for selected fields.
+The DEDUP function removes duplicates from a dataset based on the defined conditions. The result is a dataset with unique values for selected fields.
 
-**Note** To use DEDUP you dataset must be **sorted**.
+**Note** DEDUP compares only adjacent records, therefore your dataset must be sorted beforehand.
 
 ## Syntax
 
@@ -71,8 +71,8 @@ Student_DS := DATASET([
               {300,	'Sarah', 'Dallas',	'Te',	'30000',	'Math'}],
               Student_Rec);
 
-
-// Above dataset is already sorted.
+// Sorting Student_DS dataset 
+SortDS := SORT(Student_DS, StudentID, Name, City, State, ZipCode, Department);
 
 DupMe := DEDUP(SortDS, StudentID, Name);
 OUTPUT(DupMe, NAMED('DupMe'));

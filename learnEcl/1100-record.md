@@ -5,9 +5,9 @@ slug: record
 
 # RECORD
 
-Defines the layout of fields in the dataset, order of the fields should be exactly the same as the dataset columns. There are two ways to define the record structure. Doesn't matter which one you use results would be exactly the same.
+Defines the layout of fields in the dataset; the order of the fields should be exactly the same as the dataset columns. There are two ways to define the record structure. It doesn't matter which one you use, the results will be exactly the same.
 
-Keep in mind that you can't output RECORD as it is a definition. RECORD can be used with other functions such as DATASET, and TABLE.
+Keep in mind that you can't output a RECORD as it is a layout definition, similar to a data type. Similar to trying to output UNSIGNED -- it is a data type, not a value.
 
 ## SQL vs. ECL
 
@@ -27,8 +27,8 @@ In SQL, the CREATE TABLE statement is used to define a new table in a relational
 
 ### ECL - RECORD:
 
-Similarly, in ECL, the RECORD structure fulfills the role of defining data structures. It defines a composite data type that can hold multiple fields, each with its own data type. The example below demonstrates how the RECORD structure is used to define a Person data type in ECL:###
-Here, each column's name is followed by its data type definition. The CREATE TABLE statement in SQL is essentially a blueprint for how the table should be structured, and it specifies the types of data that can be stored in each column.
+Similarly, in ECL, the RECORD structure fulfills the role of defining data structures. It defines a composite data type that can hold multiple fields, each with its own data type. The example below demonstrates how the RECORD structure is used to define a Person data type in ECL:
+### Here, each column's name is followed by its data type definition. The CREATE TABLE statement in SQL is essentially a blueprint for how the table should be structured, and it specifies the types of data that can be stored in each column.
 
  <pre><EclCode code="RECORD
   INTEGER PersonID;
@@ -38,7 +38,7 @@ Here, each column's name is followed by its data type definition. The CREATE TAB
   INTEGER  hasHome;
 END;"></EclCode></pre>
 
-In ECL, the RECORD structure encapsulates the fields within the Person data type. Each field is associated with a data type, just like the columns in a SQL table. However, unlike SQL's CREATE TABLE, ECL's RECORD doesn't create a physical table; rather, it defines a new data structure that can be used to hold and manipula
+In ECL, the RECORD structure encapsulates the fields within the Person data type. Each field is associated with a data type, just like the columns in an SQL table. However, unlike SQL's CREATE TABLE, ECL's RECORD doesn't create a physical table; rather, it defines a new data structure that can be used to hold and manipulate data.
 
 ## Using Keywords
 

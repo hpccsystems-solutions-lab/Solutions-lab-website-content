@@ -5,12 +5,13 @@ slug: function
 
 # FUNCTION
 
-A Function is a set of statements that take inputs, does some specific computation and produces an output or return a result. Result could be a value or a dataset.
+A Function is a set of statements that take input, does some specific computation and produces an output or returns a result. The result could be a value or a dataset.
 
 Notes
 
-* For function to be called/used from outside, EXPORT is required
-* Function name should match the file name. if not "Error: Definition must contain EXPORT or SHARED " is generated
+* For a function to be called/used from outside of the current module, EXPORT is required.
+* A non-BWR (Builder Window Runnable) file must have an EXPORTed attribute that matches the filename, if not "Error: Definition must contain EXPORT or SHARED" is generated.
+* The EXPORTed attribute must be the last exported attribute in the file. It is perfectly legal to have other (local or SHARED) attributes preceding the final EXPORTed attribute.
 
 ## Syntax
 
@@ -26,14 +27,14 @@ END;">
 
 | _Value_ | _Definition_ |
 | :- | :- |
-| EXPORT | Optional |
-| return_data_type | Optional (compiler can infer it from return_value). If returning a dataset, the data type is DATASET(record_definition) |
-| function_name | The name by which the function will be invoked |
-| data_type | The argument’s data type. If passing a dataset, the data type is DATASET(record_definition) |
+| EXPORT | Optional. |
+| return_data_type | Optional (compiler can infer it from return_value). If returning a dataset, the data type is DATASET(record_definition). |
+| function_name | The name by which the function will be invoked. |
+| data_type | The argument’s data type. If passing a dataset, the data type is DATASET(record_definition). |
 | ecl_code | Whatever code is needed to build return_value. Conversely, if the code does not contribute to return_value then it is ignored. Attributes defined here are scoped to the function |
 | RETURN | Required |
-| return_value | 	The result of the function |
-| END | Required |
+| return_value | The result of the function. |
+| END | Required. |
 
 **Example**
 
@@ -63,11 +64,13 @@ OUTPUT(MyFunc('Sunny'), NAMED('Sunny'));
 "></EclCode>
 </pre>
 
-## Outputs in Function - Using WHEN
+## Outputs in Functions - Using WHEN
 
-OUTPUT can be used to return multiple results from a function. PARALLEL and WHEN are the keywords used to generate multiple results.
+OUTPUT is an action used to create logical files or display result values in the result section of a workunit. 
 
-PARALLEL let's you run actions in parallel and WHEN behaves as a trigger. WHEN is used in scheduling.
+PARALLEL is an action which allows items in an actionlist to execute simultaneously and the WHEN function behaves as a trigger. 
+
+WHEN executes an action based on a trigger, such as when a value is computed.
 
 **Example**
 
@@ -115,7 +118,6 @@ END;
 
 
 // Calling the SomeFunc function
-
 SomeFunc(Pop_DS);
 
 "></EclCode>

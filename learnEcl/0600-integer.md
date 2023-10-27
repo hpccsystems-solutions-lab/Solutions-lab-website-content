@@ -15,10 +15,10 @@ code="[UNSIGNED] INTEGER attribName">
 </EclCode>
 </pre>
 
-| _Value_    | _Definition_                                    |
-| :--------- | :---------------------------------------------- |
-| UNSIGNED   | Optional, if omitted the integer is signed.     |
-| INTEGER    | OPtional, recommended.                          |
+| _Value_ | _Definition_ |
+| :- | :- |
+| UNSIGNED | Optional, if omitted the integer is signed. |
+| INTEGER | OPtional, recommended. |
 | attribName | The name by which the variable will be invoked. |
 
 **Example**

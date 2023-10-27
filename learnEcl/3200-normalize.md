@@ -5,7 +5,7 @@ slug: normalize
 
 # NORMALIZE
 
-NORMALIZE gets a parent-child (DENORMALIZED) dataset and extract the child dataset from it. The purpose is to take variable-length flat-file records and split out the child information.
+NORMALIZE takes a parent-child (DENORMALIZED) dataset and extracts the child dataset from it. The purpose is to take variable-length flat-file records and split out the child information.
 
 There are two ways to normalize a child dataset:
 
@@ -14,11 +14,11 @@ There are two ways to normalize a child dataset:
 
 ## Normalize All Records
 
-This form processes through all records in the recordset executing transform function through all the child dataset records in each record. This method is used when we have embedded child dataset.
+This form processes through all records in the recordset executing the transform function on all the child dataset records in each record. This method is used when we have an embedded child dataset.
 
-You can think of this as a specialized JOIN where the TRANSFORM is called with, LEFT as the “main” record being processed and RIGHT as one of the records from the child dataset.
+You can think of this as a specialized JOIN where the TRANSFORM is called with LEFT, as the “main” record being processed and RIGHT, as one of the records from the child dataset.
 
-In this form TRANSFORM is called for each parent record with child record pair.
+In this form, TRANSFORM is called for each parent record with child record pair.
 
 ## Parameters
 * Must have a RIGHT record of the same format as the child dataset.
@@ -31,20 +31,19 @@ In this form TRANSFORM is called for each parent record with child record pair.
 <EclCode
 id="NormalizeExp_1"
 tryMe="NormalizeExp_1"
-code="/*Normalize Example:*/
-
+code="
 /*
 Normalize Example:
 NORMALIZE All Records
 */
 
-// Child layout that's being extract  from parent
+// Child record layout that's being extracted from parent record
 Child_Layout := RECORD
     INTEGER1 NameID;
     STRING20 Addr; 
 END;
 
-// Parent Layout with child dataset 
+// Parent record layout with child dataset 
 Parent_Layout := RECORD
     INTEGER1 NameID;
     STRING20 Name;
@@ -86,7 +85,7 @@ OUTPUT(ExtractChild, NAMED('ExtractChild'));
     FieldTwo;
 END;
 
-//Parent Layout with child dataset
+// Parent Layout with child dataset
 Parent_Layout := RECORD
     ...
     ...
@@ -107,7 +106,7 @@ attribName := NORMALIZE(ParentsDS,
 
 ## Normalize With COUNTER
 
-This NORMALIZE form calls TRANSFORM times for each parent record. does not need to be the same value for every record. The TRANSFORM function must take at least a LEFT record of the same format as the input recordset. The resulting record set format does not need to be the same as the input.
+This NORMALIZE form calls TRANSFORM n times for each parent record, where n is a numeric expression specifying the total number of times to call the TRANSFORM. It does not need to be the same value for every record. The TRANSFORM function must take at least a LEFT record of the same format as the input recordset. The resulting record set format does not need to be the same as the input.
 
 **Example**
 
@@ -205,7 +204,7 @@ ExtractChildren := NORMALIZE(ParentDS,
 </EclCode>
 </pre>
 
-## Flags
+## Optional Flags
 
 | Options | Description |
 | :- | :- |
