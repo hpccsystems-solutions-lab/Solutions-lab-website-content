@@ -63,7 +63,7 @@ Pop_Layout);
 
 // Check to see if Pop_DS dataset has values
 HasData := EXISTS(Pop_DS);
-OUTPUT(HasData, NAMED('HasData'));>
+OUTPUT(HasData, NAMED('HasData'));">
 </EclCode>
 </pre>
 
