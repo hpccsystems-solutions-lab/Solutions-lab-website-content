@@ -7,7 +7,7 @@ slug: dataset
 
 A Dataset is a set of records that an ECL program can manipulate. A Dataset can be initialized using a logical file (File Dataset), inline data (Inline Dataset) or by another ECL function that filters, queries or transforms data (Derived Dataset).
 
-When defining a DATASET you need to define the [RECORD](./1100-record.md) of the dataset first.
+When defining a DATASET you need to define the [RECORD](../record) of the dataset first.
 
 ## SQL vs. ECL
 
