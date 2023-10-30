@@ -29,4 +29,4 @@ ECL and SQL can both be used to query a relational database. Following is a tabl
 - Source-to-source compiler
 - ECL code gets translated to C++ that is compiled to shared libraries and executed within a custom framework
 
-Please refer [ECL syntax](../ecl-syntax) to learn about ECL standards.
+Please refer to the [ECL syntax](../ecl-syntax) to learn about ECL standards.
