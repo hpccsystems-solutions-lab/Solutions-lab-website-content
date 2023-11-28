@@ -21,41 +21,39 @@ DATASET is similar to TABLE in SQL.
 
 A (typically small) static dataset defined in the code.
 
-### Syntax
-
+**Syntax**
 <pre>
-<EclCode code="attr_layout := RECORD
-    data_type    field1;
-    ...
-    ...
-    ...
-    data_type    field100;
-END;
+    <EclCode code="attr_layout := RECORD
+        data_type    field1;
+        ...
+        ...
+        ...
+        data_type    field100;
+    END;
 
-// Inline Dataset
-attr_name := DATASET(
-                        [ 
-                            {'', '', 0, '', FALSE, ..., ''}, 
-                            {'', '', 0, '', FALSE, ..., ''},
-                            {...},
-                            {...},
-                            {'', '', 0, '', FALSE, ..., ''}
-                        ],
-                        attr_layout
-                    );">
-</EclCode>
+    // Inline Dataset
+    attr_name := DATASET(
+                            [ 
+                                {'', '', 0, '', FALSE, ..., ''}, 
+                                {'', '', 0, '', FALSE, ..., ''},
+                                {...},
+                                {...},
+                                {'', '', 0, '', FALSE, ..., ''}
+                            ],
+                            attr_layout
+                        );">
+    </EclCode>
 </pre>
 
-| Value       | Definition                                     |
-| :---------- | :--------------------------------------------- |
-| attr_name   | The name by which the dataset will be invoked. |
-| DATASET     | Required.                                      |
-| `[ ... ]`   | Contains all rows for dataset.                 |
-| `{ ... }`   | Defines one row.                               |
-| attr_layout | Name of your Record layout.                    |
+| Value | Definition |
+| :- | :- |
+| attr_name | The name by which the dataset will be invoked. |
+| DATASET | Required. |
+| `[ ... ]` | Contains all rows for dataset. |
+| `{ ... }` | Defines one row. |
+| attr_layout | Name of your Record layout. |
 
 **Demo Dataset**
-
 | Job      | Category          | City    | State | Avg_Salary | LowerBand | Upperband |
 | :------- | :---------------- | :------ | :---- | :--------- | :-------- | :-------- |
 | Manager  | IT                | Atlanta | GA    | 87000      | 62000     | 114000    |
@@ -65,100 +63,95 @@ attr_name := DATASET(
 | Sales    | General           | Chicago | IL    | 55000      | 32000     | 121000    |
 
 **Example**
+<pre>
+    <EclCode 
+    id="ds_example1"
+    tryMe="ds_example1"
+    code="/*DATASET Example:
+    Creating an inline dataset.
+    */
 
-<pre >
-<EclCode 
-id="ds_example1"
-tryMe="ds_example1"
-code="/*DATASET Example:
-Creating an inline dataset.
-*/
+    // Defining record layout
+    SalaryAvg_Layout := RECORD
+        STRING   Job;
+        STRING   Category;
+        STRING   City;
+        STRING2  State;
+        INTEGER  Avg_Salary;
+        INTEGER  LowerBand;
+        INTEGER  Upperband;
+    END;
 
-// Defining record layout
-SalaryAvg_Layout := RECORD
-    STRING   Job;
-    STRING   Category;
-    STRING   City;
-    STRING2  State;
-    INTEGER  Avg_Salary;
-    INTEGER  LowerBand;
-    INTEGER  Upperband;
-END;
-
-// Creating the dataset
-SalaryAvg_DS := DATASET([
-                    {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
-                    {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
-                    {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
-                    {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
-                    {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}],
-                    SalaryAvg_Layout);
+    // Creating the dataset
+    SalaryAvg_DS := DATASET([
+                        {'Manager', 'IT', 'Atlanta', 'GA', 87000, 62000, 114000},
+                        {'Director', 'IT', 'Atlanta', 'GA', 119000, 84000, 156000},
+                        {'Director', 'Art-Entertainment', 'Atlanta', 'GA', 100000, 70000, 133000},
+                        {'CIO', 'IT', 'Tampa', 'FL', '112000', '69000', 131000},
+                        {'Sales', 'General', 'Chicago', 'IL', 55000, 32000, 121000}],
+                        SalaryAvg_Layout);
 
 
-OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));
-">
-</EclCode>
+    OUTPUT(SalaryAvg_DS, NAMED('SalaryAvg_DS'));">
+    </EclCode>
 </pre>
 
 ## Logical File
 
 Logical files are any file saved on the cluster. Using a logical file's single name refers to all the file's data even if it's distributed among many storage locations. HPCC Systems supports different file formats such as XML, JSON, THOR, and CSV.
 
-### Syntax
-
+**Syntax**
 <pre>
-<EclCode
-code="attr_layout := RECORD
-    data_type    field1;
-    ...
-    ...
-    ...
-    data_type    field100;
-END;
+    <EclCode
+    code="attr_layout := RECORD
+        data_type    field1;
+        ...
+        ...
+        ...
+        data_type    field100;
+    END;
 
-path := '~some::sample::path';
+    path := '~some::sample::path';
 
-// File Dataset
-attr_name := DATASET(path,
-                       attr_layout,
-                       file_type);"
->
+    // File Dataset
+    attr_name := DATASET(path,
+                        attr_layout,
+                        file_type);"
+    >
 
-</EclCode>
+    </EclCode>
 </pre>
 
-| _Value_     | _Definition_                                      |
-| :---------- | :------------------------------------------------ |
-| attr_name   | The name by which the dataset will be invoked.    |
-| DATASET     | Required.                                         |
-| path        | Path where the Logical file is stored on the cluster. |
-| attr_layout | Name of your Record layout.                       |
-| file_type   | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED). |
+| _Value_ | _Definition_ |
+| :- | :- |
+| attr_name | The name by which the dataset will be invoked. |
+| DATASET | Required. |
+| path | Path where the Logical file is stored on the cluster. |
+| attr_layout | Name of your Record layout. |
+| file_type | Type of file (XML, CSV, JSON, THOR, BLOB, FIXED). |
 
 **Example**
-
 <pre>
-<EclCode 
-code="/*
-DATASET Example:
-Defining a logical file as input dataset.
-*/
+    <EclCode 
+    code="/*
+    DATASET Example:
+    Defining a logical file as input dataset.
+    */
 
-// Defining record layout
-SalaryAvg_Layout := RECORD
-    STRING   Job;
-    STRING   Category;
-    STRING   City;
-    STRING2  State;
-    INTEGER  Avg_Salary;
-    INTEGER  LowerBand;
-    INTEGER  Upperband;
-END;
+    // Defining record layout
+    SalaryAvg_Layout := RECORD
+        STRING   Job;
+        STRING   Category;
+        STRING   City;
+        STRING2  State;
+        INTEGER  Avg_Salary;
+        INTEGER  LowerBand;
+        INTEGER  Upperband;
+    END;
 
-// Logical file dataset
-SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, THOR);
-">
-</EclCode>
+    // Logical file dataset
+    SalaryAvg_DS := DATASET('~sample::average::salary::dataset', SalaryAvg_Layout, THOR);">
+    </EclCode>
 </pre>
 
 ## File Types

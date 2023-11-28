@@ -7,11 +7,11 @@ slug: despray
 
 Despray (or Export) is the process of copying a logical file from a Data Refinery cluster to a single machine location (such as the Landing Zone)
 
-### Syntax
-
+**Syntax**
 <pre>
-<EclCode code="STD.File.DeSpray(logicalname, destinationIP, destinationpath, [timeout], [espserverIPport], [maxConnections], [allowoverwrite])">
-</EclCode>
+	<EclCode 
+	code="STD.File.DeSpray(logicalname, destinationIP, destinationpath, [timeout], [espserverIPport], [maxConnections], [allowoverwrite])">
+	</EclCode>
 </pre>
 
 | Value | Definition |
@@ -30,22 +30,19 @@ Despray (or Export) is the process of copying a logical file from a Data Refiner
 -	Scroll down to the Source section and the IP listed will be the IP address you’ll use for your despray function
 
 **Example**
+<pre>
+	<EclCode 
+	code="/*Despray Example:*/
 
-<pre >
-<EclCode 
-code="/*Despray Example:*/
+	// Execute on NOTHOR
 
-// Execute on NOTHOR
+	IMPORT STD;
 
-IMPORT STD;
-
-// DeSpray function
-STD.File.DeSpray(
-	logicalName := '~thor::myfile.json',
-	destinationIP := '10.2.0.4',
-	destinationPath := '/var/lib/HPCCSystems/mydropzone/myfile.json'
-);
-
-">
-</EclCode>
+	// DeSpray function
+	STD.File.DeSpray(
+		logicalName := '~thor::myfile.json',
+		destinationIP := '10.2.0.4',
+		destinationPath := '/var/lib/HPCCSystems/mydropzone/myfile.json'
+	);">
+	</EclCode>
 </pre>
