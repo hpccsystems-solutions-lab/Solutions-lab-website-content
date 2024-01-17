@@ -11,26 +11,24 @@ Vertical Slice form, which there is no expression parameter specified. The numbe
 
 CrossTab Report form, usually includes an expression parameter and, for its output, at least one field uses an aggregate function with the keyword Grouping Condition as its first parameter. The number of records produced is equal to the number of distinct values of the expression.
 
-## Syntax
-
+**Syntax**
 <pre>
-<EclCode code="/*** Stand-alone record definition ***/
-out_record_def := RECORD
-              dataset.field;
-              dataset.field;
-              ...
-              field_name := Agg_Func(GROUP, dataset.field);
-              field_name := Agg_Func(GROUP, dataset.field);
-              field_name := COUNT(GROUP);
-              ....
-END;
+  <EclCode code="/*** Stand-alone record definition ***/
+  out_record_def := RECORD
+                dataset.field;
+                dataset.field;
+                ...
+                field_name := Agg_Func(GROUP, dataset.field);
+                field_name := Agg_Func(GROUP, dataset.field);
+                field_name := COUNT(GROUP);
+                ....
+  END;
 
-attr_name := TABLE(dataset,
-                    out_record_def,
-                    grouping-conditions
-                    [, flags]
-                    );">
-</EclCode>
+  attr_name := TABLE(dataset,
+                      out_record_def,
+                      grouping-conditions
+                      [, flags]);">
+  </EclCode>
 </pre>
 
 | _Value_ | _Definition_ |
@@ -45,21 +43,21 @@ attr_name := TABLE(dataset,
 | flags | Optional flags that can alter the behavior of TABLE. |
 
 <pre>
-<EclCode code="/*** Implicit record definition ***/
-attr_name := TABLE(dataset,
-                    {
-                      field,  //Calling specific field from input dataset
-                      field,
-                      ...
-                      field_name := Agg_Func(GROUP, dataset.field);
-                      field_name := Agg_Func(GROUP, dataset.field);
-                      field_name := COUNT(GROUP);
-                      ....
-                    },
-                    grouping_conditions
-                    [, flags]
-                    );">
-</EclCode>
+  <EclCode 
+  code="/*** Implicit record definition ***/
+  attr_name := TABLE(dataset,
+                      {
+                        field,  //Calling specific field from input dataset
+                        field,
+                        ...
+                        field_name := Agg_Func(GROUP, dataset.field);
+                        field_name := Agg_Func(GROUP, dataset.field);
+                        field_name := COUNT(GROUP);
+                        ....
+                      },
+                      grouping_conditions
+                      [, flags]);">
+  </EclCode>
 </pre>
 
 | _Value_ | _Definition_ |
@@ -71,8 +69,7 @@ attr_name := TABLE(dataset,
 | grouping_condition | One or more comma-delimited expressions. Please see Group for more information. |
 | flags | Optional flags that can alter the behavior of TABLE. |
 
-### Grouping Condition
-
+**Grouping Condition**
 * One or more comma-delimited expressions.
 * An expression could simply be an attribute name within the dataset; this is the most common usage.
 * An expression could be a computed value, such as (myValue % 2) to group on even/odd values.
@@ -80,8 +77,7 @@ attr_name := TABLE(dataset,
 * Each group will result in one output record.
 * Functions evaluated within out_record_def will operate on the group.
 
-### Optional Flags
-
+**Optional Flags**
 Flags can alter the behavior of TABLE. Commonly used flags are MERGE and LOCAL
 
 | _Flag_ | _Definition_ |
@@ -99,8 +95,7 @@ Flags can alter the behavior of TABLE. Commonly used flags are MERGE and LOCAL
 The GROUP keyword is used within output format parameter (RECORD Structure) of a TABLE definition. GROUP replaces the recordset parameter of any aggregate built-in function used in the output to indicate the operation is performed for each group of the expression. This is similar to an SQL "GROUP BY" clause.
 
 
-### Demo Dataset
-
+**Demo Dataset**
 | Pickup_Date | Fare | Distance |
 | :- | :- | :- |
 | 1/1/2021 | 25.1 | 15.5 |
@@ -114,52 +109,49 @@ The GROUP keyword is used within output format parameter (RECORD Structure) of a
 
 
 **Example**
-
 <pre>
-<EclCode
-id="TableExp_1"
-tryMe="TableExp_1"
-code="/*Table Example:*/
+  <EclCode
+  id="TableExp_1"
+  tryMe="TableExp_1"
+  code="/*Table Example:*/
 
-/*
-TABLE Example:
-TABLE is used with aggregations
-*/
+  /*
+  TABLE Example:
+  TABLE is used with aggregations
+  */
 
-// Input layout
-Fare_Layout  :=  RECORD
-    STRING Pickup_Date;
-    REAL   Fare;
-    REAL   Distance;
-END;
+  // Input layout
+  Fare_Layout  :=  RECORD
+      STRING Pickup_Date;
+      REAL   Fare;
+      REAL   Distance;
+  END;
 
-// Input dataset
-FareDS := DATASET([
-                   {'1/1/2021', 25.1, 15.5}, {'1/2/2021', 40.15,7.2},
-                   {'1/3/2021', 25.36, 6.5}, {'1/2/2021', 120, 23},
-                   {'1/3/2021', 30, 60.75}, {'2/2/2021', 25, 71},
-                   {'1/2/2021', 10, 2.2}, {'3/10/2021', 45, 12.23}],
-                   Fare_Layout);
+  // Input dataset
+  FareDS := DATASET([
+                    {'1/1/2021', 25.1, 15.5}, {'1/2/2021', 40.15,7.2},
+                    {'1/3/2021', 25.36, 6.5}, {'1/2/2021', 120, 23},
+                    {'1/3/2021', 30, 60.75}, {'2/2/2021', 25, 71},
+                    {'1/2/2021', 10, 2.2}, {'3/10/2021', 45, 12.23}],
+                    Fare_Layout);
 
-// Defining all fields for the table
-AvgRide_Layout := RECORD
-   fareDS.pickup_date;                   // Calling specific field from input dataset
-   avgFare   := AVE(GROUP, fareDS.fare); // Calculating avg fare per each group
-   totalFare := SUM(GROUP, fareDS.fare); // Calculating total fare per each group
-END;
+  // Defining all fields for the table
+  AvgRide_Layout := RECORD
+    fareDS.pickup_date;                   // Calling specific field from input dataset
+    avgFare   := AVE(GROUP, fareDS.fare); // Calculating avg fare per each group
+    totalFare := SUM(GROUP, fareDS.fare); // Calculating total fare per each group
+  END;
 
-crossTabDs := TABLE(FareDS,           // Input dataset. please see dataset above
-                     AvgRide_Layout,  // Result table definition
-                     pickup_date      // Grouping field
-                     );
+  crossTabDs := TABLE(FareDS,           // Input dataset. please see dataset above
+                      AvgRide_Layout,  // Result table definition
+                      pickup_date      // Grouping field
+                      );
 
-OUTPUT(crossTabDs, NAMED('crossTabDs'));
-
-"></EclCode>
+  OUTPUT(crossTabDs, NAMED('crossTabDs'));">
+  </EclCode>
 </pre>
 
-### Demo Dataset
-
+**Demo Dataset**
 | PersonID | FirstName | LastName | isEmployed | avgIncome | EmpGroupNum |
 | :- | :- | :- | :- | :- | :- |
 | 1102 | Fred | Smith | FALSE | 1000 | 900 |
@@ -175,59 +167,56 @@ OUTPUT(crossTabDs, NAMED('crossTabDs'));
 | 1024 | Nancy | Moon | TRUE | 201100 | 700 |
 
 **Example**
-
 <pre>
-<EclCode
-id="TableExp_2"
-tryMe="TableExp_2"
-code="
-/*
-TABLE Example:
-Cross table example.
-*/
+  <EclCode
+  id="TableExp_2"
+  tryMe="TableExp_2"
+  code="
+  /*
+  TABLE Example:
+  Cross table example.
+  */
 
-AllPeople_Layout := RECORD
-  UNSIGNED  PersonID;
-  STRING15  FirstName;
-  STRING25  LastName;
-  BOOLEAN   isEmployed;
-  UNSIGNED  AvgIncome; 
-  INTEGER   EmpGroupNum;
-END;
-
-
-AllPeopleDS := DATASET([ 
-                       {1102,'Fred','Smith', FALSE, 1000, 900},
-                       {3102,'Fact','Smith', TRUE, 200000, 100},
-                       {1012,'Joe','Blow', TRUE, 11250, 200},
-                       {2085,'Blue','Moon', TRUE, 185000, 500},
-                       {3055,'Silver','Jo', FALSE, 5000, 900},
-                       {1265,'Darling','Jo', TRUE, 5000, 100},
-                       {1265,'Darling','Alex', TRUE, 5000, 100},
-                       {5265,'Blue','Silver', TRUE, 75000, 200},
-                       {7333,'Jane','Smith', FALSE, 50000, 900},
-                       {6023,'Alex','Silver',TRUE, 102000, 200},
-                       {1024,'Nancy','Moon', TRUE, 201100, 700}],
-                       AllPeople_Layout);
-
-VerticalSlice := Table(AllPeopleDS,
-                        {
-                          LastName,
-                          isEmployed
-                        },
-                        LastName, isEmployed);
-OUTPUT(VerticalSlice, NAMED('VerticalSlice'));
+  AllPeople_Layout := RECORD
+    UNSIGNED  PersonID;
+    STRING15  FirstName;
+    STRING25  LastName;
+    BOOLEAN   isEmployed;
+    UNSIGNED  AvgIncome; 
+    INTEGER   EmpGroupNum;
+  END;
 
 
-AvgIncome := TABLE(AllPeopleDS,
-                    {
-                      LastName,
-                      AvgHouseIncome := AVE(GROUP, AvgIncome)
-                    },
-                    LastName);
+  AllPeopleDS := DATASET([ 
+                        {1102,'Fred','Smith', FALSE, 1000, 900},
+                        {3102,'Fact','Smith', TRUE, 200000, 100},
+                        {1012,'Joe','Blow', TRUE, 11250, 200},
+                        {2085,'Blue','Moon', TRUE, 185000, 500},
+                        {3055,'Silver','Jo', FALSE, 5000, 900},
+                        {1265,'Darling','Jo', TRUE, 5000, 100},
+                        {1265,'Darling','Alex', TRUE, 5000, 100},
+                        {5265,'Blue','Silver', TRUE, 75000, 200},
+                        {7333,'Jane','Smith', FALSE, 50000, 900},
+                        {6023,'Alex','Silver',TRUE, 102000, 200},
+                        {1024,'Nancy','Moon', TRUE, 201100, 700}],
+                        AllPeople_Layout);
 
-OUTPUT(AvgIncome, NAMED('AvgIncome'));
+  VerticalSlice := Table(AllPeopleDS,
+                          {
+                            LastName,
+                            isEmployed
+                          },
+                          LastName, isEmployed);
+  OUTPUT(VerticalSlice, NAMED('VerticalSlice'));
 
 
-"></EclCode>
+  AvgIncome := TABLE(AllPeopleDS,
+                      {
+                        LastName,
+                        AvgHouseIncome := AVE(GROUP, AvgIncome)
+                      },
+                      LastName);
+
+  OUTPUT(AvgIncome, NAMED('AvgIncome'));">
+  </EclCode>
 </pre>

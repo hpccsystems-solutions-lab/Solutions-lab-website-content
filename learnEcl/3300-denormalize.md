@@ -19,17 +19,64 @@ In this form TRANSFORM function takes at least two parameters:
 * The result of the TRANSFORM the same format as the LEFT record which is parent and child combined record.
 * TRANSFORM is called per number of children. The input to the first TRANSFORM is the parent and one child. The input to the 2nd call is the output of 1st TRANSFORM and another child. The input to the 3rd call is the output of 2nd call and another child ……
 
-### Parameters
-
+**Parameters**
 * ParentDataset The set of parent records to process, already in the format that will contain the denormalized parent and child records.
 * ChildDataset The set of child records to process.
 * Condition An expression that specifies how to match records between the ParentDataset and ChildDataset.
 * TRANSFORM The TRANSFORM function perform denormalize.
 * Flags Optional
 
-### Demo Dataset
-### Child Dataset
+**Form One Syntax**
+<pre>
+    <EclCode code="Child_Layout := RECORD
+        ...
+        ...
+    END;
 
+    //Parent Layout with child dataset
+    Parent_Layout := RECORD
+        INTEGER TheCounter;
+        ParentField1;
+        ...
+        ChildField1;
+        ChildField2;
+        ChildField3;
+        ...
+    END;
+
+    Parent_Layout xForm(Parent_layout Le, Child_Layout Ri, INTEGER OptCont) := TRANSFORM
+
+        SELF.ChildField1 := IF(OptCont = 1, Ri.ChildField, Le.ChildField1); 
+        SELF.ChildField2 := IF(OptCont = 2, Ri.ChildField, Le.ChildField2); 
+
+        SELF.ChildField3 := IF(OptCont = 1, Ri.ChildField, Le.ChildField3); 
+        SELF.ChildField4 := IF(OptCont = 2, Ri.ChildField, Le.ChildField4); 
+        SELF.ChildField5 := IF(OptCont = 3, Ri.ChildField, Le.ChildField5); 
+
+        //Optional 
+        SELF.TheCounter := OptCont;
+
+        SELF := Le;
+    END;
+
+    DeNorm := DENORMALIZE(ParentDS, ChildrenDS,
+                            //Condition
+                            LEFT.MatchingField = RIGHT.MatchingField,
+                            xForm(LEFT, RIGHT, COUNTER)
+                            [,flags]);">
+    </EclCode>
+</pre>
+
+| _Value_ | _Definition_ |
+| :- | :- |
+| Parent_Layout | Parent and child layouts combined. |
+| xForm | TRANSFORM to perform denormalization. |
+| ChildField1 | If counter is equal 1 it gets the first matching record value
+. |
+| ChildField2 | If counter is equal 1 it gets the second matching record value. |
+| MatchingField | Field(s) that exists both in parent and child. |
+
+**Demo Dataset - Child Dataset**
 | PersonID | FirstName | LastName |
 | :- | :- | :- |
 | Carpenter | | 123 Main Str |
@@ -42,8 +89,7 @@ In this form TRANSFORM function takes at least two parameters:
 | Black | | '8749 OceanFront main Rd |
 | Smith | | '5671 North Lake Str' |
 
-### Parent Dataset
-
+**Demo Dataset - Parent Dataset**
 | LastName | CountIt | PhoneNumOne | PhoneNumTwo | AddressOne | AddressTwo | AddressThree |
 | :- | :- | :- | :- | :- | :- | :- |
 | Carpenter | 0 |  |  |  |  |  |
@@ -54,142 +100,88 @@ In this form TRANSFORM function takes at least two parameters:
 | Adam | 0 |  |  |  |  |  |
 
 **Example**
-
 <pre>
-<EclCode
-id="DenormalizeExp_1"
-tryMe="DenormalizeExp_1"
-code="/*Denormalize Example:*/
+    <EclCode
+    id="DenormalizeExp_1"
+    tryMe="DenormalizeExp_1"
+    code="/*Denormalize Example:*/
 
-/*
-DENORMALIZE Example:
-Example on form one denormalization.
-*/
+    /*
+    DENORMALIZE Example:
+    Example on form one denormalization.
+    */
 
-child_layout := RECORD
-  STRING     lastName;
-  STRING     phoneNum := '';   //Default to blank
-  STRING     address  := '';
-END;
+    child_layout := RECORD
+    STRING     lastName;
+    STRING     phoneNum := '';   //Default to blank
+    STRING     address  := '';
+    END;
 
-Parent_layout := RECORD
-    STRING  lastName; 
-    INTEGER CountIt         := 0;
-    STRING  phoneNumOne     := '';
-    STRING  phoneNumTwo     := '';
-    STRING  addressOne      := '';
-    STRING  addressTwo      := '';
-    STRING  addressThree    := '';
-END;
+    Parent_layout := RECORD
+        STRING  lastName; 
+        INTEGER CountIt         := 0;
+        STRING  phoneNumOne     := '';
+        STRING  phoneNumTwo     := '';
+        STRING  addressOne      := '';
+        STRING  addressTwo      := '';
+        STRING  addressThree    := '';
+    END;
 
-// Creating child dataset
-// In child layout phoneNum and address are defaulted to ''.
-// If we want to fill one field and not the other, we need to keep the order.
+    // Creating child dataset
+    // In child layout phoneNum and address are defaulted to ''.
+    // If we want to fill one field and not the other, we need to keep the order.
 
-childDS := DATASET([{'Carpenter',  '',             '123 Main Str'},
-                    {'Carpenter',  '7701234567',   '404 capital cr'},
-                    {'Smith',      '40401234567',  '990 Rose highway'},
-                    {'Black',      '',             '504 Sunset Blvd'},
-                    {'Adam',       '6789991111'                     },
-                    {'Black',      '5694023457'                     },
-                    {'Smith',      '2209875437'                     },
-                    {'Black',      '',             '8749 OceanFront main Rd'},
-                    {'Smith',      '',             '5671 North Lake Str'}],
-                            child_layout);
+    childDS := DATASET([{'Carpenter',  '',             '123 Main Str'},
+                        {'Carpenter',  '7701234567',   '404 capital cr'},
+                        {'Smith',      '40401234567',  '990 Rose highway'},
+                        {'Black',      '',             '504 Sunset Blvd'},
+                        {'Adam',       '6789991111'                     },
+                        {'Black',      '5694023457'                     },
+                        {'Smith',      '2209875437'                     },
+                        {'Black',      '',             '8749 OceanFront main Rd'},
+                        {'Smith',      '',             '5671 North Lake Str'}],
+                                child_layout);
 
-// In parents layout all fields besides lastName is defaulted to '', because they are getting populated
-// by child dataset.
+    // In parents layout all fields besides lastName is defaulted to '', because they are getting populated
+    // by child dataset.
 
-ParentDS := DATASET([{'Carpenter'},{'Smith'},
-                     {'Jackson'},  {'Black'},
-                     {'Raymond'},  {'Adam'}],
-                            Parent_layout);
-											
+    ParentDS := DATASET([{'Carpenter'},{'Smith'},
+                        {'Jackson'},  {'Black'},
+                        {'Raymond'},  {'Adam'}],
+                                Parent_layout);
+                                                
 
-Parent_layout xForm(Parent_layout Le, childDS Ri, INTEGER C) := TRANSFORM
+    Parent_layout xForm(Parent_layout Le, childDS Ri, INTEGER C) := TRANSFORM
 
-    SELF.phoneNumOne := IF   (C = 1, Ri.phoneNum, Le.phoneNumOne);
-    SELF.phoneNumTwo  := IF  (C = 2, Ri.phoneNum, Le.phoneNumTwo);
-    SELF.addressOne   := IF  (C = 1, Ri.address, Le.addressOne);
-    SELF.addressTwo   := IF  (C = 1, Ri.address, Le.addressTwo);
-    SELF.addressThree := IF  (C = 1, Ri.address, Le.addressThree);
-    SELF.CountIt      := C;
-  
-  
-    SELF := Le;
-    self := [];
+        SELF.phoneNumOne := IF   (C = 1, Ri.phoneNum, Le.phoneNumOne);
+        SELF.phoneNumTwo  := IF  (C = 2, Ri.phoneNum, Le.phoneNumTwo);
+        SELF.addressOne   := IF  (C = 1, Ri.address, Le.addressOne);
+        SELF.addressTwo   := IF  (C = 1, Ri.address, Le.addressTwo);
+        SELF.addressThree := IF  (C = 1, Ri.address, Le.addressThree);
+        SELF.CountIt      := C;
+    
+    
+        SELF := Le;
+        self := [];
 
-END;
+    END;
 
-DeNorm := DENORMALIZE(ParentDS, childDS,
-                        LEFT.lastName = RIGHT.lastName,
-                        xForm(LEFT,RIGHT,COUNTER));
+    DeNorm := DENORMALIZE(ParentDS, childDS,
+                            LEFT.lastName = RIGHT.lastName,
+                            xForm(LEFT,RIGHT,COUNTER));
 
-// Viewing child dataset
-OUTPUT(childDS, NAMED('childDS'));
+    // Viewing child dataset
+    OUTPUT(childDS, NAMED('childDS'));
 
-// Viewing parent dataset
-OUTPUT(ParentDS, NAMED('ParentDS'));
+    // Viewing parent dataset
+    OUTPUT(ParentDS, NAMED('ParentDS'));
 
-// Viewing denormalize result
-OUTPUT(DeNorm, NAMED('DeNorm'));
-
-"></EclCode>
+    // Viewing denormalize result
+    OUTPUT(DeNorm, NAMED('DeNorm'));">
+    </EclCode>
 </pre>
-
-## Form One Syntax
-
-<pre>
-<EclCode code="Child_Layout := RECORD
-    ...
-    ...
-END;
-
-//Parent Layout with child dataset
-Parent_Layout := RECORD
-    INTEGER TheCounter;
-    ParentField1;
-    ...
-    ChildField1;
-    ChildField2;
-    ChildField3;
-    ...
-END;
-
-Parent_Layout xForm(Parent_layout Le, Child_Layout Ri, INTEGER OptCont) := TRANSFORM
-
-    SELF.ChildField1 := IF(OptCont = 1, Ri.ChildField, Le.ChildField1); 
-    SELF.ChildField2 := IF(OptCont = 2, Ri.ChildField, Le.ChildField2); 
-
-    SELF.ChildField3 := IF(OptCont = 1, Ri.ChildField, Le.ChildField3); 
-    SELF.ChildField4 := IF(OptCont = 2, Ri.ChildField, Le.ChildField4); 
-    SELF.ChildField5 := IF(OptCont = 3, Ri.ChildField, Le.ChildField5); 
-
-    //Optional 
-    SELF.TheCounter := OptCont;
-
-    SELF := Le;
-END;
-
-DeNorm := DENORMALIZE(ParentDS, ChildrenDS,
-                        //Condition
-                        LEFT.MatchingField = RIGHT.MatchingField,
-                        xForm(LEFT, RIGHT, COUNTER)
-                        [,flags]);">
-</EclCode>
-</pre>
-
-| _Value_ | _Definition_ |
-| :- | :- |
-| Parent_Layout | Parent and child layouts combined. |
-| xForm | TRANSFORM to perform denormalization. |
-| ChildField1 | If counter is equal 1 it gets the first matching record value
-. |
-| ChildField2 | If counter is equal 1 it gets the second matching record value. |
-| MatchingField | Field(s) that exists both in parent and child. |
 
 ## Form Two
-
 In this format TRANSFORM function takes at least two parameters. The difference from form one is instead of listing the fields in the parent records, we can nest the children's dataset(s).
 
 * A LEFT record of the same format as the combined ParentDataset and ChildDataset (the resulting de-normalized record structure)
@@ -197,103 +189,7 @@ In this format TRANSFORM function takes at least two parameters. The difference 
 * The result of the TRANSFORM must be the same format as the LEFT record.
 * PROJECT can be used to make room for nested child dataset.
 
-**Example**
-
-<pre>
-<EclCode
-id="DenormalizeExp_2"
-tryMe="DenormalizeExp_2"
-code="/*Denormalize Example:*/
-
-/*
-DENORMALIZE Example:
-Example on form two denormalization.
-*/
-
-ParentLayout := RECORD
-    STRING      fName;
-    STRING      lName;
-END;
-
-
-parentDS := DATASET
-    (
-        [
-            {'Jane', 'Carpenter'},
-            {'Bill', 'Smith'},
-            {'Orville', 'Black'}
-        ],
-        ParentLayout
-    );
-
-OUTPUT(parentDS, NAMED('parentDS'));
-
-
-ChildrenLayout := RECORD
-    STRING      fName;
-    STRING      lName;
-    UNSIGNED1   age;
-END;
-
-childrenDS := DATASET
-    (
-        [
-            {'Fiona', 'Black', 9},
-            {'Jack', 'Black', 18},
-            {'Martin', 'Carpenter', 10},
-            {'Stacey', 'Smith', 5},
-            {'Allison', 'Smith', 7}
-        ],
-        ChildrenLayout
-    );
-
-OUTPUT(childrenDS, NAMED('childrenDS'));
-
-
-EmbeddedChildLayout := RECORD
-    STRING      fName;
-    UNSIGNED1   age;
-END;
-
-// Denorm result layout
-ParentChildLayout1 := RECORD
-    ParentLayout;
-    DATASET(EmbeddedChildLayout)    children;
-END;
-
-// Making room for child fields in parent layout
-preppedParents := PROJECT
-    (
-        parentDS,
-        TRANSFORM
-            (
-                ParentChildLayout1,
-                SELF := LEFT,
-                SELF := []
-            )
-    );
-
-OUTPUT(preppedParents, NAMED('preppedParents'));
-
-denorm := DENORMALIZE
-    (
-        preppedParents,
-        childrenDS,
-        LEFT.lName = RIGHT.lName,
-        TRANSFORM
-            (
-                ParentChildLayout1,
-                SELF.children := LEFT.children + ROW({RIGHT.fName, RIGHT.age}, EmbeddedChildLayout),
-                SELF := LEFT
-            )
-    );
-OUTPUT(denorm, NAMED('denorm'));
-
-"></EclCode>
-</pre>
-
-## Form Two Syntax
-
+**Form Two Syntax**
 <pre>
 <EclCode code="ChildLayout := RECORD
     Field1;
@@ -330,80 +226,168 @@ DeNorm := DENORMALIZE(ParentLayout, ChidLayout,
 </pre>
 
 **Example**
-
 <pre>
-<EclCode
-code="DENORMALIZE Example:
-Example on form two denormalization using GROUzxP.
-*/
+    <EclCode
+    id="DenormalizeExp_2"
+    tryMe="DenormalizeExp_2"
+    code="/*Denormalize Example:*/
 
-ParentLayout := RECORD
-    STRING      fName;
-    STRING      lName;
-END;
+    /*
+    DENORMALIZE Example:
+    Example on form two denormalization.
+    */
 
-
-parentDS := DATASET
-    (
-        [
-            {'Jane', 'Carpenter'},
-            {'Bill', 'Smith'},
-            {'Orville', 'Black'}
-        ],
-        ParentLayout
-    );
-
-OUTPUT(parentDS, NAMED('parentDS'));
+    ParentLayout := RECORD
+        STRING      fName;
+        STRING      lName;
+    END;
 
 
-ChildrenLayout := RECORD
-    STRING      fName;
-    STRING      lName;
-    UNSIGNED1   age;
-END;
+    parentDS := DATASET
+        (
+            [
+                {'Jane', 'Carpenter'},
+                {'Bill', 'Smith'},
+                {'Orville', 'Black'}
+            ],
+            ParentLayout
+        );
 
-childrenDS := DATASET
-    (
-        [
-            {'Fiona', 'Black', 9},
-            {'Jack', 'Black', 18},
-            {'Martin', 'Carpenter', 10},
-            {'Stacey', 'Smith', 5},
-            {'Allison', 'Smith', 7}
-        ],
-        ChildrenLayout
-    );
-
-OUTPUT(childrenDS, NAMED('childrenDS'));
-
-ParentChildLayout2 := RECORD
-    ParentLayout;
-    SET OF STRING   children;
-END;
-
-denorm2 := DENORMALIZE
-    (
-        parentDS,
-        childrenDS,
-        LEFT.lName = RIGHT.lName,
-        GROUP,
-        TRANSFORM
-            (
-                ParentChildLayout2,
-                SELF.children := SET(ROWS(RIGHT), fName),
-                SELF := LEFT
-            )
-    );
-
-OUTPUT(denorm2, NAMED('denorm2'));
+    OUTPUT(parentDS, NAMED('parentDS'));
 
 
+    ChildrenLayout := RECORD
+        STRING      fName;
+        STRING      lName;
+        UNSIGNED1   age;
+    END;
 
-"></EclCode>
+    childrenDS := DATASET
+        (
+            [
+                {'Fiona', 'Black', 9},
+                {'Jack', 'Black', 18},
+                {'Martin', 'Carpenter', 10},
+                {'Stacey', 'Smith', 5},
+                {'Allison', 'Smith', 7}
+            ],
+            ChildrenLayout
+        );
+
+    OUTPUT(childrenDS, NAMED('childrenDS'));
+
+
+    EmbeddedChildLayout := RECORD
+        STRING      fName;
+        UNSIGNED1   age;
+    END;
+
+    // Denorm result layout
+    ParentChildLayout1 := RECORD
+        ParentLayout;
+        DATASET(EmbeddedChildLayout)    children;
+    END;
+
+    // Making room for child fields in parent layout
+    preppedParents := PROJECT
+        (
+            parentDS,
+            TRANSFORM
+                (
+                    ParentChildLayout1,
+                    SELF := LEFT,
+                    SELF := []
+                )
+        );
+
+    OUTPUT(preppedParents, NAMED('preppedParents'));
+
+    denorm := DENORMALIZE
+        (
+            preppedParents,
+            childrenDS,
+            LEFT.lName = RIGHT.lName,
+            TRANSFORM
+                (
+                    ParentChildLayout1,
+                    SELF.children := LEFT.children + ROW({RIGHT.fName, RIGHT.age}, EmbeddedChildLayout),
+                    SELF := LEFT
+                )
+        );
+    OUTPUT(denorm, NAMED('denorm'));">
+    </EclCode>
 </pre>
 
-## Flags
+**Example**
+<pre>
+    <EclCode
+    code="DENORMALIZE Example:
+    Example on form two denormalization using GROUP.
+    */
 
+    ParentLayout := RECORD
+        STRING      fName;
+        STRING      lName;
+    END;
+
+
+    parentDS := DATASET
+        (
+            [
+                {'Jane', 'Carpenter'},
+                {'Bill', 'Smith'},
+                {'Orville', 'Black'}
+            ],
+            ParentLayout
+        );
+
+    OUTPUT(parentDS, NAMED('parentDS'));
+
+
+    ChildrenLayout := RECORD
+        STRING      fName;
+        STRING      lName;
+        UNSIGNED1   age;
+    END;
+
+    childrenDS := DATASET
+        (
+            [
+                {'Fiona', 'Black', 9},
+                {'Jack', 'Black', 18},
+                {'Martin', 'Carpenter', 10},
+                {'Stacey', 'Smith', 5},
+                {'Allison', 'Smith', 7}
+            ],
+            ChildrenLayout
+        );
+
+    OUTPUT(childrenDS, NAMED('childrenDS'));
+
+    ParentChildLayout2 := RECORD
+        ParentLayout;
+        SET OF STRING   children;
+    END;
+
+    denorm2 := DENORMALIZE
+        (
+            parentDS,
+            childrenDS,
+            LEFT.lName = RIGHT.lName,
+            GROUP,
+            TRANSFORM
+                (
+                    ParentChildLayout2,
+                    SELF.children := SET(ROWS(RIGHT), fName),
+                    SELF := LEFT
+                )
+        );
+
+    OUTPUT(denorm2, NAMED('denorm2'));">
+    </EclCode>
+</pre>
+
+**Flags**
 | Options | Description |
 | :- | :- |
 | UNORDERED | Specifies the output record order is not significant. |

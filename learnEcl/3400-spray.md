@@ -7,13 +7,12 @@ slug: spray
 
 Spray (or Import) is the process of copying a data file from one location (such as a Landing Zone) to a Data Refinery cluster.
 
-# 
-# SPRAYXML
-### Syntax
+## SPRAYXML
 
+**Syntax**
 <pre>
-<EclCode code="STD.File.SprayXML(sourceIP, sourcepath, [maxrecordsize], srcRowTag, [srcEncoding], destinationgroup, desinationlogicalname [timeout] [espserverIPport] [maxConnections] [allowoverwrite] [replicate] [compress], [failIfNoSourceFile], [expireDays], [dfuServerQueue], [noSplit], [noCommon], [sourcePlane], [destinationNumParts])">
-</EclCode>
+	<EclCode code="STD.File.SprayXML(sourceIP, sourcepath, [maxrecordsize], srcRowTag, [srcEncoding], destinationgroup, desinationlogicalname [timeout] [espserverIPport] [maxConnections] [allowoverwrite] [replicate] [compress], [failIfNoSourceFile], [expireDays], [dfuServerQueue], [noSplit], [noCommon], [sourcePlane], [destinationNumParts])">
+	</EclCode>
 </pre>
 
 | Value | Definition |
@@ -41,20 +40,17 @@ Spray (or Import) is the process of copying a data file from one location (such 
 
 
 **Example**
-
 <pre >
-<EclCode 
-code="/*Despray Example:*/
+	<EclCode 
+	code="/*Despray Example:*/
 
-// Despray function
-STD.File.SprayXML(
-	'10.5.0.4',
-	'/var/lib/HPCCSystems/mydropzone/myfile.xml',,
-	'/',,
-	'myroxie',
-	'.::myfile.xml
-);
-
-">
-</EclCode>
+	// Despray function
+	STD.File.SprayXML(
+		'10.5.0.4',
+		'/var/lib/HPCCSystems/mydropzone/myfile.xml',,
+		'/',,
+		'myroxie',
+		'.::myfile.xml
+	);">
+	</EclCode>
 </pre>

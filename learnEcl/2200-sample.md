@@ -7,11 +7,11 @@ slug: sample
 
 SAMPLE function returns a set of sample records.
 
-## Syntax
-
+**Syntax**
 <pre>
-<EclCode code="SAMPLE(dataset, interval, [, which])">
-</EclCode>
+    <EclCode 
+    code="SAMPLE(dataset, interval, [, which])">
+    </EclCode>
 </pre>
 
 | _Value_ | _Definition_ |
@@ -33,38 +33,36 @@ SAMPLE function returns a set of sample records.
 | Purple | 108 |
 
 **Example**
-
 <pre>
-<EclCode
-id="SampleExp_1"
-tryMe="SampleExp_1"
-code="/*Sample Example:*/
+    <EclCode
+    id="SampleExp_1"
+    tryMe="SampleExp_1"
+    code="/*Sample Example:*/
 
-/*
-REAL Example:
-Collecting different sample sizes from the input dataset.
-*/
+    /*
+    REAL Example:
+    Collecting different sample sizes from the input dataset.
+    */
 
-Color_Layout := RECORD
-    STRING   Color;
-    INTEGER ID;
-END;
+    Color_Layout := RECORD
+        STRING   Color;
+        INTEGER ID;
+    END;
 
-Color_DS := DATASET([
-    {'Red', 100},
-    {'Blue', 102},
-    {'Black', 103},
-    {'Yellow', 104},
-    {'Orange', 105},
-    {'White', 106},
-    {'Green', 107},
-    {'Purple', 108}],
-    Color_Layout);
+    Color_DS := DATASET([
+        {'Red', 100},
+        {'Blue', 102},
+        {'Black', 103},
+        {'Yellow', 104},
+        {'Orange', 105},
+        {'White', 106},
+        {'Green', 107},
+        {'Purple', 108}],
+        Color_Layout);
 
-SampleOne := SAMPLE(Color_DS, 3);
-OUTPUT(SampleOne, NAMED('SampleOne'));
+    SampleOne := SAMPLE(Color_DS, 3);
+    OUTPUT(SampleOne, NAMED('SampleOne'));
 
-SAMPLE(Color_DS, 2, 4);
-
-"></EclCode>
+    SAMPLE(Color_DS, 2, 4);">
+    </EclCode>
 </pre>

@@ -26,82 +26,80 @@ In this form, TRANSFORM is called for each parent record with child record pair.
 * Child layout is being called as an embedded dataset.
 
 **Example**
-
 <pre>
-<EclCode
-id="NormalizeExp_1"
-tryMe="NormalizeExp_1"
-code="
-/*
-Normalize Example:
-NORMALIZE All Records
-*/
+    <EclCode
+    id="NormalizeExp_1"
+    tryMe="NormalizeExp_1"
+    code="
+    /*
+    Normalize Example:
+    NORMALIZE All Records
+    */
 
-// Child record layout that's being extracted from parent record
-Child_Layout := RECORD
-    INTEGER1 NameID;
-    STRING20 Addr; 
-END;
+    // Child record layout that's being extracted from parent record
+    Child_Layout := RECORD
+        INTEGER1 NameID;
+        STRING20 Addr; 
+    END;
 
-// Parent record layout with child dataset 
-Parent_Layout := RECORD
-    INTEGER1 NameID;
-    STRING20 Name;
-    DATASET(Child_Layout) Children; //Embedded child layout
-END;
+    // Parent record layout with child dataset 
+    Parent_Layout := RECORD
+        INTEGER1 NameID;
+        STRING20 Name;
+        DATASET(Child_Layout) Children; //Embedded child layout
+    END;
 
-// Parent dataset with child dataset
-parentDS := DATASET([ 
-                       {1,'Kevin',   [ {1, '290 Downtown Abby'}] },
-                       {2,'Liz',     [ {2, '2345 Lake View Rd'}, {2, '776  Action Cir'}] },
-                       {3,'Jacob',   [ ]},
-                       {4,'Alex',    [ {4, '9000 Sunset Blvd'}] },
-                       {5,'Sally',   [ {5, '345 Fresh Start Str'}, {5,  '433 Union Dr'} ,
-                                       {5,  '777 Lookup Court'},   {5,  '222 Movie Str'} ] }
-                    ], Parent_Layout);
+    // Parent dataset with child dataset
+    parentDS := DATASET([ 
+                        {1,'Kevin',   [ {1, '290 Downtown Abby'}] },
+                        {2,'Liz',     [ {2, '2345 Lake View Rd'}, {2, '776  Action Cir'}] },
+                        {3,'Jacob',   [ ]},
+                        {4,'Alex',    [ {4, '9000 Sunset Blvd'}] },
+                        {5,'Sally',   [ {5, '345 Fresh Start Str'}, {5,  '433 Union Dr'} ,
+                                        {5,  '777 Lookup Court'},   {5,  '222 Movie Str'} ] }
+                        ], Parent_Layout);
 
-OUTPUT(parentDS, NAMED('parentDS'));
-
-
-Child_Layout xForm(Child_Layout Ri) := TRANSFORM
-     SELF := Ri;
-END;
-
-ExtractChild := NORMALIZE(parentDS,
-                         LEFT.Children, //Sending only the child dataset
-                         xForm(RIGHT));
+    OUTPUT(parentDS, NAMED('parentDS'));
 
 
-OUTPUT(ExtractChild, NAMED('ExtractChild'));
+    Child_Layout xForm(Child_Layout Ri) := TRANSFORM
+        SELF := Ri;
+    END;
 
-"></EclCode>
+    ExtractChild := NORMALIZE(parentDS,
+                            LEFT.Children, //Sending only the child dataset
+                            xForm(RIGHT));
+
+
+    OUTPUT(ExtractChild, NAMED('ExtractChild'));">
+    </EclCode>
 </pre>
 
 ## All Records Syntax
 
 <pre>
-<EclCode code="Child_Layout := RECORD
-    FieldOne;
-    FieldTwo;
-END;
+    <EclCode code="Child_Layout := RECORD
+        FieldOne;
+        FieldTwo;
+    END;
 
-// Parent Layout with child dataset
-Parent_Layout := RECORD
-    ...
-    ...
-    DATASET(Child_Layout) Children; //Embedded child layout
-END;
+    // Parent Layout with child dataset
+    Parent_Layout := RECORD
+        ...
+        ...
+        DATASET(Child_Layout) Children; //Embedded child layout
+    END;
 
-Child_Layout xForm(Child_Layout Ri) := TRANSFORM
-     SELF := Ri;
-END;
+    Child_Layout xForm(Child_Layout Ri) := TRANSFORM
+        SELF := Ri;
+    END;
 
-attribName := NORMALIZE(ParentsDS,
-                         //Sending only the child dataset
-                         LEFT.Children, 
-                         xForm(RIGHT)
-                         [,flags]);">
-</EclCode>
+    attribName := NORMALIZE(ParentsDS,
+                            //Sending only the child dataset
+                            LEFT.Children, 
+                            xForm(RIGHT)
+                            [,flags]);">
+    </EclCode>
 </pre>
 
 ## Normalize With COUNTER
@@ -109,103 +107,100 @@ attribName := NORMALIZE(ParentsDS,
 This NORMALIZE form calls TRANSFORM n times for each parent record, where n is a numeric expression specifying the total number of times to call the TRANSFORM. It does not need to be the same value for every record. The TRANSFORM function must take at least a LEFT record of the same format as the input recordset. The resulting record set format does not need to be the same as the input.
 
 **Example**
-
 <pre>
-<EclCode
-id="NormalizeExp_2"
-tryMe="NormalizeExp_2"
-code="/*Normalize Example:*/
+    <EclCode
+    id="NormalizeExp_2"
+    tryMe="NormalizeExp_2"
+    code="/*Normalize Example:*/
 
-/*
-NORMALIZE with COUNTER Example
-*/
+    /*
+    NORMALIZE with COUNTER Example
+    */
 
-Parent_layout := RECORD
-  // The explicitCount defines:
-  // how many times transform should execute per record.
-  INTEGER explicitCount; 
-  STRING  lastName; 
-  STRING  phoneOne;
-  STRING  phoneTwo;
-  STRING  addressOne;
-  STRING  addressTwo;
-  STRING  addressThree;
-END;
+    Parent_layout := RECORD
+    // The explicitCount defines:
+    // how many times transform should execute per record.
+    INTEGER explicitCount; 
+    STRING  lastName; 
+    STRING  phoneOne;
+    STRING  phoneTwo;
+    STRING  addressOne;
+    STRING  addressTwo;
+    STRING  addressThree;
+    END;
 
-// Parent Dataset
-parentDS := DATASET([
-                {2, 'Alexa', '7701234567',  '', '123 Main Str', '404 capital cr', ''},
-                {2, 'Smith', '', '8890002323', '504 Sunset Blvd', '990 Rose highway', ''},
-                
-                //Notice Adam has two phone numbers, but assigning 1 for number of execution
-                {1, 'Adam', '6789991111', '4445679000', '', '', ''},
-                {2, 'Black', '5694023457' ,'', '777 Formal Str', '111 Batman Corner', ''},
-                {3, 'Rosy', '2209875437', '', '8749 OceanFront main Rd','5671 North Lake Str', '2323 Washington RD'}],
-                      Parent_layout);
-
-
-OUTPUT(parentDS, NAMED('parentDS'));
-
-child_layout := RECORD
-  INTEGER    countIt;
-  STRING     Name;
-  STRING     phone; 
-  STRING     address;
-END;
+    // Parent Dataset
+    parentDS := DATASET([
+                    {2, 'Alexa', '7701234567',  '', '123 Main Str', '404 capital cr', ''},
+                    {2, 'Smith', '', '8890002323', '504 Sunset Blvd', '990 Rose highway', ''},
+                    
+                    //Notice Adam has two phone numbers, but assigning 1 for number of execution
+                    {1, 'Adam', '6789991111', '4445679000', '', '', ''},
+                    {2, 'Black', '5694023457' ,'', '777 Formal Str', '111 Batman Corner', ''},
+                    {3, 'Rosy', '2209875437', '', '8749 OceanFront main Rd','5671 North Lake Str', '2323 Washington RD'}],
+                        Parent_layout);
 
 
-child_layout xForm(Parent_layout Li, INTEGER counting) := TRANSFORM
+    OUTPUT(parentDS, NAMED('parentDS'));
 
-        SELF.countIt    := counting;      
-        SELF.name       := Li.lastName;
-        SELF.phone      := CHOOSE(counting, Li.phoneOne, Li.phoneTwo);
-        SELF.address    := CHOOSE(counting, Li.addressOne, Li.addressTwo, Li.addressThree);
-END;
-  
-extractChild := NORMALIZE(parentDS,
-                          //Number of times transform should go through a record
-                          LEFT.explicitCount, 
-                          xForm(LEFT,COUNTER));
+    child_layout := RECORD
+    INTEGER    countIt;
+    STRING     Name;
+    STRING     phone; 
+    STRING     address;
+    END;
 
-OUTPUT(extractChild, NAMED('extractChild'));
 
-"></EclCode>
+    child_layout xForm(Parent_layout Li, INTEGER counting) := TRANSFORM
+
+            SELF.countIt    := counting;      
+            SELF.name       := Li.lastName;
+            SELF.phone      := CHOOSE(counting, Li.phoneOne, Li.phoneTwo);
+            SELF.address    := CHOOSE(counting, Li.addressOne, Li.addressTwo, Li.addressThree);
+    END;
+    
+    extractChild := NORMALIZE(parentDS,
+                            //Number of times transform should go through a record
+                            LEFT.explicitCount, 
+                            xForm(LEFT,COUNTER));
+
+    OUTPUT(extractChild, NAMED('extractChild'));">
+    </EclCode>
 </pre>
 
 ## With COUNTER Syntax
 
 <pre>
-<EclCode code="Child_Layout := RECORD
-    ...
-    ...
-END;
+    <EclCode code="Child_Layout := RECORD
+        ...
+        ...
+    END;
 
-//Parent Layout with child dataset
-Parent_Layout := RECORD
-    INTEGER TheCounter;
-    ...
-    ...
-END;
+    //Parent Layout with child dataset
+    Parent_Layout := RECORD
+        INTEGER TheCounter;
+        ...
+        ...
+    END;
 
 
-Child_Layout xForm(Parent_layout Li, INTEGER counting) := TRANSFORM
+    Child_Layout xForm(Parent_layout Li, INTEGER counting) := TRANSFORM
 
-        //counting will only execute the number of times defined by expression
-        SELF.Result     := CHOOSE(Counting, Li.FieldOne, Li.FieldTwo, ...);
-       ...
-       ...
+            //counting will only execute the number of times defined by expression
+            SELF.Result     := CHOOSE(Counting, Li.FieldOne, Li.FieldTwo, ...);
+        ...
+        ...
 
-END;
+    END;
 
-ExtractChildren := NORMALIZE(ParentDS,
-                            Expression, //Left.TheCounter
-                            xForm(LEFT,COUNTER)
-                            [,flags]);">
-</EclCode>
+    ExtractChildren := NORMALIZE(ParentDS,
+                                Expression, //Left.TheCounter
+                                xForm(LEFT,COUNTER)
+                                [,flags]);">
+    </EclCode>
 </pre>
 
-## Optional Flags
-
+**Optional Flags**
 | Options | Description |
 | :- | :- |
 | UNORDERED | Specifies the output record order is not significant. |

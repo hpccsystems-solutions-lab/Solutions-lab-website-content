@@ -5,7 +5,7 @@ slug: ecl-syntax
 
 # ECL SYNTAX
 
-ECL syntax is characterized by its English-like readability and declarative nature. Developers use ECL to define data transformation workflows by specifying operations on datasets. ECL scripts consist of modules and functions that manipulate data through a sequence of transformations, including filters, joins, sorts, and aggregations. ECL's unique feature is its ability to optimize and parallelize these transformations across distributed computing resources, making it well-suited for big data processing tasks. 
+ECL syntax is characterized by its English-like readability and declarative nature. Developers use it to define data transformation workflows by specifying operations on datasets. ECL scripts can consist of modules and functions that manipulate data through a sequence of transformations, including filters, joins, sorts, and aggregations. One of ECL's unique features is its ability to optimize and parallelize these transformations across distributed computing resources, making it well-suited for big data processing tasks. 
 
 - ECL is not case-sensitive but usually reserved keywords and built-in functions are written in ALL CAPS
 - White space is ignored, allowing formatting for readability as needed
@@ -20,9 +20,7 @@ ECL definitions are the basic building blocks of ECL. A definition specifies wha
 **Syntax**
 <pre>
     <EclCode 
-    code="
-    [attrib_type] attrib_name := value
-    ">
+    code="[attrib_type] attrib_name := value">
     </EclCode>
 </pre>
 
@@ -32,19 +30,17 @@ ECL definitions are the basic building blocks of ECL. A definition specifies wha
 | attrib_name | The name by which the definition will be invoked. |
 | value | Assigned value to the definition. |
 
-
+**Example**
 <pre>
     <EclCode
-    code="
-    // attrib_name Val1 is defined and value 12 is assigned to it
+    code="// attrib_name Val1 is defined and value 12 is assigned to it
     Val1 := 12;
 
     // attrib_name Val2 is defined and value 65 is assigned to it
     Val2 := 65;
 
     // attrib_name Result is defined and the summation of Val1 and Val2 is assigned to it
-    Result := Val1 + Val2;
-    ">
+    Result := Val1 + Val2;">
     </EclCode>
 </pre>
 
@@ -58,18 +54,17 @@ Comments in ECL are supported using the following syntax.
 | Single Line | `//` | `// This is a single-line comment.` |
 | Multi Line | `/* */` | `/* This is a multi-line comment. */` |
 
+**Example**
 <pre>
     <EclCode 
-    code="
-    // This is a single-line comment.
+    code="// This is a single-line comment.
 
     /*  This
         is
         a
         multi-line
         comment.
-    */
-    ">
+    */">
     </EclCode>
 </pre>
 
@@ -78,14 +73,12 @@ Comments in ECL are supported using the following syntax.
 You can use object.property to access dataset fields and definitions.
 
 - `dataset.fieldName` Referencing a field from a dataset
-- `moduleName.definition`  Referencing an attribute from a module
+- `moduleName.definition` Referencing an attribute from a module
 
 <pre>
     <EclCode
-    code="
-    MyDataset.FieldName;
-    MyModule.ExportedValue;
-    "> 
+    code="MyDataset.FieldName;
+    MyModule.ExportedValue;">
     </EclCode>
 </pre>
 
@@ -98,8 +91,7 @@ In ECL, coding revolves around two main approaches: Definitions and Actions. The
     <EclCode
     id = "IntroExp_1"
     tryMe="IntroExp_1"
-    code="
-    /* Actions vs Definitions */
+    code="/* Actions vs Definitions */
 
     // Definitions
     STRING Def1 := 'Concatenating two Definitions ';
@@ -114,8 +106,7 @@ In ECL, coding revolves around two main approaches: Definitions and Actions. The
     SomeResult := Val1 + Val2;
 
     // Action: Print Result
-    SomeResult;
-    ">
+    SomeResult;">
     </EclCode>
 </pre>
 
@@ -123,15 +114,14 @@ In ECL, coding revolves around two main approaches: Definitions and Actions. The
 
 Action simply means "do something". Actions trigger execution of a workunit that produce output in the workunit. Actions do NOT have a return value.
 
+**Example**
 <pre>
     <EclCode 
-    code="
-    // Action
+    code="// Action
     OUTPUT('This is an Action.');
 
     // Action
-    SUM(1,2);
-    ">
+    SUM(1,2);">
     </EclCode>
 </pre>
 
@@ -140,8 +130,7 @@ Action simply means "do something". Actions trigger execution of a workunit that
     <EclCode
     id="IntroExp_2"
     tryMe="IntroExp_2"
-    code="
-    /* Actions vs Definitions */
+    code="/* Actions vs Definitions */
 
     // Defining an attribute
     str := 'Hello Word';
@@ -158,7 +147,6 @@ Action simply means "do something". Actions trigger execution of a workunit that
     // Simple Actions
     'My first ECL code';
     1 + 4 + 5;
-    2 * 3;
-    ">
+    2 * 3;">
     </EclCode>
 </pre>
