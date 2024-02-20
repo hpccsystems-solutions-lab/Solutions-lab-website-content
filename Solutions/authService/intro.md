@@ -1,6 +1,7 @@
 ---
 title: HPCC Systems® Auth Service
 shortDescription: Auth-service is a robust access control system, ensuring secure access to protected areas through digital signatures and key pair verification. It simplifies user administration with an intuitive interface, allowing organizations to effortlessly manage user accounts and permissions, enhancing overall security and access management. 
+link: auth-service
 gitHubRepo: https://github.com/hpcc-systems/Auth-Service
 imageName: auth-service
 ---
